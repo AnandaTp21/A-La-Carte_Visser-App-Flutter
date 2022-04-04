@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/RecomendPage.dart';
 import 'package:flutter_application_1/pages/login.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const login(),
+      home: const RecomendPage(),
     );
   }
 }
