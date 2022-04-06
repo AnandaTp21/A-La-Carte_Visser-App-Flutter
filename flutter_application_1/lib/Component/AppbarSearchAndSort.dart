@@ -14,17 +14,17 @@ class ABSAS extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            margin: EdgeInsets.only(top:30 ),
+            margin: EdgeInsets.only(top:23 ),
           child : TextButton(onPressed: (){}, child: Icon(Icons.filter_alt_outlined,color:Colors.white),style:
           TextButton.styleFrom(
             padding: EdgeInsets.all(0)
           )
           ,)
           ),
-          Container(margin: EdgeInsets.only(top: 30,right: 10),
+          Container(margin: EdgeInsets.only(top: 28,right: 10,bottom: 3),
           child :Image.asset('assets/logowhite.png')),
           Container(
-            margin: EdgeInsets.only(top: 30),
+            margin: EdgeInsets.only(top: 23),
           child : TextButton(onPressed: (){}, child: Icon(Icons.search_outlined,color:Colors.white),style:
           TextButton.styleFrom(
             padding: EdgeInsets.all(0)
