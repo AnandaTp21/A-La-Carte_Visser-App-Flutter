@@ -18,8 +18,11 @@ class RecommendPageComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(style: OutlinedButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
+    return Container(
+      margin: EdgeInsets.only(top: 20),
       height: 210,
+    child : OutlinedButton(style: OutlinedButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
+      
       child: Column(
         children: [
           Container(
@@ -58,7 +61,7 @@ class RecommendPageComponent extends StatelessWidget {
           )
         ],
       ),
-    ));
+    )));
     
   }
 }
