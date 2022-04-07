@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/AppbarSearchAndSort.dart';
-import 'package:flutter_application_1/Component/TimePageComponent.dart';
+import 'package:flutter_application_1/Component/WeightPageComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
 
-class TimePage extends StatefulWidget {
-  const TimePage({ Key? key }) : super(key: key);
-
+class WeightPage extends StatefulWidget {
+  const WeightPage({ Key? key }) : super(key: key);
 
   @override
-  State<TimePage> createState() => _TimePageState();
-
+  State<WeightPage> createState() => _WeightPageState();
 }
 
-class _TimePageState extends State<TimePage> {
+class _WeightPageState extends State<WeightPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
         decoration: BoxDecoration(color: Color.fromRGBO(231, 223, 212, 1)),
         child: Column(
@@ -29,15 +26,15 @@ class _TimePageState extends State<TimePage> {
               child:  ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
-                judulpage(judul: "Time Visser",)
+                judulpage(judul: "Weight Visser",)
                 ,
-                TimePageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'NamaLokasi', JumlahRecomend: '1000', Harga: '50000')
+                WeightPageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'Visser Terjun Mounth', JumlahRecomend: '1000', Harga: '50.000',Hargaawal: '60000',)
               ],
             ),)
             
           ],
         )
           ),
-        );
+    );
   }
 }
