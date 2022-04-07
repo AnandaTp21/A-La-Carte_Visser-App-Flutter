@@ -13,9 +13,8 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE7DFD4),
       body: Container(
-        width: 1000,
-        decoration: BoxDecoration(color: Color(0xffE7DFD4)),
         child : Column(
         children: [
           

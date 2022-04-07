@@ -14,6 +14,7 @@ class _WeightPageState extends State<WeightPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE7DFD4),
       body: Container(
         decoration: BoxDecoration(color: Color.fromRGBO(231, 223, 212, 1)),
         child: Column(
