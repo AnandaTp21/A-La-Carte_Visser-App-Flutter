@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/ForgotPassword.dart';
 import 'package:flutter_application_1/pages/TimePAge.dart';
 import 'package:flutter_application_1/pages/WeightPage.dart';
 import 'package:flutter_application_1/pages/login.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const login(),
+      home: const ForgotPassword(),
     );
   }
 }
