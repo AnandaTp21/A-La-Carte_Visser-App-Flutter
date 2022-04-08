@@ -26,7 +26,7 @@ class TimePageComponent extends StatelessWidget {
         )]),
       margin: EdgeInsets.only(top: 25),
       height: 210,
-    child : OutlinedButton(style: OutlinedButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
+    child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
         children: [

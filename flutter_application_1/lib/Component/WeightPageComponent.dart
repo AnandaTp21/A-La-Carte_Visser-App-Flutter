@@ -17,6 +17,7 @@ class WeightPageComponent extends StatelessWidget {
    }) : super(key: key);
 
   @override
+  static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -29,7 +30,7 @@ class WeightPageComponent extends StatelessWidget {
         )]),
       margin: EdgeInsets.only(top: 25),
       height: 210,
-    child : OutlinedButton(style: OutlinedButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
+    child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
         children: [
@@ -49,7 +50,7 @@ class WeightPageComponent extends StatelessWidget {
                     margin: EdgeInsets.only(top: 8),
                     child:Row(
                     children: [Text("It's a Visser Weight",style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) )),
-                    Icon(Icons.monitor_weight_outlined,size: 14,color: Color.fromRGBO(101, 101, 101, 1),)],
+                    Icon(Icons.scale,size: 14,color: Color.fromRGBO(101, 101, 101, 1),)],
                   ) ,)
                   
                 ],),

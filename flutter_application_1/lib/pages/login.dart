@@ -14,6 +14,7 @@ class login extends StatefulWidget {
 
 class _loginState extends State<login> {
   bool visibilty = true;
+  bool? check = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,13 @@ class _loginState extends State<login> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      Checkbox(value: check,onChanged: (val){
+                        setState(() {
+                          check = val;
+                        });
+                      },),
                       Text("Remember Me")
                     ],
                   ),
@@ -105,7 +112,7 @@ class _loginState extends State<login> {
                 }, child: const Text("Register",style: TextStyle(fontWeight: FontWeight.bold),),
                 style: TextButton.styleFrom(
                   primary: Color.fromRGBO(32, 62, 88, 1)
-                ),)
+                ),),
               ],)
             )
             ],
