@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter_application_1/pages/Home/EventPage.dart';
+=======
+import 'package:flutter_application_1/freepage.dart';
+import 'package:flutter_application_1/pages/TimePAge.dart';
+import 'package:flutter_application_1/pages/WeightPage.dart';
+import 'package:flutter_application_1/pages/login.dart';
+>>>>>>> f30f463653821cb8a69a147328b19accb6f6de73
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +32,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+<<<<<<< HEAD
       home: const EventPage(),
+=======
+      home: const freepage(),
+>>>>>>> f30f463653821cb8a69a147328b19accb6f6de73
     );
   }
 }
