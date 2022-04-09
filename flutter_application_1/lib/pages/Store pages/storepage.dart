@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/AppbarSearchAndSort.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreSection.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnail.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
@@ -16,19 +15,39 @@ class storePage extends StatefulWidget {
 class _storePageState extends State<storePage> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.filter_alt_outlined,
+              color: Colors.white,
+            )),
+        centerTitle: true,
+        title: Image.asset(
+          'assets/logowhite.png',
+          width: 51,
+          height: 35,
+        ),
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+              )),
+        ],
+      ),
       body: Container(
-          decoration:
-              BoxDecoration(color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
+          decoration: const BoxDecoration(
+              color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
           child: Column(
             children: [
-              const Expanded(flex: 1, child: ABSAS()),
               Expanded(
                 flex: 9,
                 child: ListView(
-                  padding: EdgeInsets.only(top: 0),
+                  padding: const EdgeInsets.only(top: 0),
                   children: const [
                     carousel(items: [
                       CarouselList(lokasiGambar: "assets/test.png"),
