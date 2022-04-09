@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/AppbarSearchAndSort.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreSection.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnail.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
@@ -24,7 +23,6 @@ class _storePageState extends State<storePage> {
               BoxDecoration(color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
           child: Column(
             children: [
-              const Expanded(flex: 1, child: ABSAS()),
               Expanded(
                 flex: 9,
                 child: ListView(
