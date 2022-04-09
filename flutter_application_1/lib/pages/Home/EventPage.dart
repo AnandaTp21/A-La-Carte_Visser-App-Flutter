@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/WeightPageComponent.dart';
+import 'package:flutter_application_1/Component/EventPageComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
 
-class WeightPage extends StatefulWidget {
-  const WeightPage({ Key? key }) : super(key: key);
+class EventPage extends StatefulWidget {
+  const EventPage({ Key? key }) : super(key: key);
 
   @override
-  State<WeightPage> createState() => _WeightPageState();
+  State<EventPage> createState() => _EventPageState();
 }
 
-class _WeightPageState extends State<WeightPage> {
+class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +20,12 @@ class _WeightPageState extends State<WeightPage> {
         ),
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
-        decoration: BoxDecoration(color: Color.fromRGBO(231, 223, 212, 1)),
         child: 
             ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
-                judulpage(judul: "Weight Visser",),
-                WeightPageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'Visser Terjun Mounth', JumlahRecomend: '1000', Harga: '50.000',Hargaawal: '60000',)
+                judulpage(judul: "Event Visser"),
+                EventPageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: "NamaLokasi", JumlahRecomend: 1000, Harga: "150.000",Tanggal: "12 March 2020",)
               ],
             ),
           ),

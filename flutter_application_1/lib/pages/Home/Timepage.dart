@@ -29,7 +29,7 @@ class _TimePageState extends State<TimePage> {
                 padding: EdgeInsets.only(top: 0),
               children: [
                 judulpage(judul: "Time Visser",),
-                TimePageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'NamaLokasi', JumlahRecomend: '1000', Harga: '50000')
+                TimePageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'NamaLokasi', JumlahRecomend: 1000, Harga: "50.000")
               ],
             ),),
         );

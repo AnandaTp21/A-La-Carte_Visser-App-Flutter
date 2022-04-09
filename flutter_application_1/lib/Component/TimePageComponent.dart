@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class TimePageComponent extends StatelessWidget {
   final String LokasiGambar;
   final String NamaLokasi;
-  final String JumlahRecomend;
+  final int JumlahRecomend;
   final String Harga;
   final VoidCallback press;
   const TimePageComponent({ Key? key ,
