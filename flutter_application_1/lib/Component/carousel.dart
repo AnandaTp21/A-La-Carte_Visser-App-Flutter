@@ -10,7 +10,6 @@ class carousel extends StatelessWidget {
     return CarouselSlider(
       items: items,
       options: CarouselOptions(
-        height: screenheight * 0.22,
         aspectRatio: 45 / 22,
         viewportFraction: 1.5,
         initialPage: 0,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
+import 'package:flutter_application_1/pages/Store%20pages/detailstore.dart';
 import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
 
 class freepage extends StatefulWidget {
@@ -32,6 +33,14 @@ class _freepageState extends State<freepage> {
               Navigator.push(context, route);
             },
             child: const Text("Weight"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Route route =
+                  MaterialPageRoute(builder: (context) => const DetailStore());
+              Navigator.push(context, route);
+            },
+            child: const Text("DetailStore"),
           ),
         ],
       )),
