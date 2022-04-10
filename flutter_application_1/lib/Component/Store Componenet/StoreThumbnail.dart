@@ -19,11 +19,10 @@ class StoreThumbnail extends StatelessWidget {
         margin: const EdgeInsets.only(right: 20),
         width: 100,
         child: Column(children: [
-          Container(
+          Image.asset(
+            logotoko,
             width: 100,
             height: 100,
-            child: Image.asset(logotoko),
-            margin: const EdgeInsets.only(bottom: 5),
           ),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(

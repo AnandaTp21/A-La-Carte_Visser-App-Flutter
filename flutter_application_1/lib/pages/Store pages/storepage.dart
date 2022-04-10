@@ -40,100 +40,94 @@ class _storePageState extends State<storePage> {
         ],
       ),
       body: Container(
-          decoration: const BoxDecoration(
-              color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
-          child: Column(
-            children: [
-              Expanded(
-                flex: 9,
-                child: ListView(
-                  padding: const EdgeInsets.only(top: 0),
-                  children: const [
-                    carousel(items: [
-                      CarouselList(lokasiGambar: "assets/test.png"),
-                      CarouselList(lokasiGambar: "assets/test.png"),
-                      CarouselList(lokasiGambar: "assets/test.png")
-                    ]),
-                    StoreSection(
-                        judulSection: "Recommended Visser Store",
-                        subJudulSection: "Let's find out!",
-                        storeThumbnail: [
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50")
-                        ]),
-                    StoreSection(
-                        judulSection: "Order Again",
-                        subJudulSection: "You ever order here. Again?",
-                        storeThumbnail: [
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50")
-                        ]),
-                    StoreSection(
-                        judulSection: "Recently Viewed",
-                        subJudulSection: "Come and see again!",
-                        storeThumbnail: [
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50"),
-                          StoreThumbnail(
-                              logotoko: 'assets/logogreen.png',
-                              namatoko: 'Visser Store',
-                              alamattoko: "St. Bilal No. 46",
-                              jumlahlike: "50")
-                        ]),
-                  ],
-                ),
-              )
-            ],
-          )),
+        decoration:
+            const BoxDecoration(color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
+        child: ListView(
+          padding: const EdgeInsets.only(top: 0),
+          children: const [
+            carousel(items: [
+              CarouselList(lokasiGambar: "assets/test.png"),
+              CarouselList(lokasiGambar: "assets/test.png"),
+              CarouselList(lokasiGambar: "assets/test.png")
+            ]),
+            StoreSection(
+                judulSection: "Recommended Visser Store",
+                subJudulSection: "Let's find out!",
+                storeThumbnail: [
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50")
+                ]),
+            StoreSection(
+                judulSection: "Order Again",
+                subJudulSection: "You ever order here. Again?",
+                storeThumbnail: [
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50")
+                ]),
+            StoreSection(
+                judulSection: "Recently Viewed",
+                subJudulSection: "Come and see again!",
+                storeThumbnail: [
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50"),
+                  StoreThumbnail(
+                      logotoko: 'assets/logogreen.png',
+                      namatoko: 'Visser Store',
+                      alamattoko: "St. Bilal No. 46",
+                      jumlahlike: "50")
+                ]),
+          ],
+        ),
+      ),
     );
   }
 }
