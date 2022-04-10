@@ -50,7 +50,7 @@ class DetailStore extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Category",
+                    "Categories",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Container(
