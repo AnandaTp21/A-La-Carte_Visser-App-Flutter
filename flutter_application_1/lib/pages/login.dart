@@ -13,6 +13,9 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  TextEditingController Username = TextEditingController();
+  TextEditingController Password = TextEditingController();
+  String Error = "";
   bool visibilty = true;
   bool? check = false;
   @override
@@ -27,10 +30,15 @@ class _loginState extends State<login> {
             child :Image.asset('assets/logogreen.png',width: 296,height: 200,)
             ),
             Container(
-              margin: EdgeInsets.only(top: 30),
+              margin: EdgeInsets.only(top: 10),
+             child : Text(Error,style:TextStyle(color: Colors.red),),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Username,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
               hintText: 'Enter Your Username',
@@ -46,6 +54,7 @@ class _loginState extends State<login> {
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Password,
                 obscureText: visibilty,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 0.6,) ),
             decoration: InputDecoration(
@@ -93,7 +102,21 @@ class _loginState extends State<login> {
             ),
             Container( 
               margin: EdgeInsets.only(top: 10),
-              child: ElevatedButton(onPressed: (){}, child: Text("LOGIN",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
+              child: ElevatedButton(onPressed: (){
+                setState(() {
+                  if(Username.text.isEmpty && Password.text.isEmpty){
+                    Error = "Username dan Password Tidak Boleh Kosong";
+                  }
+                  else{
+                    if(Password.text == "Admin123" && Username.text == "Admin"){
+                      Error = "Login";
+                    }
+                    else {
+                      Error = "Silahkan Lakukan Register";
+                    }
+                  }
+                });
+              } ,child: Text("LOGIN",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal : 100),
                 primary: Color.fromRGBO(32, 62, 88, 1),

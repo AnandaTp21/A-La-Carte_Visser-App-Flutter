@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/WeightPageComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
 
@@ -26,6 +27,7 @@ class _WeightPageState extends State<WeightPage> {
             ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
+                HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xffffffff, color4: 0xff656565),
                 judulpage(judul: "Weight Visser",),
                 WeightPageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'Visser Terjun Mounth', JumlahRecomend: 1000, Harga: '50.000',Hargaawal: '60000',)
               ],

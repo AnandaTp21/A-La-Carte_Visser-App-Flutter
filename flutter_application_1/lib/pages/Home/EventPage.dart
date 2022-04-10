@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/EventPageComponent.dart';
+import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
 
 class EventPage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _EventPageState extends State<EventPage> {
             ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
+                HomeUpComponent(color1: 0xff656565, color2: 0xffffffff, color3: 0xff656565, color4: 0xff656565),
                 judulpage(judul: "Event Visser"),
                 EventPageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: "NamaLokasi", JumlahRecomend: 1000, Harga: "150.000",Tanggal: "12 March 2020",)
               ],

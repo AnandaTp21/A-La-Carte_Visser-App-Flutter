@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_1/pages/Home/EventPage.dart';
-import 'package:flutter_application_1/freepage.dart';
-import 'package:flutter_application_1/pages/Home/Timepage.dart';
+import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/login.dart';
 
 void main() {
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const freepage(),
+      home: const WeightPage(),
     );
   }
 }

@@ -15,9 +15,8 @@ class WeightPageComponent extends StatelessWidget {
     required this.Hargaawal,
     required this.Harga 
    }) : super(key: key);
-
-  @override
   static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(

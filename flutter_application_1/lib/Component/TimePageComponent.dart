@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class TimePageComponent extends StatelessWidget {
   final String LokasiGambar;
   final String NamaLokasi;
@@ -10,8 +11,7 @@ class TimePageComponent extends StatelessWidget {
     required this.LokasiGambar,
     required this.NamaLokasi,
     required this.JumlahRecomend,
-    required this.Harga 
-  }) : super(key: key);
+    required this.Harga }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class TimePageComponent extends StatelessWidget {
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
-        children: [
+        children:[
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: Image.asset(LokasiGambar,height: 145,),
@@ -67,6 +67,7 @@ class TimePageComponent extends StatelessWidget {
           )
         ],
       ),
-    )));
+    ))
+    );
   }
 }
