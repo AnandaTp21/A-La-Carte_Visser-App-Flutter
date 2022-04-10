@@ -67,7 +67,7 @@ class EventPageComponent extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 2),
-                    child: Text("Rp${Harga}/Tickets",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
+                    child: Text("Rp${Harga}/Ticket",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
                   )
                   
                 ],)
