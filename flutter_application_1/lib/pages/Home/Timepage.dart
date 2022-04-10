@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/HomeDownComponent.dart';
 import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
@@ -15,6 +16,9 @@ class TimePage extends StatefulWidget {
 }
 
 class _TimePageState extends State<TimePage> {
+  List datapage = [
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : "50.000"},
+    ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +42,14 @@ class _TimePageState extends State<TimePage> {
                   CarouselList(lokasiGambar: "assets/logowhite.png"),
                 ]),
                 judulpage(judul: "Time Visser",),
-                TimePageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'NamaLokasi', JumlahRecomend: 1000, Harga: "50.000")
+                Column(
+                  children: datapage.map((val){
+                    return TimePageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
+                  }).toList()
+                )
               ],
             ),),
+        bottomNavigationBar: HomeDownComponent(color1: 0xffffffff, color2: 0xff656565, color3: 0xff656565, color4: 0xff656565),
         );
   }
 }

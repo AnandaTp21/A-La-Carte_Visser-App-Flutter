@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/HomeDownComponent.dart';
 import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/WeightPageComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
@@ -43,10 +44,10 @@ class _WeightPageState extends State<WeightPage> {
                     return WeightPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
                   }).toList()
                 )
-                
               ],
             ),
           ),
+          bottomNavigationBar: HomeDownComponent(color1: 0xffffffff, color2: 0xff656565, color3:0xff656565, color4: 0xff656565),
     );
   }
 }

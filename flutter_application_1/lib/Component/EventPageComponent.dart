@@ -47,7 +47,7 @@ class EventPageComponent extends StatelessWidget {
                   children: [
                   Text(NamaLokasi,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
                   Container(
-                    margin: EdgeInsets.only(top: 8),
+                    margin: EdgeInsets.only(top: 11),
                     child:Row(
                     children: [
                       Column(
