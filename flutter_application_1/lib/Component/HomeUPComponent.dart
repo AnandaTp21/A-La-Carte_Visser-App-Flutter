@@ -22,8 +22,7 @@ static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
             IconButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendPage()));
             }, icon: Icon(Icons.recommend_outlined,color: Color(color1),)),
-            Container(
-              child :Text("Recomend"))],
+            Text("Recomend")],
           ),
           Column(
             children: [
@@ -33,7 +32,6 @@ static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
             Text("Event")],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
             IconButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => WeightPage()));

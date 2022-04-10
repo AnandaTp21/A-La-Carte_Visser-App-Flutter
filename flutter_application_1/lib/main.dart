@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
+import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
 import 'package:flutter_application_1/pages/login.dart';
 
 void main() {
