@@ -11,11 +11,11 @@ class judulpage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                    Container(width: 120,height: 1,color: Colors.black,),
+                    Container(width: 100,height: 1,color: Colors.black,),
                     Text(judul,style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),),
-                    Container(width: 120,height: 1,color: Colors.black,),
+                    Container(width: 100,height: 1,color: Colors.black,),
                   ]),
     );
   }

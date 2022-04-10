@@ -37,8 +37,10 @@ class EventPageComponent extends StatelessWidget {
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
+            color: Colors.white,
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 15), 
+              child : Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +74,7 @@ class EventPageComponent extends StatelessWidget {
               ],
             ),
           )
-        ],
+          )],
       ),
     ))
     );

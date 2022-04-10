@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/HomeUPComponent.dart';
+import 'package:flutter_application_1/Component/carousel.dart';
+import 'package:flutter_application_1/Component/carousel_list.dart';
 import 'package:flutter_application_1/Component/TimePageComponent.dart';
 import 'package:flutter_application_1/Component/judulpage.dart';
 
@@ -28,6 +31,12 @@ class _TimePageState extends State<TimePage> {
                 ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
+                HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xff656565, color4: 0xffffffff),
+                carousel(items: [
+                  CarouselList(lokasiGambar: "assets/logowhite.png"),
+                  CarouselList(lokasiGambar: "assets/logowhite.png"),
+                  CarouselList(lokasiGambar: "assets/logowhite.png"),
+                ]),
                 judulpage(judul: "Time Visser",),
                 TimePageComponent(press: (){}, LokasiGambar: 'assets/logogreen.png', NamaLokasi: 'NamaLokasi', JumlahRecomend: 1000, Harga: "50.000")
               ],

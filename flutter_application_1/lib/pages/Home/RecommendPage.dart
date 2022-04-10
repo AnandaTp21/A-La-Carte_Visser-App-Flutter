@@ -1,21 +1,19 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/EventPageComponent.dart';
 import 'package:flutter_application_1/Component/HomeUPComponent.dart';
-import 'package:flutter_application_1/Component/WeightPageComponent.dart';
-import 'package:flutter_application_1/Component/judulpage.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
+import 'package:flutter_application_1/Component/judulpage.dart';
 
-class WeightPage extends StatefulWidget {
-  const WeightPage({ Key? key }) : super(key: key);
+class RecommendPage extends StatefulWidget {
+  const RecommendPage({ Key? key }) : super(key: key);
 
   @override
-  State<WeightPage> createState() => _WeightPageState();
+  State<RecommendPage> createState() => _RecommendPageState();
 }
 
-class _WeightPageState extends State<WeightPage> {
-  List dataweight = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : "50.000",'hargaawal' : "60.000"},
-    ];
+class _RecommendPageState extends State<RecommendPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,24 +24,17 @@ class _WeightPageState extends State<WeightPage> {
         ),
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
-        decoration: BoxDecoration(color: Color.fromRGBO(231, 223, 212, 1)),
         child: 
             ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
-                HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xffffffff, color4: 0xff656565),
+                HomeUpComponent(color1: 0xffffffff, color2: 0xff656565, color3: 0xff656565, color4: 0xff656565),
                 carousel(items: [
                   CarouselList(lokasiGambar: "assets/logowhite.png"),
                   CarouselList(lokasiGambar: "assets/logowhite.png"),
                   CarouselList(lokasiGambar: "assets/logowhite.png"),
                 ]),
-                judulpage(judul: "Weight Visser",),
-                Column(
-                  children: dataweight.map((val){
-                    return WeightPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
-                  }).toList()
-                )
-                
+                judulpage(judul: "Recommend Visser"),
               ],
             ),
           ),

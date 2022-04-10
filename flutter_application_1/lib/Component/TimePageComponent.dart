@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class TimePageComponent extends StatelessWidget {
   final String LokasiGambar;
   final String NamaLokasi;
@@ -10,8 +11,7 @@ class TimePageComponent extends StatelessWidget {
     required this.LokasiGambar,
     required this.NamaLokasi,
     required this.JumlahRecomend,
-    required this.Harga 
-  }) : super(key: key);
+    required this.Harga }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +29,24 @@ class TimePageComponent extends StatelessWidget {
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
-        children: [
+        children:[
           Container(
             margin: EdgeInsets.only(bottom: 10),
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
+            padding: EdgeInsets.only(bottom: 4),
+            color: Colors.white,
+            child: 
+            Container( margin: EdgeInsets.symmetric(horizontal: 15),child :Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  Text(NamaLokasi,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                    Container(
+                      margin: EdgeInsets.only(top: 11),
+                      child :Text(NamaLokasi,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                  ),
                   Container(
                     margin: EdgeInsets.only(top: 8),
                     child:Row(
@@ -53,8 +58,10 @@ class TimePageComponent extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  Row(
-                    children: [Icon(Icons.thumb_up_outlined,size: 11,color: Color.fromRGBO(101, 101, 101, 1),),Text(' ${JumlahRecomend} people recommend this place',style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) ),)],
+                   Row(
+                    children: [
+                      Icon(Icons.thumb_up_outlined,size: 11,color: Color.fromRGBO(101, 101, 101, 1),),
+                      Text(' ${JumlahRecomend} people recommend this place',style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) ),)],
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 8),
@@ -65,8 +72,9 @@ class TimePageComponent extends StatelessWidget {
               ],
             ),
           )
-        ],
+          )],
       ),
-    )));
+    ))
+    );
   }
 }
