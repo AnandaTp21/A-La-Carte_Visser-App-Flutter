@@ -15,10 +15,8 @@ class StoreSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenheight = MediaQuery.of(context).size.height;
     return Container(
         margin: const EdgeInsets.only(bottom: 15),
-        height: screenheight * 0.23,
         decoration: BoxDecoration(
             color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
             boxShadow: [
@@ -35,15 +33,17 @@ class StoreSection extends StatelessWidget {
             children: [
               Text(
                 judulSection,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               Text(
                 subJudulSection,
-                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                style:
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10),
-                height: screenheight * 0.15,
+                height: 140,
                 child: ListView(
                     scrollDirection: Axis.horizontal, children: storeThumbnail),
               )
