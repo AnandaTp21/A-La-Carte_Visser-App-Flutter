@@ -19,7 +19,7 @@ class _freepageState extends State<freepage> {
           ElevatedButton(
             onPressed: () {
               Route route =
-                  MaterialPageRoute(builder: (conntext) => const storePage());
+                  MaterialPageRoute(builder: (context) => const storePage());
               Navigator.push(context, route);
             },
             child: const Text("StorePage"),
