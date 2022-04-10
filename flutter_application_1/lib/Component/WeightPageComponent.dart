@@ -27,7 +27,7 @@ class WeightPageComponent extends StatelessWidget {
           spreadRadius: -6,
           offset: Offset(0,13.0)
         )]),
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: 30),
       height: 210,
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
@@ -38,8 +38,10 @@ class WeightPageComponent extends StatelessWidget {
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
+            color: Colors.white,
+            child: Container ( 
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              child :Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,7 +85,7 @@ class WeightPageComponent extends StatelessWidget {
                   
                 ],)
               ],
-            ),
+            )),
           )
         ],
       ),

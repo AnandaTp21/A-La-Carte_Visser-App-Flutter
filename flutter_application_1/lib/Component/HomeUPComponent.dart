@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home/EventPage.dart';
+import 'package:flutter_application_1/pages/Home/RecommendPage.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 
@@ -18,7 +19,9 @@ static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
         children: [
           Column(
             children: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.recommend_outlined,color: Color(color1),)),
+            IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendPage()));
+            }, icon: Icon(Icons.recommend_outlined,color: Color(color1),)),
             Container(
               child :Text("Recomend"))],
           ),
@@ -43,7 +46,7 @@ static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
               Navigator.push(context, MaterialPageRoute(builder: (context) => TimePage()));
             }, icon: Icon(Icons.timer_outlined,color: Color(color4))),
             Text("Time")],
-          )
+          ),
         ],
       ),
     );
