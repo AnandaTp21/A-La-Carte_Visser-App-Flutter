@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/freepage.dart';
 
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const WeightPage(),
+      home: const freepage(),
     );
   }
 }

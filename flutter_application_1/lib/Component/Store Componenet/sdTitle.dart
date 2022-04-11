@@ -41,7 +41,9 @@ class sdTitle extends StatelessWidget {
                     "See other outlets>",
                     style: TextStyle(color: Colors.black),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 )
               ],
             ),
