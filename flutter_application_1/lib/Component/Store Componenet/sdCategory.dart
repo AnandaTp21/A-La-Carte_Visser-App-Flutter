@@ -4,7 +4,8 @@ class sdCategory extends StatelessWidget {
   final String icon;
   final String judul;
 
-  const sdCategory({Key? key, required this.icon, required this.judul}) : super(key: key);
+  const sdCategory({Key? key, required this.icon, required this.judul})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
