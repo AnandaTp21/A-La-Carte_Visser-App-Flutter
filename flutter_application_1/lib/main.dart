@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/Home/DetailVisserWeight.dart';
-import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
-import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
-import 'package:flutter_application_1/pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +25,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+
       home: WeightPage(),
+
     );
   }
 }
