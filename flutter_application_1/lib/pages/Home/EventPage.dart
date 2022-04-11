@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/HomeDownComponent.dart';
-import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
 import 'package:flutter_application_1/Component/homecomponent/EventPageComponent.dart';
