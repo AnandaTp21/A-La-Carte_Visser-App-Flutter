@@ -16,7 +16,7 @@ class WeightPage extends StatefulWidget {
 
 class _WeightPageState extends State<WeightPage> {
   List dataweight = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'hargaawal' : 70000},
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mount','Jumlahrecomend' : 1000,'harga' : 50000,'hargaawal' : 70000,'Location' : "St.Damar Raya "},
     ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _WeightPageState extends State<WeightPage> {
                 Column(
                   children: dataweight.map((val){
                     return WeightPageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'])));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'],Location: val['Location'],)));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
                   }).toList()
                 )
