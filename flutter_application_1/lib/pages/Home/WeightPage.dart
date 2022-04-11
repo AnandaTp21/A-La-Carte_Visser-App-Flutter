@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/HomeDownComponent.dart';
-import 'package:flutter_application_1/Component/HomeUPComponent.dart';
-import 'package:flutter_application_1/Component/WeightPageComponent.dart';
-import 'package:flutter_application_1/Component/judulpage.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
+import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/WeightPageComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
+import 'package:flutter_application_1/pages/Home/DetailVisserWeight.dart';
 
 class WeightPage extends StatefulWidget {
   const WeightPage({ Key? key }) : super(key: key);
@@ -15,7 +16,7 @@ class WeightPage extends StatefulWidget {
 
 class _WeightPageState extends State<WeightPage> {
   List dataweight = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : "50.000",'hargaawal' : "60.000"},
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'hargaawal' : 70000},
     ];
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,9 @@ class _WeightPageState extends State<WeightPage> {
                 judulpage(judul: "Weight Visser",),
                 Column(
                   children: dataweight.map((val){
-                    return WeightPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
+                    return WeightPageComponent(press: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'])));
+                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
                   }).toList()
                 )
               ],

@@ -4,7 +4,7 @@ class TimePageComponent extends StatelessWidget {
   final String LokasiGambar;
   final String NamaLokasi;
   final int JumlahRecomend;
-  final String Harga;
+  final int Harga;
   final VoidCallback press;
   const TimePageComponent({ Key? key ,
   required this.press,
