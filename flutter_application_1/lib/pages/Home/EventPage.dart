@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/EventPageComponent.dart';
 import 'package:flutter_application_1/Component/HomeDownComponent.dart';
 import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
@@ -41,9 +40,7 @@ class _EventPageState extends State<EventPage> {
                 ]),
                 judulpage(judul: "Event Visser"),
                 Column(
-                  children: dataevent.map((val){
-                    return EventPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
-                  }).toList(),
+
                 )
               ],
             ),
