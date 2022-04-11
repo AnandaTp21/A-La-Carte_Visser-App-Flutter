@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/freepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: WeightPage(),
+      home: freepage(),
 
     );
   }
