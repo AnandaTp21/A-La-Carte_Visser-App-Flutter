@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_1/Component/DetailVisserComponent.dart';
 
 class DetailVisserWeight extends StatefulWidget {
   final String judul;
@@ -7,6 +8,7 @@ class DetailVisserWeight extends StatefulWidget {
   final int hargaawal;
   final int harga;
   final String Location;
+  final List Fasilitas;
 
   const DetailVisserWeight({ Key? key ,
   required this.judul,
@@ -14,6 +16,7 @@ class DetailVisserWeight extends StatefulWidget {
   required this.hargaawal,
   required this.harga,
   required this.Location,
+  required this.Fasilitas
 
   }) : super(key: key);
 
@@ -132,6 +135,21 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                     Text(widget.Location)
                   ],
                 ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                child : Row(
+                  children: [
+                    Text("Detail Visser",style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
+                )),
+                Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: Column(
+                    children: widget.Fasilitas.map((val){
+                      return DetailVisserComponent(icon: val['Icon'], JudulFasilitas: val['judulfasilitas'], KeteranganFasilitas: val['keterangan']);
+                    }).toList(),
+                  )
                 )
               ],
             ),
