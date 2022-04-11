@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/HomeDownComponent.dart';
-import 'package:flutter_application_1/Component/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
-import 'package:flutter_application_1/Component/TimePageComponent.dart';
-import 'package:flutter_application_1/Component/judulpage.dart';
+import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
+
 
 class TimePage extends StatefulWidget {
   const TimePage({ Key? key }) : super(key: key);
@@ -17,7 +18,7 @@ class TimePage extends StatefulWidget {
 
 class _TimePageState extends State<TimePage> {
   List datapage = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : "50.000"},
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000},
     ];
   @override
   Widget build(BuildContext context) {

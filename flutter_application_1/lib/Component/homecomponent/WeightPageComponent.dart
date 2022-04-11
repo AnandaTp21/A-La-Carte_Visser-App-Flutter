@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class EventPageComponent extends StatelessWidget {
+class WeightPageComponent extends StatelessWidget {
   final String LokasiGambar;
   final String NamaLokasi;
   final int JumlahRecomend;
-  final String Harga;
-  final String Tanggal;
+  final int Harga;
   final VoidCallback press;
-  const EventPageComponent({ Key? key,
-  required this.press,
+  final int Hargaawal;
+  const WeightPageComponent({ Key? key,
+    required this.press,
     required this.LokasiGambar,
     required this.NamaLokasi,
     required this.JumlahRecomend,
-    required this.Tanggal,
-    required this.Harga }) : super(key: key);
-
+    required this.Hargaawal,
+    required this.Harga 
+   }) : super(key: key);
+  static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +27,7 @@ class EventPageComponent extends StatelessWidget {
           spreadRadius: -6,
           offset: Offset(0,13.0)
         )]),
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: 30),
       height: 210,
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
@@ -37,44 +38,56 @@ class EventPageComponent extends StatelessWidget {
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
-            color: Colors.white,
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15), 
-              child : Column(
+            color: Colors.white.withOpacity(0.5),
+            child: Container ( 
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              child :Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                   Text(NamaLokasi,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
                   Container(
-                    margin: EdgeInsets.only(top: 11),
+                    margin: EdgeInsets.only(top: 8),
                     child:Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text("It's a Visser Event",style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) )),
-                          Text("On ${Tanggal}",style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) ))],
-                      ),
-                      Icon(Icons.event_outlined,size: 25,color: Color.fromRGBO(101, 101, 101, 1),)],
+                    children: [Text("It's a Visser Weight",style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) )),
+                    Icon(Icons.scale,size: 14,color: Color.fromRGBO(101, 101, 101, 1),)],
                   ) ,)
                   
                 ],),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  Row(
+                    
+                    Container(
+                      width: 20,
+                      height: 1,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 1),
+                      child: Text("Rp${Hargaawal}/Kg",style: TextStyle(fontSize: 12,color:Color.fromRGBO(101, 101, 101, 1),decoration: TextDecoration.lineThrough)),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 5),
+                      child : Row(
                     children: [Icon(Icons.thumb_up_outlined,size: 11,color: Color.fromRGBO(101, 101, 101, 1),),Text(' ${JumlahRecomend} people recommend this place',style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) ),)],
-                  ),
+                  )
+                    ),
                   Container(
-                    margin: EdgeInsets.only(top: 2),
-                    child: Text("Rp${Harga}/Ticket",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
+                    margin: EdgeInsets.only(top: 1),
+                    child: Text("Rp${Harga}/Kg",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
                   )
                   
                 ],)
               ],
-            ),
+            )),
           )
-          )],
+        ],
       ),
     ))
     );

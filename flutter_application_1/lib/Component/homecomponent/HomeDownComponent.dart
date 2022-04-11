@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home/RecommendPage.dart';
+import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
 
 class HomeDownComponent extends StatelessWidget {
   final int color1;
@@ -20,7 +21,10 @@ class HomeDownComponent extends StatelessWidget {
             IconButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendPage()));
             }, icon: Icon(Icons.home_outlined,color: Color(color1),)),
-            IconButton(onPressed: (){}, icon: Icon(Icons.storefront_outlined,color: Color(color2))),
+            IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => storePage()));
+              
+            }, icon: Icon(Icons.storefront_outlined,color: Color(color2))),
             IconButton(onPressed: (){}, icon: Icon(Icons.confirmation_number_outlined,color: Color(color3))),
             IconButton(onPressed: (){}, icon: Icon(Icons.person_outlined,color: Color(color4))),
         ],
