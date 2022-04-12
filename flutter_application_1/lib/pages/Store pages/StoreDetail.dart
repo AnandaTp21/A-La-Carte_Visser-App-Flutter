@@ -3,6 +3,7 @@ import 'package:flutter_application_1/Component/Store%20Componenet/sdCategory.da
 import 'package:flutter_application_1/Component/Store%20Componenet/sdInfo.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdProduct.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdTitle.dart';
+import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
 
 class StoreDetail extends StatelessWidget {
   const StoreDetail({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class StoreDetail extends StatelessWidget {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         decoration:
             const BoxDecoration(color: Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4)),
         child: ListView(
@@ -55,7 +56,7 @@ class StoreDetail extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 20),
+                    margin: const EdgeInsets.only(top: 10, bottom: 20),
                     height: 85,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -84,7 +85,7 @@ class StoreDetail extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 10),
+                          margin: const EdgeInsets.only(top: 10, bottom: 20),
                           child: GridView.count(
                               childAspectRatio: 0.7,
                               shrinkWrap: true,
@@ -127,8 +128,13 @@ class StoreDetail extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.shopping_cart_outlined),
-        backgroundColor: Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
+        backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
       ),
+      bottomNavigationBar: HomeDownComponent(
+          color1: 0xff656565,
+          color2: 0xffffffff,
+          color3: 0xff656565,
+          color4: 0xff656565),
     );
   }
 }

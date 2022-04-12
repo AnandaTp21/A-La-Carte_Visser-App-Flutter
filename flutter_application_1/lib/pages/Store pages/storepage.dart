@@ -5,14 +5,16 @@ import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnai
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
 
-class storePage extends StatefulWidget {
-  const storePage({Key? key}) : super(key: key);
+import '../../Component/homecomponent/HomeDownComponent.dart';
+
+class StorePage extends StatefulWidget {
+  const StorePage({Key? key}) : super(key: key);
 
   @override
   _storePageState createState() => _storePageState();
 }
 
-class _storePageState extends State<storePage> {
+class _storePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,6 +130,11 @@ class _storePageState extends State<storePage> {
           ],
         ),
       ),
+      bottomNavigationBar: HomeDownComponent(
+          color1: 0xff656565,
+          color2: 0xffffffff,
+          color3: 0xff656565,
+          color4: 0xff656565),
     );
   }
 }
