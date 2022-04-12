@@ -17,8 +17,8 @@ class EventPage extends StatefulWidget {
 
 class _EventPageState extends State<EventPage> {
   List dataevent = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret'},
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret'}
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret 2022'},
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret 2022'}
     ];
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,9 @@ class _EventPageState extends State<EventPage> {
                 ]),
                 judulpage(judul: "Event Visser"),
                 Column(
-
+                  children: dataevent.map((val){
+                    return EventPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
+                  }).toList(),
                 )
               ],
             ),

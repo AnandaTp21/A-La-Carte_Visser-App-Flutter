@@ -14,6 +14,7 @@ class DetailVisserComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
       child: Row(
         children: [
           Icon(icon),
@@ -21,8 +22,16 @@ class DetailVisserComponent extends StatelessWidget {
             margin: EdgeInsets.only(left: 10),
             child :Column(
               children: [
-                  Text(JudulFasilitas,style: TextStyle(fontWeight: FontWeight.w500),),
-                  Text(KeteranganFasilitas,style: TextStyle(color: Color(0xff747688),fontSize: 10),),
+                 Row(
+                  children: [
+                    Text(JudulFasilitas,style: TextStyle(fontWeight: FontWeight.w500),)],
+                  ),
+                  
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(KeteranganFasilitas,style: TextStyle(color: Color(0xff747688),fontSize: 10),)],
+                )
             ],
           ))
           ],

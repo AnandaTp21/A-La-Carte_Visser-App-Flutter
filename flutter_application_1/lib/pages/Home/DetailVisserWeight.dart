@@ -9,6 +9,7 @@ class DetailVisserWeight extends StatefulWidget {
   final int harga;
   final String Location;
   final List Fasilitas;
+  final VoidCallback press;
 
   const DetailVisserWeight({ Key? key ,
   required this.judul,
@@ -16,7 +17,8 @@ class DetailVisserWeight extends StatefulWidget {
   required this.hargaawal,
   required this.harga,
   required this.Location,
-  required this.Fasilitas
+  required this.Fasilitas,
+  required this.press
 
   }) : super(key: key);
 
@@ -150,7 +152,16 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                       return DetailVisserComponent(icon: val['Icon'], JudulFasilitas: val['judulfasilitas'], KeteranganFasilitas: val['keterangan']);
                     }).toList(),
                   )
-                )
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
+                  primary: Color(0xff203E58),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15)
+                ),))
               ],
             ),
           )
