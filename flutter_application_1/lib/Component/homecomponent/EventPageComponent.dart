@@ -37,7 +37,7 @@ class EventPageComponent extends StatelessWidget {
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
-            color: Colors.white,
+            color: Colors.white.withOpacity(0.5),
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 15), 
               child : Column(

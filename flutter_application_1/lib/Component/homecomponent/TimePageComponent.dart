@@ -35,8 +35,8 @@ class TimePageComponent extends StatelessWidget {
             child: Image.asset(LokasiGambar,height: 145,),
           ),
           Container(
+            color: Colors.white.withOpacity(0.5),
             padding: EdgeInsets.only(bottom: 4),
-            color: Colors.white,
             child: 
             Container( margin: EdgeInsets.symmetric(horizontal: 15),child :Column(
               children: [

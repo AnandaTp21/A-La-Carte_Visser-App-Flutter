@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.
 import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
+import 'package:flutter_application_1/pages/Home/DetailVisserTime.dart';
 
 
 class TimePage extends StatefulWidget {
@@ -18,7 +19,7 @@ class TimePage extends StatefulWidget {
 
 class _TimePageState extends State<TimePage> {
   List datapage = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000},
+    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'Location' : "St.Damar Raya",'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}]},
     ];
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,9 @@ class _TimePageState extends State<TimePage> {
                 judulpage(judul: "Time Visser",),
                 Column(
                   children: datapage.map((val){
-                    return TimePageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
+                    return TimePageComponent(press: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] , harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},)));
+                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
                   }).toList()
                 )
               ],
