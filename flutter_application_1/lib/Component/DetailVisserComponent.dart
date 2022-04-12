@@ -21,17 +21,10 @@ class DetailVisserComponent extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 10),
             child :Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Row(
-                  children: [
-                    Text(JudulFasilitas,style: TextStyle(fontWeight: FontWeight.w500),)],
-                  ),
-                  
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(KeteranganFasilitas,style: TextStyle(color: Color(0xff747688),fontSize: 10),)],
-                )
+                  Text(JudulFasilitas,style: TextStyle(fontWeight: FontWeight.w500),),
+                  Text(KeteranganFasilitas,style: TextStyle(color: Color(0xff747688),fontSize: 10),)
             ],
           ))
           ],
