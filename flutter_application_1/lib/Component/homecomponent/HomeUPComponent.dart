@@ -17,34 +17,39 @@ static const IconData scale = IconData(0xf0564, fontFamily: 'MaterialIcons');
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
+          TextButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendPage()));
+          }, 
+          child: Column(
             children: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => RecommendPage()));
-            }, icon: Icon(Icons.recommend_outlined,color: Color(color1),)),
-            Text("Recomend")],
+            Icon(Icons.recommend_outlined,color: Color(color1),),
+            Text("Recomend",style: TextStyle(color: Color(0xff656565)))],),
           ),
-          Column(
+          TextButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => EventPage()));
+          }, 
+          child: Column(
             children: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => EventPage()));
-            }, icon: Icon(Icons.event_outlined,color: Color(color2))),
-            Text("Event")],
+            Icon(Icons.event_outlined,color: Color(color2),),
+            Text("Event",style: TextStyle(color: Color(0xff656565)),)],),
           ),
-          Column(
+          TextButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => WeightPage()));
+          }, 
+          child: Column(
             children: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => WeightPage()));
-            }, icon: Icon(scale,color: Color(color3))),
-            Text("Weight")],
+            Icon(scale,color: Color(color3),),
+            Text("Weight",style: TextStyle(color: Color(0xff656565)))],),
           ),
-          Column(
+          TextButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => TimePage()));
+          }, 
+          child: Column(
             children: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TimePage()));
-            }, icon: Icon(Icons.timer_outlined,color: Color(color4))),
-            Text("Time")],
+            Icon(Icons.timer_outlined,color: Color(color4),),
+            Text("Time",style: TextStyle(color: Color(0xff656565)))],),
           ),
+          
         ],
       ),
     );
