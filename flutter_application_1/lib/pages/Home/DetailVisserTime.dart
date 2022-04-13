@@ -148,20 +148,21 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                     }).toList(),
                   )
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                
+              ],
+            ),
+          )
+          )],
+      ),
+      floatingActionButton: Container(
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40))
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15)
-                ),))
-              ],
-            ),
-          )
-          )],
-      ),
+                ),)),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
