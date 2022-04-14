@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/pages/ForgotPassword.dart';
 import 'package:flutter_application_1/pages/register.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class login extends StatefulWidget {
   const login({ Key? key }) : super(key: key);
@@ -31,7 +32,7 @@ class _loginState extends State<login> {
             ),
             Container(
               margin: EdgeInsets.only(top: 10),
-             child : Text(Error,style:TextStyle(color: Colors.red),),
+             child : Text(Error,style:GoogleFonts.poppins(color: Colors.red),),
             ),
             Container(
               margin: EdgeInsets.only(top: 10),
@@ -42,7 +43,7 @@ class _loginState extends State<login> {
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
               hintText: 'Enter Your Username',
-              hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 60,)),
+              hintStyle: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
               prefixIcon: Icon(Icons.person_outline_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(100))
@@ -56,10 +57,10 @@ class _loginState extends State<login> {
               child :TextFormField(
                 controller: Password,
                 obscureText: visibilty,
-                style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 0.6,) ),
+                style: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
             decoration: InputDecoration(
               hintText: 'Enter Your Password',
-              hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6,)),
+              hintStyle: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
               prefixIcon: Icon(Icons.lock_outlined,color: Color.fromRGBO(255, 255, 255, 0.6,),),
               suffixIcon: Container (margin : EdgeInsets.only(right: 20),child: IconButton(onPressed: (){
                 if(visibilty == true){
@@ -96,7 +97,7 @@ class _loginState extends State<login> {
                   ),
                   TextButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPassword()));
-                  }, child: Text("Forgot Password ?",style: TextStyle(color: Color.fromRGBO(80, 119, 122, 1),fontWeight: FontWeight.bold ),))
+                  }, child: Text("Forgot Password ?",style: GoogleFonts.poppins(color: Color.fromRGBO(80, 119, 122, 1),fontWeight: FontWeight.bold),))
                 ],
               ),
             ),
@@ -116,7 +117,7 @@ class _loginState extends State<login> {
                     }
                   }
                 });
-              } ,child: Text("LOGIN",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
+              } ,child: Text("LOGIN",style: GoogleFonts.poppins(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal : 100),
                 primary: Color.fromRGBO(32, 62, 88, 1),
@@ -129,10 +130,10 @@ class _loginState extends State<login> {
               child : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("Don't have an account yet ?"),
+                Text("Don't have an account yet ?",style: GoogleFonts.poppins(),),
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const Register()));
-                }, child: const Text("Register",style: TextStyle(fontWeight: FontWeight.bold),),
+                }, child:  Text("Register",style: GoogleFonts.poppins(fontWeight: FontWeight.bold),),
                 style: TextButton.styleFrom(
                   primary: Color.fromRGBO(32, 62, 88, 1)
                 ),),
