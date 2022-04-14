@@ -4,6 +4,7 @@ import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:provider/provider.dart';
 import 'Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: freepage(),
+      home: login(),
 
     ),);
   }
