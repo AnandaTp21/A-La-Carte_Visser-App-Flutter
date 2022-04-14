@@ -7,8 +7,10 @@ class CarouselList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:
-          Image.asset(lokasiGambar),
-    );
+        width: MediaQuery.of(context).size.width,
+        child: FittedBox(
+          child: Image.asset(lokasiGambar),
+          fit: BoxFit.fill,
+        ));
   }
 }

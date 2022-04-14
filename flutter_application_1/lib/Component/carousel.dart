@@ -11,7 +11,7 @@ class carousel extends StatelessWidget {
       items: items,
       options: CarouselOptions(
         aspectRatio: 45 / 22,
-        viewportFraction: 1.5,
+        viewportFraction: 1,
         initialPage: 0,
         enableInfiniteScroll: true,
         autoPlay: true,
