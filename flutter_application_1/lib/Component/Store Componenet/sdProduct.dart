@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class sdProduct extends StatelessWidget {
   final String gambarProduk;
   final String namaProduk;
-  final int hargaProduk;
+  final String hargaProduk;
 
   const sdProduct(
       {Key? key,
@@ -21,7 +21,7 @@ class sdProduct extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5),
                 borderRadius: BorderRadius.circular(30)),
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +36,7 @@ class sdProduct extends StatelessWidget {
                 ),
                 Text(
                   namaProduk,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text("Rp$hargaProduk")
               ],

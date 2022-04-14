@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Component/Store%20Componenet/scdProduct.dart';
 import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:provider/provider.dart';
 
 class StoreCategoryDetail extends StatefulWidget {
   const StoreCategoryDetail({Key? key}) : super(key: key);
@@ -12,6 +15,8 @@ class StoreCategoryDetail extends StatefulWidget {
 class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<StoreProvider>(context);
+    var containerColor = Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -37,7 +42,7 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
         ],
       ),
       body: Container(
-        color: Colors.grey,
+        color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
         child: Column(
           children: [
             Container(
@@ -46,7 +51,7 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Tackle",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -55,12 +60,12 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
                   ),
                   Container(
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.filter_alt,
                           color: Colors.black38,
                         ),
-                        const Text(
+                        Text(
                           "Filter",
                           style: TextStyle(
                               color: Colors.black38,
@@ -75,129 +80,27 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
             Expanded(
                 child: ListView(
               scrollDirection: Axis.vertical,
-              children: [
-                Container(
-                  color: Color.fromARGB(
-                    0xFF,
-                    0xE7,
-                    0xDF,
-                    0xD4,
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(
-                          flex: 3,
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            child: Image.asset(
-                              'assets/ImageAssets/fishing_rod.png',
-                            ),
-                          )),
-                      Expanded(
-                          flex: 4,
-                          child: Container(
-                            margin: EdgeInsets.only(left: 10, bottom: 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Joran Pancing",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
-                                ),
-                                Text(
-                                  "Tackle type",
-                                  style: TextStyle(fontWeight: FontWeight.w300),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 30,
-                                        child: FittedBox(
-                                            child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                              primary: Color.fromRGBO(
-                                                  80, 119, 122, 1)),
-                                          child: Icon(Icons.remove),
-                                          onPressed: () {},
-                                        )),
-                                      ),
-                                      Container(
-                                        margin: const EdgeInsets.only(
-                                            right: 5, left: 5),
-                                        height: 25,
-                                        width: 30,
-                                        child: const Expanded(
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            textAlign: TextAlign.center,
-                                            decoration: InputDecoration(
-                                                contentPadding:
-                                                    EdgeInsets.only(bottom: 15),
-                                                filled: true,
-                                                fillColor: Color.fromARGB(
-                                                    255, 216, 216, 216),
-                                                border: OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.circular(
-                                                                5))),
-                                                hintText: "Qty",
-                                                hintStyle: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 12)),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 30,
-                                        child: FittedBox(
-                                            child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                              primary: Color.fromRGBO(
-                                                  80, 119, 122, 1)),
-                                          child: Icon(Icons.add),
-                                          onPressed: () {},
-                                        )),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  child: Text(
-                                    "Rp350000",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                )
-                              ],
-                            ),
-                          )),
-                      Expanded(
-                        flex: 2,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(80, 119, 122, 1)),
-                          child: Text("Add"),
-                          onPressed: () {},
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+              children: myProvider.getSdProductList.map((val) {
+                return sdcProduct(
+                  gambarProduk: val['gambarProduk'],
+                  hargaProduk: val['hargaProduk'],
+                  namaProduk: val['namaProduk'],
+                  containerColor: int.parse(val['index']) % 2 == 0
+                      ? const Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5)
+                      : const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
+                );
+              }).toList(),
             ))
           ],
         ),
       ),
-      bottomNavigationBar: HomeDownComponent(
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.shopping_cart_outlined),
+        backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
+      ),
+      bottomNavigationBar: const HomeDownComponent(
           color1: 0xff656565,
           color2: 0xffffffff,
           color3: 0xff656565,

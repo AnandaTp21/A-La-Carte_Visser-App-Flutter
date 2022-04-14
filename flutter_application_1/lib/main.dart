@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/freepage.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
+import 'package:provider/provider.dart';
+import 'Provider/Store_Provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => StoreProvider())
+    ], 
+    child: MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -30,6 +35,6 @@ class MyApp extends StatelessWidget {
 
       home: freepage(),
 
-    );
+    ),);
   }
 }

@@ -4,6 +4,8 @@ import 'package:flutter_application_1/Component/Store%20Componenet/StoreSection.
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnail.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../Component/homecomponent/HomeDownComponent.dart';
 
@@ -17,6 +19,7 @@ class StorePage extends StatefulWidget {
 class _storePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -46,91 +49,45 @@ class _storePageState extends State<StorePage> {
             const BoxDecoration(color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
         child: ListView(
           padding: const EdgeInsets.only(top: 0),
-          children: const [
-            carousel(items: [
-              CarouselList(lokasiGambar: "assets/test.png"),
-              CarouselList(lokasiGambar: "assets/test.png"),
-              CarouselList(lokasiGambar: "assets/test.png")
-            ]),
+          children: [
+            carousel(
+                items: myProvider.getStoreCarouselList.map((val) {
+              return CarouselList(lokasiGambar: val);
+            }).toList()),
             StoreSection(
                 judulSection: "Recommended Visser Store",
                 subJudulSection: "Let's find out!",
-                storeThumbnail: [
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50")
-                ]),
+                storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
+                  return StoreThumbnail(
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike']);
+                }).toList()),
             StoreSection(
                 judulSection: "Order Again",
                 subJudulSection: "You ever order here. Again?",
-                storeThumbnail: [
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50")
-                ]),
+                storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
+                  return StoreThumbnail(
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike']);
+                }).toList()),
             StoreSection(
                 judulSection: "Recently Viewed",
                 subJudulSection: "Come and see again!",
-                storeThumbnail: [
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50"),
-                  StoreThumbnail(
-                      logotoko: 'assets/logogreen.png',
-                      namatoko: 'Visser Store',
-                      alamattoko: "St. Bilal No. 46",
-                      jumlahlike: "50")
-                ]),
+                storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
+                  return StoreThumbnail(
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike']);
+                }).toList()),
           ],
         ),
       ),
-      bottomNavigationBar: HomeDownComponent(
+      bottomNavigationBar: const HomeDownComponent(
           color1: 0xff656565,
           color2: 0xffffffff,
           color3: 0xff656565,
