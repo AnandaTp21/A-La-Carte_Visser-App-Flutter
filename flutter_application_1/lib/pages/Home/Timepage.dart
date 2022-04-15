@@ -5,7 +5,9 @@ import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.
 import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
+import 'package:flutter_application_1/Provider/Home_Provider.dart';
 import 'package:flutter_application_1/pages/Home/DetailVisserTime.dart';
+import 'package:provider/provider.dart';
 
 
 class TimePage extends StatefulWidget {
@@ -18,11 +20,9 @@ class TimePage extends StatefulWidget {
 }
 
 class _TimePageState extends State<TimePage> {
-  List datapage = [
-    {'lokasigambar' : 'assets/logogreen.png','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'Location' : "St.Damar Raya",'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}]},
-    ];
   @override
   Widget build(BuildContext context) {
+    final datatime = Provider.of<Home_Provider>(context);
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       appBar: AppBar(
@@ -38,14 +38,12 @@ class _TimePageState extends State<TimePage> {
                 padding: EdgeInsets.only(top: 0),
               children: [
                 HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xff656565, color4: 0xffffffff),
-                carousel(items: [
-                  CarouselList(lokasiGambar: "assets/logowhite.png"),
-                  CarouselList(lokasiGambar: "assets/logowhite.png"),
-                  CarouselList(lokasiGambar: "assets/logowhite.png"),
-                ]),
+                carousel(items: datatime.AmbilCarouselTime.map((e){
+                  return CarouselList(lokasiGambar: e);
+                }).toList()),
                 judulpage(judul: "Time Visser",),
                 Column(
-                  children: datapage.map((val){
+                  children: datatime.AmbilDataTime.map((val){
                     return TimePageComponent(press: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] , harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},)));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
