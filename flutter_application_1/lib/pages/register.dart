@@ -1,5 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/pages/login.dart';
+import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
   const Register({ Key? key }) : super(key: key);
@@ -10,23 +14,32 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   bool visibilty = true;
+  TextEditingController Username = TextEditingController();
+  TextEditingController Email = TextEditingController();
+  TextEditingController Mobile = TextEditingController();
+  TextEditingController Password = TextEditingController();
+  String pesan = "";
+  int dapat = -1;
+  bool susksesregis = false;
   @override
   Widget build(BuildContext context) {
+    final Account = Provider.of<account_Provider>(context);
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
         child : Column(
         children: [
-          
           Container(
             margin: EdgeInsets.only(top: 50),
             child :Image.asset('assets/logogreen.png',width: 140,height: 97,)
             ),
+            Text("${pesan}",style: susksesregis?TextStyle(color: Colors.green):TextStyle(color: Colors.red),),
             Container(
               margin: EdgeInsets.only(top: 10),
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Username,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
               hintText: 'Username',
@@ -42,6 +55,7 @@ class _RegisterState extends State<Register> {
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Email,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
               hintText: 'Email Address',
@@ -57,6 +71,7 @@ class _RegisterState extends State<Register> {
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Mobile,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
               hintText: 'Mobile Phone',
@@ -72,6 +87,7 @@ class _RegisterState extends State<Register> {
               width: 320,
               decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
+                controller: Password,
                 obscureText: visibilty,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 0.6,) ),
             decoration: InputDecoration(
@@ -98,7 +114,33 @@ class _RegisterState extends State<Register> {
 
             Container( 
               margin: EdgeInsets.only(top: 20),
-              child: ElevatedButton(onPressed: (){}, child: Text("Register",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
+              child: ElevatedButton(onPressed: (){
+                setState(() {
+                  if(Username.text.isEmpty || Password.text.isEmpty || Email.text.isEmpty || Mobile.text.isEmpty){
+                    pesan = "Tidak Boleh Ada Yang Kosong";
+                    susksesregis = false;
+                  }
+                  else {
+                    for(var i=0; i < Account.ambildatalist.length;i++){
+                      if(Username.text == Account.ambildatalist[i]['Username'] && Password.text == Account.ambildatalist[i]['Password'] && Email.text == Account.ambildatalist[i]['Email']&& Mobile.text == Account.ambildatalist[i]['NoTelp']){
+                          setState(() {
+                            dapat = i;
+                          });
+                      }
+                    }
+                    if(dapat != -1){
+                        pesan = "Account Sudah Ada Silahkan Login";
+                        susksesregis = true;
+                      }
+                    else{
+                      Account.tambahaccount(Username.text, Password.text, Mobile.text, Email.text);
+                      pesan = "Sudah Berhasil Mendaftar Silahkan Melakukan Login";
+                      susksesregis = true;
+                    }
+                  }
+                });
+                  
+              }, child: Text("Register",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal : 100),
                 primary: Color.fromRGBO(32, 62, 88, 1),
