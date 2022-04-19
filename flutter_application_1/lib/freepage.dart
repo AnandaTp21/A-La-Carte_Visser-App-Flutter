@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
+import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreDetail.dart';
 import 'package:flutter_application_1/pages/Store%20pages/Storepage.dart';
@@ -50,6 +51,14 @@ class _freepageState extends State<freepage> {
               Navigator.push(context, route);
             },
             child: const Text("StoreCategoryDetail"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Route route =
+                  MaterialPageRoute(builder: (context) => const StoreCart());
+              Navigator.push(context, route);
+            },
+            child: const Text("StoreCart"),
           ),
         ],
       )),

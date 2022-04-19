@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class sdcProduct extends StatelessWidget {
   final String gambarProduk;
-  final String hargaProduk;
+  final int hargaProduk;
   final String namaProduk;
   final Color containerColor;
 
@@ -28,6 +28,8 @@ class sdcProduct extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: Image.asset(
                   gambarProduk,
+                  width: 100,
+                  height: 100,
                 ),
               )),
           Expanded(
@@ -101,7 +103,7 @@ class sdcProduct extends StatelessWidget {
                     ),
                     Container(
                       child: Text(
-                        hargaProduk,
+                        "Rp" + hargaProduk.toString(),
                         style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
                       ),
