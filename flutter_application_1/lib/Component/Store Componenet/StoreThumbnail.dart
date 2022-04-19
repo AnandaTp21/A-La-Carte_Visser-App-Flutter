@@ -5,7 +5,7 @@ class StoreThumbnail extends StatelessWidget {
   final String logotoko;
   final String namatoko;
   final String alamattoko;
-  final String jumlahlike;
+  final int jumlahlike;
   const StoreThumbnail(
       {Key? key,
       required this.logotoko,
@@ -52,7 +52,7 @@ class StoreThumbnail extends StatelessWidget {
                         size: 10,
                       ),
                       Text(
-                        jumlahlike,
+                        jumlahlike.toString(),
                         style: const TextStyle(fontSize: 10),
                       )
                     ],

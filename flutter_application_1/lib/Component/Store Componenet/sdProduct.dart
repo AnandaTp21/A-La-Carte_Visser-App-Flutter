@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:provider/provider.dart';
 
 class sdProduct extends StatelessWidget {
   final String gambarProduk;
   final String namaProduk;
-  final String hargaProduk;
+  final int hargaProduk;
+  final int idProduk;
 
   const sdProduct(
       {Key? key,
       required this.gambarProduk,
       required this.namaProduk,
-      required this.hargaProduk})
+      required this.hargaProduk,
+      required this.idProduk})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<StoreProvider>(context);
+    Map<String, dynamic> keteranganProduk = {
+      'idProduk': idProduk,
+      'gambarProduk': gambarProduk,
+      'namaProduk': namaProduk,
+      'hargaProduk': hargaProduk,
+      'jumlahProduk': 1
+    };
     return Stack(
-      alignment: const Alignment(0.9, 0.9),
+      alignment: const Alignment(1, 1.06),
       children: [
         Container(
             decoration: BoxDecoration(
@@ -38,21 +50,21 @@ class sdProduct extends StatelessWidget {
                   namaProduk,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text("Rp$hargaProduk")
+                Text("Rp${hargaProduk.toString()}")
               ],
             )),
-        SizedBox(
-          width: 40,
-          height: 40,
-          child: FittedBox(
-            child: FloatingActionButton(
-              heroTag: namaProduk,
-              onPressed: () {},
-              child: const Icon(Icons.add),
-              backgroundColor: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A),
-            ),
-          ),
-        )
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: const Color.fromRGBO(80, 119, 122, 1),
+                shadowColor: Colors.transparent,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30),
+                        topLeft: Radius.circular(50)))),
+            onPressed: () {
+              myProvider.setCartList = keteranganProduk;
+            },
+            child: const Icon(Icons.add))
       ],
     );
   }

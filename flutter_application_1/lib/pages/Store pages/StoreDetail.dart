@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Component/Store%20Componenet/sdProduct.dar
 import 'package:flutter_application_1/Component/Store%20Componenet/sdTitle.dart';
 import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
 import 'package:provider/provider.dart';
 
@@ -105,11 +106,12 @@ class StoreDetail extends StatelessWidget {
                               mainAxisSpacing: 15,
                               crossAxisSpacing: 15,
                               crossAxisCount: 2,
-                              children: myProvider.getSdProductList.map((val) {
+                              children: myProvider.getProductList.map((val) {
                                 return sdProduct(
+                                    idProduk: val['idProduk'],
                                     gambarProduk: val['gambarProduk'],
                                     namaProduk: val['namaProduk'],
-                                    hargaProduk: val['hargaProduk']);
+                                    hargaProduk: val['hargaProduk'],);
                               }).toList(),
                             )),
                       ],
@@ -123,7 +125,11 @@ class StoreDetail extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Route route =
+              MaterialPageRoute(builder: (context) => const StoreCart());
+          Navigator.push(context, route);
+        },
         child: const Icon(Icons.shopping_cart_outlined),
         backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
       ),
