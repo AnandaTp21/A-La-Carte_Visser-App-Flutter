@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/pages/ForgotPassword.dart';
 import 'package:flutter_application_1/pages/register.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class login extends StatefulWidget {
   const login({ Key? key }) : super(key: key);
@@ -19,8 +21,10 @@ class _loginState extends State<login> {
   String Error = "";
   bool visibilty = true;
   bool? check = false;
+  int dapat = -1;
   @override
   Widget build(BuildContext context) {
+    final Account = Provider.of<account_Provider>(context);
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
@@ -105,15 +109,22 @@ class _loginState extends State<login> {
               margin: EdgeInsets.only(top: 10),
               child: ElevatedButton(onPressed: (){
                 setState(() {
-                  if(Username.text.isEmpty && Password.text.isEmpty){
-                    Error = "Username dan Password Tidak Boleh Kosong";
+                  if(Username.text.isEmpty || Password.text.isEmpty){
+                    Error = "Tidak Boleh Ada Yang Kosong";
                   }
                   else{
-                    if(Password.text == "Admin123" && Username.text == "Admin"){
-                      Error = "Login";
+                    for(var i=0; i < Account.ambildatalist.length;i++){
+                      if(Username.text == Account.ambildatalist[i]['Username'] && Password.text == Account.ambildatalist[i]['Password']){
+                          setState(() {
+                            dapat = i;
+                          });
+                      }
                     }
-                    else {
-                      Error = "Silahkan Lakukan Register";
+                    if(dapat != -1){
+                        Error = "Login";
+                      }
+                    else{
+                      Error = "Silahkan Melakukan Register";
                     }
                   }
                 });
