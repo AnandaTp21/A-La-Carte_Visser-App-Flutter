@@ -8,7 +8,6 @@ class DetailVisserTime extends StatefulWidget {
   final String Location;
   final List Fasilitas;
   final VoidCallback press;
-  final String City;
   const DetailVisserTime({ Key? key,
   required this.judul,
   required this.recommend,
@@ -16,7 +15,6 @@ class DetailVisserTime extends StatefulWidget {
   required this.Location,
   required this.Fasilitas,
   required this.press,
-  required this.City
    }) : super(key: key);
 
   @override
@@ -131,7 +129,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   child:
                    Row(
                   children: [
-                    Text("${widget.Location}, ${widget.City}")
+                    Text("${widget.Location}")
                   ],
                 ),
                 ),

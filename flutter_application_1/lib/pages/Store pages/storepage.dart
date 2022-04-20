@@ -7,7 +7,6 @@ import 'package:flutter_application_1/Component/carousel_list.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../Component/homecomponent/HomeDownComponent.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
@@ -87,11 +86,6 @@ class _storePageState extends State<StorePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const HomeDownComponent(
-          color1: 0xff656565,
-          color2: 0xffffffff,
-          color3: 0xff656565,
-          color4: 0xff656565),
     );
   }
 }

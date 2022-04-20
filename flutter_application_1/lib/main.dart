@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/freepage.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/register.dart';
+import 'package:flutter_application_1/utama.dart';
 import 'package:provider/provider.dart';
 import 'Provider/Store_Provider.dart';
 import 'package:flutter_application_1/pages/login.dart';
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => StoreProvider()),
       ChangeNotifierProvider(create: (context) => Home_Provider()),
-      ChangeNotifierProvider(create: (context) => account_Provider())
+      ChangeNotifierProvider(create: (context) => account_Provider()),
+      ChangeNotifierProvider(create: (context) => bottomprovider()),
+
     ], 
     child: MaterialApp(
       title: 'Flutter Demo',
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: TimePage(),
+      home: utama(),
 
     ),);
   }
