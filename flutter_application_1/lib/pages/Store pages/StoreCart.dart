@@ -46,17 +46,39 @@ class _StoreCartState extends State<StoreCart> {
             alignment: Alignment.bottomCenter,
             children: [
               ListView(
-                padding: EdgeInsets.only(bottom: 80),
+                padding: const EdgeInsets.only(bottom: 80),
                 scrollDirection: Axis.vertical,
                 children: [
                   Column(
                     children: myProvider.getCartList.map((val) {
-                      return scProduct(
-                          jumlahProduk: val['jumlahProduk'],
-                          idProduk: val['idProduk'],
-                          gambarProduk: val['gambarProduk'],
-                          namaProduk: val['namaProduk'],
-                          hargaProduk: val['hargaProduk']);
+                      return Dismissible(
+                          direction: DismissDirection.endToStart,
+                          resizeDuration: Duration(milliseconds: 200),
+                          key: Key(val['idProduk'].toString()),
+                          onDismissed: (direction) {
+                            myProvider.setDissmissible = val['idProduk'];
+                          },
+                          background: Container(
+                            padding: const EdgeInsets.only(right: 10),
+                            margin: const EdgeInsets.fromLTRB(10, 25, 10, 25),
+                            alignment: AlignmentDirectional.centerEnd,
+                            decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 0xB1, 0x31, 0x26),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                            ),
+                            child: const Icon(
+                              Icons.delete_rounded,
+                              color: Colors.white,
+                              size: 45,
+                            ),
+                          ),
+                          child: scProduct(
+                              jumlahProduk: val['jumlahProduk'],
+                              idProduk: val['idProduk'],
+                              gambarProduk: val['gambarProduk'],
+                              namaProduk: val['namaProduk'],
+                              hargaProduk: val['hargaProduk']));
                     }).toList(),
                   ),
                 ],
@@ -71,7 +93,7 @@ class _StoreCartState extends State<StoreCart> {
                         flex: 1,
                         child: Container(
                           padding: const EdgeInsets.only(bottom: 10, top: 10),
-                          margin: EdgeInsets.only(left: 40),
+                          margin: const EdgeInsets.only(left: 40),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +106,7 @@ class _StoreCartState extends State<StoreCart> {
                               ),
                               Text(
                                 myProvider.getTotalHarga.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 22, fontWeight: FontWeight.bold),
                               )
                             ],

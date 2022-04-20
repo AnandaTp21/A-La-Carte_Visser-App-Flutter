@@ -136,6 +136,16 @@ class StoreProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  set setDissmissible(idProduk) {
+    for (var i = 0; i < _cartList.length; i++) {
+      if (idProduk == _cartList[i]['idProduk']) {
+        _cartList.removeAt(i);
+      }
+    }
+    FuncTotalHarga();
+    notifyListeners();
+  }
+
   FuncTotalHarga() {
     _totalHarga = 0;
     int x = 0;
