@@ -40,7 +40,6 @@ class _RecommendPageState extends State<RecommendPage> {
             ),
           ),
         bottomNavigationBar: HomeDownComponent(color1: 0xffffffff, color2: 0xff656565, color3: 0xff656565, color4: 0xff656565),
-
     );
   }
 }

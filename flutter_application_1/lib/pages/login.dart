@@ -115,13 +115,11 @@ class _loginState extends State<login> {
                   else{
                     for(var i=0; i < Account.ambildatalist.length;i++){
                       if(Username.text == Account.ambildatalist[i]['Username'] && Password.text == Account.ambildatalist[i]['Password']){
-                          setState(() {
-                            dapat = i;
-                          });
+                          dapat = i;
                       }
                     }
                     if(dapat != -1){
-                        Error = "Login";
+                        Account.useractive(Account.ambildatalist[dapat]['Username'],Account.ambildatalist[dapat]['Password'],Account.ambildatalist[dapat]['NoTelp'],Account.ambildatalist[dapat]['Email']);
                       }
                     else{
                       Error = "Silahkan Melakukan Register";
