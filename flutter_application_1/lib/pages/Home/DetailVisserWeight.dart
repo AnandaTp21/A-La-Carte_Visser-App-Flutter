@@ -10,7 +10,7 @@ class DetailVisserWeight extends StatefulWidget {
   final String Location;
   final List Fasilitas;
   final VoidCallback press;
-  final String City;
+
 
   const DetailVisserWeight({ Key? key ,
   required this.judul,
@@ -20,7 +20,6 @@ class DetailVisserWeight extends StatefulWidget {
   required this.Location,
   required this.Fasilitas,
   required this.press,
-  required this.City
 
 
   }) : super(key: key);
@@ -137,7 +136,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                   child:
                    Row(
                   children: [
-                    Text("${widget.Location}, ${widget.City}")
+                    Text("${widget.Location}")
                   ],
                 ),
                 ),

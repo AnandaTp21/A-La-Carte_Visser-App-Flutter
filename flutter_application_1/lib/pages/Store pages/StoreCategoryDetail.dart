@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/scdProduct.dart';
-import 'package:flutter_application_1/Component/homecomponent/HomeDownComponent.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:provider/provider.dart';
@@ -104,11 +103,6 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
         child: const Icon(Icons.shopping_cart_outlined),
         backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
       ),
-      bottomNavigationBar: const HomeDownComponent(
-          color1: 0xff656565,
-          color2: 0xffffffff,
-          color3: 0xff656565,
-          color4: 0xff656565),
     );
   }
 }
