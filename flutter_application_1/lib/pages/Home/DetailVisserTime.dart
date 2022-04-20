@@ -8,13 +8,15 @@ class DetailVisserTime extends StatefulWidget {
   final String Location;
   final List Fasilitas;
   final VoidCallback press;
+  final String City;
   const DetailVisserTime({ Key? key,
   required this.judul,
   required this.recommend,
   required this.harga,
   required this.Location,
   required this.Fasilitas,
-  required this.press
+  required this.press,
+  required this.City
    }) : super(key: key);
 
   @override
@@ -129,7 +131,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   child:
                    Row(
                   children: [
-                    Text(widget.Location)
+                    Text("${widget.Location}, ${widget.City}")
                   ],
                 ),
                 ),
@@ -148,13 +150,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                     }).toList(),
                   )
                 ),
-                
-              ],
-            ),
-          )
-          )],
-      ),
-      floatingActionButton: Container(
+                Container(
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(
@@ -162,7 +158,11 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15)
                 ),)),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+              ],
+            ),
+          )
+          )],
+      ),
     );
   }
 }

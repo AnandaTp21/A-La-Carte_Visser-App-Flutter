@@ -10,6 +10,7 @@ class DetailVisserWeight extends StatefulWidget {
   final String Location;
   final List Fasilitas;
   final VoidCallback press;
+  final String City;
 
   const DetailVisserWeight({ Key? key ,
   required this.judul,
@@ -18,7 +19,9 @@ class DetailVisserWeight extends StatefulWidget {
   required this.harga,
   required this.Location,
   required this.Fasilitas,
-  required this.press
+  required this.press,
+  required this.City
+
 
   }) : super(key: key);
 
@@ -134,7 +137,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                   child:
                    Row(
                   children: [
-                    Text(widget.Location)
+                    Text("${widget.Location}, ${widget.City}")
                   ],
                 ),
                 ),
@@ -153,13 +156,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                     }).toList(),
                   )
                 ),
-                
-              ],
-            ),
-          )
-          )],
-      ),
-      floatingActionButton: Container(
+                Container(
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(
@@ -167,7 +164,11 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15)
                 ),)),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+              ],
+            ),
+          )
+          )],
+      ),
     );
   }
 }
