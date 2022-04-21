@@ -5,7 +5,7 @@ import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.da
 import 'package:flutter_application_1/Component/homecomponent/WeightPageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
-import 'package:flutter_application_1/pages/Home/DetailVisserWeight.dart';
+import 'package:flutter_application_1/pages/Home/Detail/DetailVisserWeight.dart';
 import 'package:provider/provider.dart';
 
 class WeightPage extends StatefulWidget {
