@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_application_1/Component/DetailVisserComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/DetailVisserComponent.dart';
 
 class DetailVisserWeight extends StatefulWidget {
   final String judul;
@@ -9,6 +9,7 @@ class DetailVisserWeight extends StatefulWidget {
   final int harga;
   final String Location;
   final List Fasilitas;
+  final String lokasigambar;
   final VoidCallback press;
 
 
@@ -20,6 +21,7 @@ class DetailVisserWeight extends StatefulWidget {
   required this.Location,
   required this.Fasilitas,
   required this.press,
+  required this.lokasigambar,
 
 
   }) : super(key: key);
@@ -50,7 +52,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
             child: Column(
               children: [
                 Container(
-                  child: Image.asset("assets/logogreen.png",height: 140,),
+                  child: Image.asset(widget.lokasigambar),
                 ),
                 Container(
                   color: Color(0xffF0EBE5).withOpacity(0.5),

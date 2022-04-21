@@ -27,13 +27,13 @@ class EventPageComponent extends StatelessWidget {
           offset: Offset(0,13.0)
         )]),
       margin: EdgeInsets.only(top: 25),
-      height: 205,
+      height: 300,
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
         children: [
           Container(
-            child: Image.asset(LokasiGambar,height: 145,),
+            child: Image.asset(LokasiGambar),
           ),
           Container(
             color: Colors.white.withOpacity(0.5),

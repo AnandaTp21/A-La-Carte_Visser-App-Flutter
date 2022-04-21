@@ -34,9 +34,7 @@ class _EventPageState extends State<EventPage> {
                 judulpage(judul: "Event Visser"),
                 Column(
                   children: dataevent.AmbilDataEvent.map((val){
-                    return EventPageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailVisserEvent()));
-                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
+                    return EventPageComponent(press: (){}, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
                   }).toList(),
                 )
               ],
