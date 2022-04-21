@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/DetailVisserComponent.dart';
+import 'package:flutter_application_1/Component/homecomponent/DetailVisserComponent.dart';
 
 class DetailVisserTime extends StatefulWidget {
   final String judul;
   final int recommend;
   final int harga;
   final String Location;
+  final String Lokasigambar;
   final List Fasilitas;
   final VoidCallback press;
   const DetailVisserTime({ Key? key,
@@ -15,6 +16,7 @@ class DetailVisserTime extends StatefulWidget {
   required this.Location,
   required this.Fasilitas,
   required this.press,
+  required this.Lokasigambar
    }) : super(key: key);
 
   @override
@@ -43,7 +45,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
             child: Column(
               children: [
                 Container(
-                  child: Image.asset("assets/logogreen.png",height: 140,),
+                  child: Image.asset(widget.Lokasigambar),
                 ),
                 Container(
                   color: Color(0xffF0EBE5).withOpacity(0.5),

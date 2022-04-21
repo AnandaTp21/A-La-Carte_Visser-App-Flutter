@@ -33,7 +33,7 @@ class _WeightPageState extends State<WeightPage> {
                 Column(
                   children: dataweight.AmbilDataWeight.map((val){
                     return WeightPageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},)));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
                   }).toList()
                 )

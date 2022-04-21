@@ -3,6 +3,7 @@ import 'package:flutter_application_1/Provider/Home_Provider.dart';
 import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/freepage.dart';
+import 'package:flutter_application_1/pages/Home/DetailVisserEvent.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/register.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: utama(),
+      home: DetailVisserEvent(Lokasigambar: "assets/4005909.jpg", judul: "Galatama"),
 
     ),);
   }
