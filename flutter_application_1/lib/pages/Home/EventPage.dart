@@ -7,7 +7,7 @@ import 'package:flutter_application_1/Component/homecomponent/EventPageComponent
 import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
-import 'package:flutter_application_1/pages/Home/DetailVisserEvent.dart';
+import 'package:flutter_application_1/pages/Home/Detail/DetailVisserEvent.dart';
 import 'package:provider/provider.dart';
 
 

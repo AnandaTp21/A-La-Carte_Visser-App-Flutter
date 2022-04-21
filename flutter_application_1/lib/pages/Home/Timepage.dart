@@ -5,7 +5,7 @@ import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.da
 import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
-import 'package:flutter_application_1/pages/Home/DetailVisserTime.dart';
+import 'package:flutter_application_1/pages/Home/Detail/DetailVisserTime.dart';
 import 'package:provider/provider.dart';
 
 

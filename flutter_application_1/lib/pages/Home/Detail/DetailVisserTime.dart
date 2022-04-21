@@ -50,7 +50,8 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                 Container(
                   color: Color(0xffF0EBE5).withOpacity(0.5),
                   child: 
-                  Container ( margin: EdgeInsets.symmetric(horizontal: 10),child :Column(
+                  Container ( margin: EdgeInsets.symmetric(horizontal: 10),child 
+                  :Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
