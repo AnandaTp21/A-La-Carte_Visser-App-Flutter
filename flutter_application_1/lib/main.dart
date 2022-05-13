@@ -44,8 +44,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: DetailVisserEvent(Lokasigambar: "assets/4005909.jpg", judul: "Galatama", Capacity: 100, isi: 59, Kalender: "23 April 2022", waktutanggal: "Saturday, 9.00PM - 15:00PM", lokasikolam: "jalan organ", namakolam: "namakolam", Harga: 100000, Hadiah: "TEN MILLION RUPIAH",Naskah: "iasodasuidasiudshdiouhsdaiufhsaiuhfiuasdhfisudadhfsaofh",Recommend: 100,),
-
+      home: utama()
     ),);
   }
 }

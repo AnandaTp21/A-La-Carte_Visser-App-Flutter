@@ -45,8 +45,12 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
             child: Column(
               children: [
                 Container(
-                  child: Image.asset(widget.Lokasigambar),
-                ),
+            height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(widget.Lokasigambar),
+                fit: BoxFit.fill)
+              ),
+          ),
                 Container(
                   color: Color(0xffF0EBE5).withOpacity(0.5),
                   child: 
@@ -102,7 +106,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   ),
                 ),
                 TextButton(onPressed: (){},style: TextButton.styleFrom(shape: RoundedRectangleBorder(
-                ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 35,vertical: 18)), 
+                ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 56,vertical: 18)), 
                 child: Row(
                   children: [
                     Icon(Icons.star_outlined,color: Colors.white,size: 12,),

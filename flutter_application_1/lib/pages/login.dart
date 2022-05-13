@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/pages/ForgotPassword.dart';
 import 'package:flutter_application_1/pages/register.dart';
+import 'package:flutter_application_1/utama.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -28,8 +29,9 @@ class _loginState extends State<login> {
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
-        child : Column(
-        children: [
+        child : ListView(
+        children: [Column(
+          children: [
           Container(
             margin: EdgeInsets.only(top: 50),
             child :Image.asset('assets/logogreen.png',width: 296,height: 200,)
@@ -120,6 +122,7 @@ class _loginState extends State<login> {
                     }
                     if(dapat != -1){
                         Account.useractive(Account.ambildatalist[dapat]['Username'],Account.ambildatalist[dapat]['Password'],Account.ambildatalist[dapat]['NoTelp'],Account.ambildatalist[dapat]['Email']);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> utama()));
                       }
                     else{
                       Error = "Silahkan Melakukan Register";
@@ -149,6 +152,7 @@ class _loginState extends State<login> {
               ],)
             )
             ],
+        )]
       ),
       )
     );
