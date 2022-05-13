@@ -28,13 +28,17 @@ class WeightPageComponent extends StatelessWidget {
           offset: Offset(0,13.0)
         )]),
       margin: EdgeInsets.only(top: 25),
-      height: 300,
+      height: 264,
     child : TextButton(style: TextButton.styleFrom(padding: EdgeInsets.all(0)),onPressed: press, child: Container(
       
       child: Column(
         children: [
           Container(
-            child: Image.asset(LokasiGambar),
+            height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(LokasiGambar),
+                fit: BoxFit.fill)
+              ),
           ),
           Container(
             color: Colors.white.withOpacity(0.5),
@@ -56,7 +60,6 @@ class WeightPageComponent extends StatelessWidget {
                     children: [Icon(Icons.thumb_up_outlined,size: 11,color: Color.fromRGBO(101, 101, 101, 1),),Text(' ${JumlahRecomend} people recommend this place',style: TextStyle(fontSize: 11,color: Color.fromRGBO(101, 101, 101, 1) ),)],
                   )
                     ),
-                  
                 ],),
                 Column(
                   children: [ 
@@ -67,10 +70,9 @@ class WeightPageComponent extends StatelessWidget {
                     Icon(Icons.scale,size: 14,color: Color.fromRGBO(101, 101, 101, 1),)],
                   ) ,),
                     Container(
-                      margin: EdgeInsets.only(top: 1),
+                      margin: EdgeInsets.only(top: 2),
                       child: Text("Rp${Hargaawal}/Kg",style: TextStyle(fontSize: 12,color:Color.fromRGBO(101, 101, 101, 1),decoration: TextDecoration.lineThrough)),
                     ),
-                    
                   Container(
                     margin: EdgeInsets.only(top: 1),
                     child: Text("Rp${Harga}/Kg",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
