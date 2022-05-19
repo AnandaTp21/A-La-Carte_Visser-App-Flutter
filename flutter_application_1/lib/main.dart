@@ -7,7 +7,7 @@ import 'package:flutter_application_1/pages/Home/Detail/DetailVisserEvent.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/register.dart';
-import 'package:flutter_application_1/utama.dart';
+import 'package:flutter_application_1/pages/utama.dart';
 import 'package:provider/provider.dart';
 import 'Provider/Store_Provider.dart';
 import 'package:flutter_application_1/pages/login.dart';
