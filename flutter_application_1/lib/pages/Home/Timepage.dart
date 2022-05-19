@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
-import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
@@ -29,7 +28,6 @@ class _TimePageState extends State<TimePage> {
                 ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
-                HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xff656565, color4: 0xffffffff),
                 carousel(items: datatime.AmbilCarouselTime.map((e){
                   return CarouselList(lokasiGambar: e);
                 }).toList()),

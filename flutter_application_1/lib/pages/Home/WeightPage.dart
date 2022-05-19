@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
-import 'package:flutter_application_1/Component/homecomponent/HomeUPComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/WeightPageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
@@ -25,7 +24,6 @@ class _WeightPageState extends State<WeightPage> {
             ListView(
                 padding: EdgeInsets.only(top: 0),
               children: [
-                HomeUpComponent(color1: 0xff656565, color2: 0xff656565, color3: 0xffffffff, color4: 0xff656565),
                 carousel(items: dataweight.AmbilCarouselWeight.map((e){
                   return CarouselList(lokasiGambar: e);
                 }).toList()),

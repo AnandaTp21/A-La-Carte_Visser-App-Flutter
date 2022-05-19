@@ -15,8 +15,6 @@ class _utamaState extends State<utama> {
   Widget build(BuildContext context) {
     var bottomcomponent = Provider.of<bottomprovider>(context);
     return Scaffold(
-      backgroundColor: Color(0xffE7DFD4),
-      appBar: AppBar(),
       body: bottomcomponent.Pages[bottomcomponent.params],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
