@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Component/DetailVisserComponent.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_application_1/Component/homecomponent/DetailVisserComponent.dart';
 
-class DetailVisserTime extends StatefulWidget {
+class DetailVisserWeight extends StatefulWidget {
   final String judul;
   final int recommend;
+  final int hargaawal;
   final int harga;
   final String Location;
   final List Fasilitas;
+  final String lokasigambar;
   final VoidCallback press;
-  final String City;
-  const DetailVisserTime({ Key? key,
+
+
+  const DetailVisserWeight({ Key? key ,
   required this.judul,
   required this.recommend,
+  required this.hargaawal,
   required this.harga,
   required this.Location,
   required this.Fasilitas,
   required this.press,
-  required this.City
-   }) : super(key: key);
+  required this.lokasigambar,
+
+
+  }) : super(key: key);
 
   @override
-  State<DetailVisserTime> createState() => _DetailVisserTimeState();
+  State<DetailVisserWeight> createState() => _DetailVisserWeightState();
 }
 
-class _DetailVisserTimeState extends State<DetailVisserTime> {
+class _DetailVisserWeightState extends State<DetailVisserWeight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,8 +52,12 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
             child: Column(
               children: [
                 Container(
-                  child: Image.asset("assets/logogreen.png",height: 140,),
-                ),
+            height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(widget.lokasigambar),
+                fit: BoxFit.fill)
+              ),
+          ),
                 Container(
                   color: Color(0xffF0EBE5).withOpacity(0.5),
                   child: 
@@ -62,8 +73,8 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                           Container(
                             margin: EdgeInsets.only(top: 20),
                             child: Column(
-                            children: [
-                            Text("Rp${widget.harga}/Hour",style: TextStyle(
+                            children: [Text("Rp${widget.hargaawal}/Kg",style: TextStyle(fontSize: 12,color: Color(0xff000000).withOpacity(0.5),decoration : TextDecoration.lineThrough,decorationColor: Colors.black),),
+                            Text("Rp${widget.harga}/Kg",style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16
                             ),)],
@@ -101,7 +112,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   ),
                 ),
                 TextButton(onPressed: (){},style: TextButton.styleFrom(shape: RoundedRectangleBorder(
-                ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 35,vertical: 18)), 
+                ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 56,vertical: 18)), 
                 child: Row(
                   children: [
                     Icon(Icons.star_outlined,color: Colors.white,size: 12,),
@@ -131,7 +142,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   child:
                    Row(
                   children: [
-                    Text("${widget.Location}, ${widget.City}")
+                    Text("${widget.Location}")
                   ],
                 ),
                 ),

@@ -27,8 +27,9 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       body: Container(
-        child : Column(
-        children: [
+        child : ListView(
+        children: [Column(
+          children: [
           Container(
             margin: EdgeInsets.only(top: 50),
             child :Image.asset('assets/logogreen.png',width: 140,height: 97,)
@@ -164,6 +165,7 @@ class _RegisterState extends State<Register> {
             ),
             
             ],
+        )]
       ),
       )
     );
