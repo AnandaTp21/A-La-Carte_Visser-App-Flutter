@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/homecomponent/DetailVisserComponent.dart';
+import 'package:flutter_application_1/pages/Home/Detail/Review.dart';
 
 class DetailVisserTime extends StatefulWidget {
   final String judul;
@@ -9,6 +10,7 @@ class DetailVisserTime extends StatefulWidget {
   final String Lokasigambar;
   final List Fasilitas;
   final VoidCallback press;
+  final double Rating;
   const DetailVisserTime({ Key? key,
   required this.judul,
   required this.recommend,
@@ -16,7 +18,10 @@ class DetailVisserTime extends StatefulWidget {
   required this.Location,
   required this.Fasilitas,
   required this.press,
-  required this.Lokasigambar
+  required this.Lokasigambar,
+  required this.Rating,
+
+  
    }) : super(key: key);
 
   @override
@@ -105,13 +110,15 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                     Text(" Info")],
                   ),
                 ),
-                TextButton(onPressed: (){},style: TextButton.styleFrom(shape: RoundedRectangleBorder(
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Review(gambar: widget.Lokasigambar,rating: widget.Rating,)));
+                },style: TextButton.styleFrom(shape: RoundedRectangleBorder(
                 ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 56,vertical: 18)), 
                 child: Row(
                   children: [
                     Icon(Icons.star_outlined,color: Colors.white,size: 12,),
-                    Text("Rating",style: TextStyle(color: Color(0xffffffff),fontSize: 12)),
-                    Text(" 4.6",style: TextStyle(color: Color(0xffFFEC44),fontSize: 12),)
+                    Text("Rating ",style: TextStyle(color: Color(0xffffffff),fontSize: 12)),
+                    Text("${widget.Rating}",style: TextStyle(color: Color(0xffFFEC44),fontSize: 12),)
                   ],
                 ))
                   ],
@@ -156,6 +163,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   )
                 ),
                 Container(
+                  margin: EdgeInsets.only(top: 49,bottom: 20),
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(

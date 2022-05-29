@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Home_Provider extends ChangeNotifier{
@@ -26,12 +26,11 @@ class Home_Provider extends ChangeNotifier{
     {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mount','Jumlahrecomend' : 1000,'harga' : 50000,'hargaawal' : 70000,'Location' : "St.Damar Raya",'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}]},
     ];
   final List _DataTime = [
-    {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'Location' : "St.Damar Raya",'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}]},
+    {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'Location' : "St.Damar Raya",'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}],"Rating" :4.0,},
     ];
   final List _DataEvent = [
-    {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret 2022',"judul" : "Galatama Ikan MAs Dan Ikan Patin"},
-    {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret 2022',"judul" : "Galatama Ikan MAs Dan Ikan Patin"}
-    ];
+    {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'tanggal' : '15 Maret 2022',"judul" : "Galatama Ikan Mas Dan Ikan Patin", "Alamat" : "Jl Thamrin no 52","Hadiah" : "1.000.000","naskah" : "b;lsadoiasjdoaisdjaso", "isi" : 199,"capacity" : 200,"HariTanggal" : "Saturday, 23 April 2022"},
+  ];
 
   
    List get AmbilDataWeight => _DataWeight;

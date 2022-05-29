@@ -122,6 +122,7 @@ class _loginState extends State<login> {
                     if(dapat != -1){
                         Account.useractive(Account.ambildatalist[dapat]['Username'],Account.ambildatalist[dapat]['Password'],Account.ambildatalist[dapat]['NoTelp'],Account.ambildatalist[dapat]['Email']);
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> utama()));
+                        Error = "";
                       }
                     else{
                       Error = "Silahkan Melakukan Register";
