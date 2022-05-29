@@ -5,10 +5,11 @@ import 'package:flutter_application_1/pages/Home/RecommendPage.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/Home/utamapage.dart';
+import 'package:flutter_application_1/pages/Profile.dart';
 
 class bottomprovider extends ChangeNotifier{
   int _params = 0;
-  List _Pages = [utamapage(),freepage(),freepage(),freepage()];
+  List _Pages = [utamapage(),freepage(),freepage(),Profile()];
   List<Widget> _pages2 = [RecommendPage(),EventPage(),WeightPage(),TimePage()];
   List get Pages => _Pages;
   int get params => _params;

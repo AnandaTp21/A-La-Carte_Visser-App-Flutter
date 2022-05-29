@@ -162,6 +162,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                   )
                 ),
                 Container(
+                  margin: EdgeInsets.only(top: 40,bottom: 20),
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(

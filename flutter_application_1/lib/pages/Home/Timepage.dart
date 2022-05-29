@@ -35,7 +35,7 @@ class _TimePageState extends State<TimePage> {
                 Column(
                   children: datatime.AmbilDataTime.map((val){
                     return TimePageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(Lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(Lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},Rating: val['Rating'],)));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
                   }).toList()
                 )
