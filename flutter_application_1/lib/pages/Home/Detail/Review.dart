@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/homecomponent/ReviewComponent.dart';
 class Review extends StatefulWidget {
   final String gambar;
   final double rating;
-
+  final List comments;
   Review({ 
   Key? key,
   required this.gambar,
   required this.rating,
+  required this.comments
 
   }) : super(key: key);
 
@@ -61,7 +63,29 @@ class _ReviewState extends State<Review> {
                   )
                 ],
               ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Ratings & Reviews",style: TextStyle(fontSize: 20)),
+                    Text("Latest",style: TextStyle(color: Colors.grey)),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  child: Text("See all",style: TextStyle(color: Color(0xffB13126),fontWeight: FontWeight.w300)),
+                )
+              ],
+            ),
+          ),
+          Expanded(child: ListView(
+            children: widget.comments.map((val)=> ReviewComponent(nama: val['nama'], tanggal: val['tanggal'], rating: val['Nilai'], comment: val['Isi Commment'])).toList(),
+          ))
         ],
       )
     );

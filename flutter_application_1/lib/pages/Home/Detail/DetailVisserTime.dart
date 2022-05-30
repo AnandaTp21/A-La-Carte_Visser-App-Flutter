@@ -11,6 +11,7 @@ class DetailVisserTime extends StatefulWidget {
   final List Fasilitas;
   final VoidCallback press;
   final double Rating;
+  final List comments;
   const DetailVisserTime({ Key? key,
   required this.judul,
   required this.recommend,
@@ -20,6 +21,8 @@ class DetailVisserTime extends StatefulWidget {
   required this.press,
   required this.Lokasigambar,
   required this.Rating,
+  required this.comments,
+
 
   
    }) : super(key: key);
@@ -111,7 +114,7 @@ class _DetailVisserTimeState extends State<DetailVisserTime> {
                   ),
                 ),
                 TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Review(gambar: widget.Lokasigambar,rating: widget.Rating,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Review(gambar: widget.Lokasigambar,rating: widget.Rating,comments: widget.comments,)));
                 },style: TextButton.styleFrom(shape: RoundedRectangleBorder(
                 ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 56,vertical: 18)), 
                 child: Row(
