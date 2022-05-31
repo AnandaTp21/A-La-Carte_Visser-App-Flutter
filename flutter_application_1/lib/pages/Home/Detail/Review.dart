@@ -84,7 +84,7 @@ class _ReviewState extends State<Review> {
             ),
           ),
           Expanded(child: ListView(
-            children: widget.comments.map((val)=> ReviewComponent(nama: val['nama'], tanggal: val['tanggal'], rating: val['Nilai'], comment: val['Isi Commment'])).toList(),
+            children: widget.comments.map((val)=> ReviewComponent(kumpulangambar: val['gambar'],nama: val['nama'], tanggal: val['tanggal'], rating: val['Nilai'], comment: val['Isi Commment'])).toList(),
           ))
         ],
       )
