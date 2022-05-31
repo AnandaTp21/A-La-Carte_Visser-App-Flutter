@@ -5,13 +5,13 @@ class ReviewComponent extends StatefulWidget {
   final String tanggal;
   final String rating;
   final String comment;
-  final List? kumpulangambar;
+  final List kumpulangambar;
   const ReviewComponent({ Key? key,
     required this.nama,
     required this.tanggal,
     required this.rating,
     required this.comment, 
-    this.kumpulangambar,
+    required this.kumpulangambar,
    }) : super(key: key);
 
   @override
@@ -60,6 +60,23 @@ class _ReviewComponentState extends State<ReviewComponent> {
               vertical: 20
             ),
             child: Text(widget.comment,style: TextStyle(fontSize: 17,color: Color(0xff010F07)),),
+          ),
+          Container(
+            child: Row(
+              children: widget.kumpulangambar.map((e){
+                return Container(
+                  margin: EdgeInsets.only(left: 15),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(e),
+                      fit: BoxFit.fill
+                    )
+                  ),
+                );
+              }).toList(),
+            ),
           )
           ],
       ),

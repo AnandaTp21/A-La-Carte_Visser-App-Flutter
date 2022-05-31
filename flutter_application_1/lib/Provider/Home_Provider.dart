@@ -26,14 +26,16 @@ class Home_Provider extends ChangeNotifier{
     {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mount','Jumlahrecomend' : 1000,'harga' : 50000,'hargaawal' : 70000,'Location' : "St.Damar Raya",
     'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}],
     "Rating" :4.0,
-    "Comment" : [{"nama" : "Geiginia Mill","Nilai" : "5,0","tanggal" : "18 Feb 2022", "Isi Commment" : "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari"}]
+    "Comment" : [{"nama" : "Geiginia Mill","Nilai" : "5,0","tanggal" : "18 Feb 2022", "Isi Commment" : "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+    "gambar" : ["assets/carousel.jpg","assets/carousel.jpg","assets/carousel.jpg",]}]
     },
     ];
   final List _DataTime = [
     {'lokasigambar' : 'assets/4005909.jpg','NamaLokasi' : 'Visser Terjun Mounth','Jumlahrecomend' : 1000,'harga' : 50000,'Location' : "St.Damar Raya",
     'fasilitas' : [{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'},{"Icon" : Icons.abc,'judulfasilitas' : 'Patin / Lele','keterangan' : 'Type of fish'}],
     "Rating" :4.0,
-    "Comment" : [{"nama" : "Geiginia Mill","Nilai" : "5,0","tanggal" : "18 Feb 2022", "Isi Commment" : "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari"}]
+    "Comment" : [{"nama" : "Geiginia Mill","Nilai" : "5,0","tanggal" : "18 Feb 2022", "Isi Commment" : "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+    "gambar" : ["assets/carousel.jpg","assets/carousel.jpg","assets/carousel.jpg",]}]
     },
     ];
   final List _DataEvent = [
