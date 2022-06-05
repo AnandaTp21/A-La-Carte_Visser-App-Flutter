@@ -15,18 +15,38 @@ class _utamapageState extends State<utamapage> {
     return DefaultTabController(length: 4, child: Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.filter_alt_outlined,
+              color: Colors.white,
+            )),
+        centerTitle: true,
+        title: Image.asset(
+          'assets/logowhite.png',
+          width: 51,
+          height: 35,
         ),
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+              )),
+        ],
+      ),
         body: Column(children: [
           Container(
             height: 60,
             color: Color(0xffE7DFD4),
               child: Container(margin: EdgeInsets.only(top: 12),child: TabBar(
                 tabs: [
-            Column(children: [Icon(Icons.thumb_up_alt_outlined),Text("Reccomend",style: TextStyle(fontSize: 10),)],),
-            Column(children: [Icon(Icons.event_outlined),Text("event",style: TextStyle(fontSize: 10),)],),
-            Column(children: [Icon(Icons.scale_outlined),Text("weight",style: TextStyle(fontSize: 10),)],),
-            Column(children: [Icon(Icons.timer_outlined),Text("time",style: TextStyle(fontSize: 10),)],),
+                Tab(iconMargin: EdgeInsets.only(bottom: 0),icon: Icon(Icons.thumb_up_alt_outlined),child: Text("Reccomend",style: TextStyle(fontSize: 10),),),
+                Tab(iconMargin: EdgeInsets.only(bottom: 0),icon: Icon(Icons.event_outlined),child: Text("event",style: TextStyle(fontSize: 10),),),
+                Tab(iconMargin: EdgeInsets.only(bottom: 0),icon: Icon(Icons.scale_outlined),child: Text("weight",style: TextStyle(fontSize: 10),),),
+                Tab(iconMargin: EdgeInsets.only(bottom: 0),icon: Icon(Icons.timer_outlined),child: Text("time",style: TextStyle(fontSize: 10),),),
             ],unselectedLabelColor: Color(0xff656565),),),),
           Expanded(child: TabBarView(children: navigasi.Pages2))
           ],)  

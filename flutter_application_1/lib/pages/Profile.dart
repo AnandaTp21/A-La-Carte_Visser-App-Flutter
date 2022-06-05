@@ -117,10 +117,11 @@ class _ProfileState extends State<Profile> {
                         ),
                       )
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 17),
-                        height: 1,
+                      Divider(
                         color: Color.fromARGB(102, 158, 158, 158),
+                        endIndent: 17,
+                        indent: 17,
+                        height: 1,
                       ),
                       ListTile(
                       onTap: (){},
@@ -130,10 +131,11 @@ class _ProfileState extends State<Profile> {
                         child: Icon(Icons.keyboard_arrow_right_outlined,color: Colors.black,size: 30,),
                       )
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 17),
-                        height: 1,
+                      Divider(
                         color: Color.fromARGB(102, 158, 158, 158),
+                        endIndent: 17,
+                        indent: 17,
+                        height: 1,
                       ),
                       ListTile(
                       onTap: (){},
@@ -143,10 +145,11 @@ class _ProfileState extends State<Profile> {
                         child: Icon(Icons.keyboard_arrow_right_outlined,color: Colors.black,size: 30,),
                       )
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 17),
-                        height: 1,
+                      Divider(
                         color: Color.fromARGB(102, 158, 158, 158),
+                        endIndent: 17,
+                        indent: 17,
+                        height: 1,
                       ),
                       ListTile(
                       onTap: (){},
@@ -156,11 +159,12 @@ class _ProfileState extends State<Profile> {
                         child: Icon(Icons.keyboard_arrow_right_outlined,color: Colors.black,size: 30,),
                       )
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 17),
-                        height: 1,
+                      Divider(
                         color: Color.fromARGB(102, 158, 158, 158),
-                      )
+                        endIndent: 17,
+                        indent: 17,
+                        height: 1,
+                      ),
                   ],
                 ),
               ),

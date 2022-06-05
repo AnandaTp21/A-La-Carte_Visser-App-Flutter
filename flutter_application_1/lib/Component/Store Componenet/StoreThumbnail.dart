@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreDetail.dart';
+import 'package:provider/provider.dart';
 
 class StoreThumbnail extends StatelessWidget {
   final String logotoko;
@@ -16,11 +18,10 @@ class StoreThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     return GestureDetector(
       onTap: () {
-        Route route =
-            MaterialPageRoute(builder: (context) => const StoreDetail());
-        Navigator.push(context, route);
+        bottomnavigasi.perubahanparamsstore(1);
       },
       child: Container(
           margin: const EdgeInsets.only(right: 20),
