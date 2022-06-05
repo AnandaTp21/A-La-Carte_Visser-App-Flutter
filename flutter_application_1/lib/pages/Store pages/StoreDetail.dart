@@ -4,6 +4,7 @@ import 'package:flutter_application_1/Component/Store%20Componenet/sdInfo.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdProduct.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdTitle.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
 import 'package:provider/provider.dart';
@@ -14,30 +15,8 @@ class StoreDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var myProvider = Provider.of<StoreProvider>(context);
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.filter_alt_outlined,
-              color: Colors.white,
-            )),
-        centerTitle: true,
-        title: Image.asset(
-          'assets/logowhite.png',
-          width: 51,
-          height: 35,
-        ),
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search_outlined,
-                color: Colors.white,
-              )),
-        ],
-      ),
       body: Container(
         padding: const EdgeInsets.only(left: 20, right: 20),
         decoration:
@@ -73,10 +52,7 @@ class StoreDetail extends StatelessWidget {
                               icon: 'assets/ImageAssets/pancing.png',
                               judul: "Tackle"),
                           onTap: () {
-                            Route route = MaterialPageRoute(
-                                builder: (context) =>
-                                    const StoreCategoryDetail());
-                            Navigator.push(context, route);
+                            bottomnavigasi.perubahanparamsstore(2);
                           },
                         ),
                         const sdCategory(
@@ -125,9 +101,7 @@ class StoreDetail extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Route route =
-              MaterialPageRoute(builder: (context) => const StoreCart());
-          Navigator.push(context, route);
+          bottomnavigasi.perubahanparamsstore(3);
         },
         child: const Icon(Icons.shopping_cart_outlined),
         backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),

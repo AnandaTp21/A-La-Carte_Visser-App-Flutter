@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/scdProduct.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:provider/provider.dart';
 
@@ -15,31 +16,9 @@ class StoreCategoryDetail extends StatefulWidget {
 class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.filter_alt_outlined,
-              color: Colors.white,
-            )),
-        centerTitle: true,
-        title: Image.asset(
-          'assets/logowhite.png',
-          width: 51,
-          height: 35,
-        ),
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search_outlined,
-                color: Colors.white,
-              )),
-        ],
-      ),
       body: Container(
         color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
         child: Column(
@@ -96,9 +75,7 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Route route =
-              MaterialPageRoute(builder: (context) => const StoreCart());
-          Navigator.push(context, route);
+          bottomnavigasi.perubahanparamsstore(3);
         },
         child: const Icon(Icons.shopping_cart_outlined),
         backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
