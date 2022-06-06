@@ -31,6 +31,7 @@ class _utamaState extends State<utama> {
           BottomNavigationBarItem(icon: Icon(Icons.person),label: "Account"),
         ],
         onTap: (int angka){
+          bottomcomponent.perubahanparamsstore(0);
           bottomcomponent.perubahanbottom(angka);
         },
         ),

@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
         leading: Text(""),
         backgroundColor: Color(0xff50777A),
-        title: Text("Personal Detail"),
+        title: Text("Personal Detail",style: TextStyle(color: Colors.white),),
         titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
         centerTitle: true,
       ),

@@ -15,6 +15,7 @@ import 'package:flutter_application_1/pages/Store%20pages/UtamaStore.dart';
 class bottomprovider extends ChangeNotifier{
   int _params = 0;
   int _params2 = 0;
+  int _helparams2 = 0;
   List _Pages = [utamapage(),UtamaStore(),freepage(),Profile()];
   List _PagesStore = [StorePage(),StoreDetail(),StoreCategoryDetail(),StoreCart()];
   List<Widget> _pages2 = [RecommendPage(),EventPage(),WeightPage(),TimePage()];
@@ -22,6 +23,7 @@ class bottomprovider extends ChangeNotifier{
   List get Pages => _Pages;
   int get params => _params;
   int get params2 => _params2; 
+  int get helpparams=> _helparams2;
   List<Widget> get Pages2 => _pages2;
   
   void perubahanbottom(int angka){
@@ -30,6 +32,10 @@ class bottomprovider extends ChangeNotifier{
   }
   void perubahanparamsstore (int angka){
     _params2 = angka;
+    notifyListeners();
+  }
+  void perubahanpembantuparamssotre(int angka){
+    _helparams2 = angka;
     notifyListeners();
   }
 }
