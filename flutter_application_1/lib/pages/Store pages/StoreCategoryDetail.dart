@@ -19,9 +19,11 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.filter_alt_outlined,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_rounded,
               color: Colors.white,
             )),
         centerTitle: true,
@@ -32,9 +34,39 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
         ),
         backgroundColor: Color.fromRGBO(80, 119, 122, 1),
         actions: [
+          Stack(
+            children: [
+              IconButton(
+                  alignment: Alignment.bottomCenter,
+                  onPressed: () {
+                    Route route = MaterialPageRoute(
+                        builder: (context) => const StoreCart());
+                    Navigator.push(context, route);
+                  },
+                  icon: const Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.white,
+                  )),
+              Visibility(
+                  visible: myProvider.getCartList.isNotEmpty,
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Text(
+                      myProvider.getCartList.length.toString(),
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ))
+            ],
+          ),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.search_outlined,
                 color: Colors.white,
               )),
@@ -81,6 +113,7 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
               scrollDirection: Axis.vertical,
               children: myProvider.getProductList.map((val) {
                 return sdcProduct(
+                  idProduk: val['idProduk'],
                   gambarProduk: val['gambarProduk'],
                   hargaProduk: val['hargaProduk'],
                   namaProduk: val['namaProduk'],
@@ -92,16 +125,6 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
             ))
           ],
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Route route =
-              MaterialPageRoute(builder: (context) => const StoreCart());
-          Navigator.push(context, route);
-        },
-        child: const Icon(Icons.shopping_cart_outlined),
-        backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
       ),
     );
   }

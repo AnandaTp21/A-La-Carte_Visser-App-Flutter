@@ -5,8 +5,8 @@ import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnai
 import 'package:flutter_application_1/Component/carousel.dart';
 import 'package:flutter_application_1/Component/carousel_list.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:provider/provider.dart';
-
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _storePageState extends State<StorePage> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.filter_alt_outlined,
               color: Colors.white,
             )),
@@ -35,9 +35,39 @@ class _storePageState extends State<StorePage> {
         ),
         backgroundColor: Color.fromRGBO(80, 119, 122, 1),
         actions: [
+          Stack(
+            children: [
+              IconButton(
+                  alignment: Alignment.bottomCenter,
+                  onPressed: () {
+                    Route route = MaterialPageRoute(
+                        builder: (context) => const StoreCart());
+                    Navigator.push(context, route);
+                  },
+                  icon: const Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.white,
+                  )),
+              Visibility(
+                  visible: myProvider.getCartList.isNotEmpty,
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Text(
+                      myProvider.getCartList.length.toString(),
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ))
+            ],
+          ),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.search_outlined,
                 color: Colors.white,
               )),
