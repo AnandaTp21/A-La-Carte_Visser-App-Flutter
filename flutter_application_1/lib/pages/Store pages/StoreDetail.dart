@@ -4,6 +4,7 @@ import 'package:flutter_application_1/Component/Store%20Componenet/sdInfo.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdProduct.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/sdTitle.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,7 @@ class StoreDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var myProvider = Provider.of<StoreProvider>(context);
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -103,10 +105,7 @@ class StoreDetail extends StatelessWidget {
                               icon: 'assets/ImageAssets/pancing.png',
                               judul: "Tackle"),
                           onTap: () {
-                            Route route = MaterialPageRoute(
-                                builder: (context) =>
-                                    const StoreCategoryDetail());
-                            Navigator.push(context, route);
+                            bottomnavigasi.perubahanparamsstore(2);
                           },
                         ),
                         const sdCategory(

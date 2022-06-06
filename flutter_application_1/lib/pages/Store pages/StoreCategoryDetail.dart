@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/scdProduct.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,7 @@ class StoreCategoryDetail extends StatefulWidget {
 class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
       appBar: AppBar(

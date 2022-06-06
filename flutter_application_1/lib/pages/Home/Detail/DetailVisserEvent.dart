@@ -159,7 +159,7 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
               ),))))],),
           Container(
           height: 60,
-          margin: EdgeInsets.only(top: 210,left: 40,right: 40),
+          margin: EdgeInsets.only(top: 240,left: 40,right: 40),
           child : Container(
           child: Row(
             children: [
@@ -196,11 +196,11 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
           ),
         )
         )], 
-        
       ),
       ) ,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(onPressed: (){},child:  Text("Shopping Now"),shape: RoundedRectangleBorder(),),
+      floatingActionButton: FloatingActionButton(onPressed: widget.isi == widget.Capacity?null:(){
+      },child:  Text("Shopping Now"),shape: RoundedRectangleBorder(),),
     ) ;
   }
 } 

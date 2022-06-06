@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_application_1/Component/homecomponent/DetailVisserComponent.dart';
+import 'package:flutter_application_1/pages/Home/Detail/Review.dart';
+
 
 class DetailVisserWeight extends StatefulWidget {
   final String judul;
@@ -11,6 +13,8 @@ class DetailVisserWeight extends StatefulWidget {
   final List Fasilitas;
   final String lokasigambar;
   final VoidCallback press;
+  final double Rating;
+  final List comments;
 
 
   const DetailVisserWeight({ Key? key ,
@@ -22,6 +26,8 @@ class DetailVisserWeight extends StatefulWidget {
   required this.Fasilitas,
   required this.press,
   required this.lokasigambar,
+  required this.Rating,
+  required this.comments,
 
 
   }) : super(key: key);
@@ -111,13 +117,15 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                     Text(" Info")],
                   ),
                 ),
-                TextButton(onPressed: (){},style: TextButton.styleFrom(shape: RoundedRectangleBorder(
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Review(gambar: widget.lokasigambar,rating: widget.Rating,comments: widget.comments,)));
+                },style: TextButton.styleFrom(shape: RoundedRectangleBorder(
                 ),backgroundColor: Color(0xff50777A).withOpacity(0.9),padding: EdgeInsets.symmetric(horizontal: 56,vertical: 18)), 
                 child: Row(
                   children: [
                     Icon(Icons.star_outlined,color: Colors.white,size: 12,),
                     Text("Rating",style: TextStyle(color: Color(0xffffffff),fontSize: 12)),
-                    Text(" 4.6",style: TextStyle(color: Color(0xffFFEC44),fontSize: 12),)
+                    Text("${widget.Rating}",style: TextStyle(color: Color(0xffFFEC44),fontSize: 12),)
                   ],
                 ))
                   ],
@@ -162,6 +170,7 @@ class _DetailVisserWeightState extends State<DetailVisserWeight> {
                   )
                 ),
                 Container(
+                  margin: EdgeInsets.only(top: 40,bottom: 20),
                 child : ElevatedButton(onPressed: widget.press, child: Text("Booking Now"),style: ElevatedButton.styleFrom(
                   primary: Color(0xff203E58),
                   shape: RoundedRectangleBorder(
