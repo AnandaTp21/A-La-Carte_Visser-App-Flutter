@@ -69,12 +69,31 @@ class StoreProvider extends ChangeNotifier {
   int _totalHarga = 0;
   int _tempTextField = 0;
 
+  Map<String,String> _alamat = {};
+  String _shippingRadio1 = "delivery";
+  String _shippingRadio2 = "pickup";
+  String _shippingRadioGroup = "";
+
+  Map get getAlamat => _alamat;
+  String get getShippingRadio1 => _shippingRadio1;
+  String get getShippingRadio2 => _shippingRadio2;
+  String get getShippingRadioGroup => _shippingRadioGroup;
   List get getStoreThumbnailList => _storeThumbnailList;
   List get getStoreCarouselList => _storeCarouselList;
   List get getProductList => _productList;
   List get getCartList => _cartList;
   int get getTempTextField => _tempTextField;
   int get getTotalHarga => _totalHarga;
+
+  set setAlamat(val){
+    _alamat = val;
+    notifyListeners();
+  }
+
+  set setShippingRadio(val){
+    _shippingRadioGroup = val;
+    notifyListeners();
+  }
 
   set setTempTextField(val) {
     _tempTextField = val;
@@ -130,6 +149,16 @@ class StoreProvider extends ChangeNotifier {
     for (var i = 0; i < _cartList.length; i++) {
       if (idProduk == _cartList[i]['idProduk']) {
         _cartList[i]['jumlahProduk'] = _tempTextField;
+      }
+    }
+    FuncTotalHarga();
+    notifyListeners();
+  }
+
+  set setDissmissible(idProduk) {
+    for (var i = 0; i < _cartList.length; i++) {
+      if (idProduk == _cartList[i]['idProduk']) {
+        _cartList.removeAt(i);
       }
     }
     FuncTotalHarga();

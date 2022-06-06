@@ -17,6 +17,59 @@ class StoreDetail extends StatelessWidget {
     var myProvider = Provider.of<StoreProvider>(context);
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.filter_alt_outlined,
+              color: Colors.white,
+            )),
+        centerTitle: true,
+        title: Image.asset(
+          'assets/logowhite.png',
+          width: 51,
+          height: 35,
+        ),
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                  alignment: Alignment.bottomCenter,
+                  onPressed: () {
+                    Route route = MaterialPageRoute(
+                        builder: (context) => const StoreCart());
+                    Navigator.push(context, route);
+                  },
+                  icon: const Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.white,
+                  )),
+              Visibility(
+                  visible: myProvider.getCartList.isNotEmpty,
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Text(
+                      myProvider.getCartList.length.toString(),
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ))
+            ],
+          ),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+              )),
+        ],
+      ),
       body: Container(
         padding: const EdgeInsets.only(left: 20, right: 20),
         decoration:
@@ -83,10 +136,11 @@ class StoreDetail extends StatelessWidget {
                               crossAxisCount: 2,
                               children: myProvider.getProductList.map((val) {
                                 return sdProduct(
-                                    idProduk: val['idProduk'],
-                                    gambarProduk: val['gambarProduk'],
-                                    namaProduk: val['namaProduk'],
-                                    hargaProduk: val['hargaProduk'],);
+                                  idProduk: val['idProduk'],
+                                  gambarProduk: val['gambarProduk'],
+                                  namaProduk: val['namaProduk'],
+                                  hargaProduk: val['hargaProduk'],
+                                );
                               }).toList(),
                             )),
                       ],
@@ -97,14 +151,6 @@ class StoreDetail extends StatelessWidget {
             )
           ],
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          bottomnavigasi.perubahanparamsstore(3);
-        },
-        child: const Icon(Icons.shopping_cart_outlined),
-        backgroundColor: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
       ),
     );
   }
