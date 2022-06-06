@@ -14,6 +14,32 @@ class _utamapageState extends State<utamapage> {
     var navigasi = Provider.of<bottomprovider>(context);
     return DefaultTabController(length: 4, child: Scaffold(
       backgroundColor: Color(0xffE7DFD4),
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              
+            },
+            icon: Icon(
+              Icons.filter_alt_outlined,
+              color: Colors.white,
+            )),
+        centerTitle: true,
+        title: Image.asset(
+          'assets/logowhite.png',
+          width: 51,
+          height: 35,
+        ),
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        actions: [
+          IconButton(
+              onPressed: () {
+              },
+              icon: Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+              )),
+        ],
+      ),
         body: Column(children: [
           Container(
             height: 60,
