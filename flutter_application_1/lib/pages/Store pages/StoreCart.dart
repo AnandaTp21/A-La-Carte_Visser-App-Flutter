@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/scProduct.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreShipping.dart';
 import 'package:provider/provider.dart';
 
 class StoreCart extends StatefulWidget {
-  const StoreCart({Key? key}) : super(key: key);
+  final int? posisi;
+  const StoreCart({Key? key,this.posisi}) : super(key: key);
 
   @override
   State<StoreCart> createState() => _StoreCartState();
@@ -14,12 +16,21 @@ class StoreCart extends StatefulWidget {
 class _StoreCartState extends State<StoreCart> {
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              if(bottomnavigasi.helpparams == 1){
+                bottomnavigasi.perubahanparamsstore(0);
+              }
+              else if(bottomnavigasi.helpparams==2){
+                bottomnavigasi.perubahanparamsstore(1);
+              }
+              else if(bottomnavigasi.helpparams==3){
+                bottomnavigasi.perubahanparamsstore(2);
+              }
             },
             icon: const Icon(
               Icons.arrow_back_rounded,

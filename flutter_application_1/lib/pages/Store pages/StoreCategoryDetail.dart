@@ -14,15 +14,39 @@ class StoreCategoryDetail extends StatefulWidget {
 }
 
 class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
+  bool search = false;
   @override
   Widget build(BuildContext context) {
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
-      appBar: AppBar(
+      appBar: search?
+       AppBar(
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        leading: (
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              setState(() {
+                search = false;
+              });
+            },
+          )
+        ),
+        title : TextField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0xffffffff).withOpacity(0.6),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50))
+            ),
+            suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_outlined))
+          ),
+        ),
+      ):AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              bottomnavigasi.perubahanparamsstore(1);
             },
             icon: const Icon(
               Icons.arrow_back_rounded,
@@ -41,9 +65,8 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
               IconButton(
                   alignment: Alignment.bottomCenter,
                   onPressed: () {
-                    Route route = MaterialPageRoute(
-                        builder: (context) => const StoreCart());
-                    Navigator.push(context, route);
+                    bottomnavigasi.perubahanpembantuparamssotre(3);
+                    bottomnavigasi.perubahanparamsstore(3);
                   },
                   icon: const Icon(
                     Icons.shopping_cart_outlined,
@@ -67,7 +90,11 @@ class _StoreCategoryDetailState extends State<StoreCategoryDetail> {
             ],
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  search = true;
+                });
+              },
               icon: const Icon(
                 Icons.search_outlined,
                 color: Colors.white,
