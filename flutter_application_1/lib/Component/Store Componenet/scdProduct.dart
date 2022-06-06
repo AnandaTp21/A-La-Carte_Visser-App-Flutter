@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:provider/provider.dart';
 
 class sdcProduct extends StatelessWidget {
   final String gambarProduk;
   final int hargaProduk;
   final String namaProduk;
   final Color containerColor;
+  final int idProduk;
 
   const sdcProduct({
     Key? key,
@@ -12,10 +15,19 @@ class sdcProduct extends StatelessWidget {
     required this.hargaProduk,
     required this.namaProduk,
     required this.containerColor,
+    required this.idProduk,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> keteranganProduk = {
+      'idProduk': idProduk,
+      'gambarProduk': gambarProduk,
+      'namaProduk': namaProduk,
+      'hargaProduk': hargaProduk,
+      'jumlahProduk': 1
+    };
+    var myProvider = Provider.of<StoreProvider>(context);
     return Container(
       color: containerColor,
       padding: EdgeInsets.all(10),
@@ -48,58 +60,8 @@ class sdcProduct extends StatelessWidget {
                       'Tackle type',
                       style: TextStyle(fontWeight: FontWeight.w300),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10, bottom: 10),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 30,
-                            child: FittedBox(
-                                child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromRGBO(80, 119, 122, 1)),
-                              child: const Icon(Icons.remove),
-                              onPressed: () {},
-                            )),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(right: 5, left: 5),
-                            height: 25,
-                            width: 30,
-                            child: const Expanded(
-                              child: TextField(
-                                keyboardType: TextInputType.number,
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.only(bottom: 15),
-                                    filled: true,
-                                    fillColor:
-                                        Color.fromARGB(255, 216, 216, 216),
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5))),
-                                    hintText: "Qty",
-                                    hintStyle: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12)),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 30,
-                            child: FittedBox(
-                                child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromRGBO(80, 119, 122, 1)),
-                              child: const Icon(Icons.add),
-                              onPressed: () {},
-                            )),
-                          ),
-                        ],
-                      ),
+                    SizedBox(
+                      height: 35,
                     ),
                     Container(
                       child: Text(
@@ -117,7 +79,9 @@ class sdcProduct extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   primary: const Color.fromRGBO(80, 119, 122, 1)),
               child: const Text("Add"),
-              onPressed: () {},
+              onPressed: () {
+                myProvider.setCartList = keteranganProduk;
+              },
             ),
           )
         ],

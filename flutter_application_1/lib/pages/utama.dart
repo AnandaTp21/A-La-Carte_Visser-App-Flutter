@@ -56,7 +56,7 @@ class _utamaState extends State<utama> {
       body: bottomcomponent.Pages[bottomcomponent.params],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-         backgroundColor: Color(0xffE7DFD4),
+        backgroundColor: Color(0xffE7DFD4),
         currentIndex: bottomcomponent.params,
         unselectedItemColor: Color(0xff656565),
         selectedItemColor: Color(0xffffffff),
