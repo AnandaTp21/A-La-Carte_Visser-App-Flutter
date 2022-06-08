@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/bottomprovider.dart';
+import 'package:flutter_application_1/pages/search.dart';
 import 'package:provider/provider.dart';
 class utamapage extends StatefulWidget {
   const utamapage({ Key? key }) : super(key: key);
@@ -11,6 +12,7 @@ class utamapage extends StatefulWidget {
 class _utamapageState extends State<utamapage> {
   @override
   bool search = false;
+  TextEditingController pencarian = TextEditingController();
   Widget build(BuildContext context) {
     var navigasi = Provider.of<bottomprovider>(context);
     return DefaultTabController(length: 4, child: Scaffold(
@@ -24,18 +26,22 @@ class _utamapageState extends State<utamapage> {
             onPressed: (){
               setState(() {
                 search = false;
+                pencarian = TextEditingController(text: "");
               });
             },
           )
         ),
         title : TextField(
+          controller: pencarian,
           decoration: InputDecoration(
             filled: true,
             fillColor: Color(0xffffffff).withOpacity(0.6),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))
             ),
-            suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_outlined))
+            suffixIcon: IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: ((context) => Search(pencarian: pencarian))));
+            }, icon: Icon(Icons.search_outlined))
           ),
         ),
       ):AppBar(
