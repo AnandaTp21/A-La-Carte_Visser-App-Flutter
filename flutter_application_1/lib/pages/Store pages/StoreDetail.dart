@@ -7,6 +7,7 @@ import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
+import 'package:flutter_application_1/pages/search.dart';
 import 'package:provider/provider.dart';
 
 class StoreDetail extends StatefulWidget {
@@ -19,6 +20,7 @@ class StoreDetail extends StatefulWidget {
 class _StoreDetailState extends State<StoreDetail> {
   @override
   bool search = false;
+  TextEditingController pencarian = TextEditingController();
   Widget build(BuildContext context) {
     var myProvider = Provider.of<StoreProvider>(context);
     var bottomnavigasi = Provider.of<bottomprovider>(context);
@@ -32,18 +34,22 @@ class _StoreDetailState extends State<StoreDetail> {
             onPressed: (){
               setState(() {
                 search = false;
+                pencarian = TextEditingController(text: "");
               });
             },
           )
         ),
         title : TextField(
+          controller: pencarian,
           decoration: InputDecoration(
             filled: true,
             fillColor: Color(0xffffffff).withOpacity(0.6),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(50))
             ),
-            suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_outlined))
+            suffixIcon: IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: ((context) => Search(pencarian: pencarian))));
+            }, icon: Icon(Icons.search_outlined))
           ),
         ),
       ):AppBar(

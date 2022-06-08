@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/pages/login.dart';
+import 'package:flutter_application_1/pages/verification.dart';
 import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
@@ -38,11 +39,14 @@ class _RegisterState extends State<Register> {
             Container(
               margin: EdgeInsets.only(top: 10),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
+              
               child :TextFormField(
+                
                 controller: Username,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Username',
               hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 60,)),
               prefixIcon: Icon(Icons.person_outline_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),
@@ -54,11 +58,12 @@ class _RegisterState extends State<Register> {
             Container(
               margin: EdgeInsets.only(top: 18),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
                 controller: Email,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Email Address',
               hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 60,)),
               prefixIcon: Icon(Icons.email_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),
@@ -70,11 +75,12 @@ class _RegisterState extends State<Register> {
             Container(
               margin: EdgeInsets.only(top: 18),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
                 controller: Mobile,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Mobile Phone',
               hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 60,)),
               prefixIcon: Icon(Icons.call_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),
@@ -86,12 +92,13 @@ class _RegisterState extends State<Register> {
             Container(
               margin: EdgeInsets.only(top: 18),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
                 controller: Password,
                 obscureText: visibilty,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 0.6,) ),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Enter Your Password',
               hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6,)),
               prefixIcon: Icon(Icons.lock_outlined,color: Color.fromRGBO(255, 255, 255, 0.6,),),
@@ -135,7 +142,7 @@ class _RegisterState extends State<Register> {
                       }
                     else{
                       Account.tambahaccount(Username.text, Password.text, Mobile.text, Email.text);
-                      pesan = "Sudah Berhasil Mendaftar Silahkan Melakukan Login";
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Verification(mobile: Mobile.text)));
                       susksesregis = true;
                     }
                   }
