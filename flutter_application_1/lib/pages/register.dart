@@ -142,12 +142,11 @@ class _RegisterState extends State<Register> {
                       }
                     else{
                       Account.tambahaccount(Username.text, Password.text, Mobile.text, Email.text);
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Verification(mobile: Mobile.text)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Verification(mobile: Mobile.text,username: Username.text,password: Password.text,email: Email.text,)));
                       susksesregis = true;
                     }
                   }
-                });
-                  
+                });   
               }, child: Text("Register",style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1,),fontWeight: FontWeight.bold)),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal : 100),

@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Component/homecomponent/TimePageComponent.
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
 import 'package:flutter_application_1/pages/Home/Detail/DetailVisserTime.dart';
+import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:provider/provider.dart';
 
 
@@ -35,7 +36,9 @@ class _TimePageState extends State<TimePage> {
                 Column(
                   children: datatime.AmbilDataTime.map((val){
                     return TimePageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(Lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){},Rating: val['Rating'],comments: val['Comment'],)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(Lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){
+                       
+                      },Rating: val['Rating'],comments: val['Comment'],)));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Harga: val['harga']);
                   }).toList()
                 )
