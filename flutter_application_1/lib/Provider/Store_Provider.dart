@@ -9,24 +9,28 @@ class StoreProvider extends ChangeNotifier {
 
   final List<Map<String, dynamic>> _storeThumbnailList = [
     {
+      'idToko': 1,
       'logotoko': 'assets/logogreen.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
     },
     {
+      'idToko': 2,
       'logotoko': 'assets/logogreen.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
     },
     {
+      'idToko': 3,
       'logotoko': 'assets/logogreen.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
     },
     {
+      'idToko': 4,
       'logotoko': 'assets/logogreen.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
@@ -37,6 +41,7 @@ class StoreProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> _productList = [
     {
       'index': 1,
+      'idToko': 1,
       'idProduk': 0001,
       'gambarProduk': 'assets/ImageAssets/fishing_rod.png',
       'namaProduk': 'Joran Pancing',
@@ -44,6 +49,7 @@ class StoreProvider extends ChangeNotifier {
     },
     {
       'index': 2,
+      'idToko': 1,
       'idProduk': 0002,
       'gambarProduk': 'assets/ImageAssets/reel.png',
       'namaProduk': 'Spinning Reel',
@@ -51,6 +57,7 @@ class StoreProvider extends ChangeNotifier {
     },
     {
       'index': 3,
+      'idToko': 1,
       'idProduk': 0003,
       'gambarProduk': 'assets/ImageAssets/timah.png',
       'namaProduk': 'Timah Pancing',
@@ -58,6 +65,7 @@ class StoreProvider extends ChangeNotifier {
     },
     {
       'index': 4,
+      'idToko': 1,
       'idProduk': 0004,
       'gambarProduk': 'assets/ImageAssets/pelampung.png',
       'namaProduk': 'Pelampung',
@@ -69,7 +77,7 @@ class StoreProvider extends ChangeNotifier {
   int _totalHarga = 0;
   int _tempTextField = 0;
 
-  Map<String,String> _alamat = {};
+  Map<String, String> _alamat = {};
   String _shippingRadio1 = "delivery";
   String _shippingRadio2 = "pickup";
   String _shippingRadioGroup = "";
@@ -85,12 +93,12 @@ class StoreProvider extends ChangeNotifier {
   int get getTempTextField => _tempTextField;
   int get getTotalHarga => _totalHarga;
 
-  set setAlamat(val){
+  set setAlamat(val) {
     _alamat = val;
     notifyListeners();
   }
 
-  set setShippingRadio(val){
+  set setShippingRadio(val) {
     _shippingRadioGroup = val;
     notifyListeners();
   }
@@ -172,5 +180,11 @@ class StoreProvider extends ChangeNotifier {
       x = _cartList[i]['hargaProduk'] * _cartList[i]['jumlahProduk'];
       _totalHarga += x;
     }
+  }
+
+  void OrderComplete() {
+    _cartList.clear();
+    _totalHarga = 0;
+    notifyListeners();
   }
 }

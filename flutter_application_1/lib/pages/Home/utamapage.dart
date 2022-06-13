@@ -10,13 +10,39 @@ class utamapage extends StatefulWidget {
 
 class _utamapageState extends State<utamapage> {
   @override
+  bool search = false;
   Widget build(BuildContext context) {
     var navigasi = Provider.of<bottomprovider>(context);
     return DefaultTabController(length: 4, child: Scaffold(
       backgroundColor: Color(0xffE7DFD4),
-      appBar: AppBar(
+      appBar: search?
+      AppBar(
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        leading: (
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              setState(() {
+                search = false;
+              });
+            },
+          )
+        ),
+        title : TextField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0xffffffff).withOpacity(0.6),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50))
+            ),
+            suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_outlined))
+          ),
+        ),
+      ):AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              
+            },
             icon: Icon(
               Icons.filter_alt_outlined,
               color: Colors.white,
@@ -30,7 +56,11 @@ class _utamapageState extends State<utamapage> {
         backgroundColor: Color.fromRGBO(80, 119, 122, 1),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  search = true;
+                });
+              },
               icon: Icon(
                 Icons.search_outlined,
                 color: Colors.white,

@@ -9,19 +9,50 @@ import 'package:flutter_application_1/pages/Store%20pages/StoreCart.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreCategoryDetail.dart';
 import 'package:provider/provider.dart';
 
-class StoreDetail extends StatelessWidget {
-  const StoreDetail({Key? key}) : super(key: key);
+class StoreDetail extends StatefulWidget {
+  const StoreDetail({ Key? key }) : super(key: key);
 
   @override
+  State<StoreDetail> createState() => _StoreDetailState();
+}
+
+class _StoreDetailState extends State<StoreDetail> {
+  @override
+  bool search = false;
   Widget build(BuildContext context) {
     var myProvider = Provider.of<StoreProvider>(context);
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Scaffold(
-      appBar: AppBar(
+      appBar: search?
+      AppBar(
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+        leading: (
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              setState(() {
+                search = false;
+              });
+            },
+          )
+        ),
+        title : TextField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0xffffffff).withOpacity(0.6),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50))
+            ),
+            suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search_outlined))
+          ),
+        ),
+      ):AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              bottomnavigasi.perubahanparamsstore(0);
+            },
             icon: const Icon(
-              Icons.filter_alt_outlined,
+              Icons.arrow_back_rounded,
               color: Colors.white,
             )),
         centerTitle: true,
@@ -37,9 +68,8 @@ class StoreDetail extends StatelessWidget {
               IconButton(
                   alignment: Alignment.bottomCenter,
                   onPressed: () {
-                    Route route = MaterialPageRoute(
-                        builder: (context) => const StoreCart());
-                    Navigator.push(context, route);
+                    bottomnavigasi.perubahanpembantuparamssotre(2);
+                    bottomnavigasi.perubahanparamsstore(3);
                   },
                   icon: const Icon(
                     Icons.shopping_cart_outlined,
@@ -63,7 +93,11 @@ class StoreDetail extends StatelessWidget {
             ],
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  search = true;
+                });
+              },
               icon: const Icon(
                 Icons.search_outlined,
                 color: Colors.white,

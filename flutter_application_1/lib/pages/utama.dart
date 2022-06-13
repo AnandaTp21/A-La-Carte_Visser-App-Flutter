@@ -14,6 +14,7 @@ class _utamaState extends State<utama> {
   Widget build(BuildContext context) {
     var bottomcomponent = Provider.of<bottomprovider>(context);
     return Scaffold(
+      
       body: bottomcomponent.Pages[bottomcomponent.params],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -30,6 +31,7 @@ class _utamaState extends State<utama> {
           BottomNavigationBarItem(icon: Icon(Icons.person),label: "Account"),
         ],
         onTap: (int angka){
+          bottomcomponent.perubahanparamsstore(0);
           bottomcomponent.perubahanbottom(angka);
         },
         ),

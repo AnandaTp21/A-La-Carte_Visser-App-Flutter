@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:flutter_application_1/pages/Store%20pages/DeliveryAddress.dart';
 import 'package:provider/provider.dart';
 
@@ -81,7 +82,12 @@ class DeliveryAddressConfirmation extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 60),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Route route = MaterialPageRoute(
+                          builder: (context) =>
+                              const PaymentMethod(shipping: "delivery"));
+                      Navigator.push(context, route);
+                    },
                     child: const Text(
                       "Proceed to Payment",
                       style:

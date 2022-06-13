@@ -42,11 +42,13 @@ class _loginState extends State<login> {
             Container(
               margin: EdgeInsets.only(top: 10),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
+        
               child :TextFormField(
                 controller: Username,
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
+              fillColor: Color.fromARGB(40, 32, 62, 88),
+              filled: true,
               hintText: 'Enter Your Username',
               hintStyle: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
               prefixIcon: Icon(Icons.person_outline_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),
@@ -56,14 +58,15 @@ class _loginState extends State<login> {
             ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
+              margin: EdgeInsets.only(top: 10),
               child :TextFormField(
                 controller: Password,
                 obscureText: visibilty,
                 style: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Enter Your Password',
               hintStyle: GoogleFonts.poppins(color : Color.fromRGBO(255, 255, 255, 0.6,)),
               prefixIcon: Icon(Icons.lock_outlined,color: Color.fromRGBO(255, 255, 255, 0.6,),),
