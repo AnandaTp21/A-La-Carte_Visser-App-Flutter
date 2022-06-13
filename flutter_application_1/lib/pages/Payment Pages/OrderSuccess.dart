@@ -22,7 +22,7 @@ class OrderSuccess extends StatelessWidget {
           backgroundColor: const Color.fromRGBO(80, 119, 122, 1),
         ),
         body: Container(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
           decoration: const BoxDecoration(
               color: Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4)),
           child: Center(
@@ -51,7 +51,8 @@ class OrderSuccess extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    '${accountProvider.active['Username']}, your order has been succesfully placed',
+                    '${accountProvider.active['Username']}, your order has been succesfully placed.',
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontSize: 18, color: Color.fromARGB(90, 0, 0, 0)),
                   ),

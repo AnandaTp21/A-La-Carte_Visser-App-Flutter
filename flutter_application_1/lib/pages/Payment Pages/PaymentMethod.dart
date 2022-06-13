@@ -186,6 +186,7 @@ class PaymentMethod extends StatelessWidget {
                               if (myProv.getOrderPaymentGroup != 0) {
                                 myProv.setListKeterangan(shipping);
                                 storeProvider.OrderComplete();
+                                
                                 Route route = MaterialPageRoute(
                                     builder: (context) => const OrderSuccess());
                                 Navigator.push(context, route);
