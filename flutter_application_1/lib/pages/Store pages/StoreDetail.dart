@@ -26,7 +26,7 @@ class _StoreDetailState extends State<StoreDetail> {
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Scaffold(
       appBar: search?
-       AppBar(
+      AppBar(
         backgroundColor: Color.fromRGBO(80, 119, 122, 1),
         leading: (
           IconButton(
