@@ -49,11 +49,7 @@ class _StoreCartState extends State<StoreCart> {
             children: [
               IconButton(
                   alignment: Alignment.bottomCenter,
-                  onPressed: () {
-                    Route route = MaterialPageRoute(
-                        builder: (context) => const StoreCart());
-                    Navigator.push(context, route);
-                  },
+                  onPressed: () {},
                   icon: const Icon(
                     Icons.shopping_cart_outlined,
                     color: Colors.white,
@@ -93,7 +89,48 @@ class _StoreCartState extends State<StoreCart> {
                 scrollDirection: Axis.vertical,
                 children: [
                   myProvider.getCartList.length == 0
-                      ? noOrder()
+                      ? Container(
+      margin: EdgeInsets.only(top: 100),
+      child: Column(
+        children: [
+          const Icon(
+            Icons.remove_shopping_cart_rounded,
+            size: 150,
+            color: Colors.grey,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text("Your cart is empty,",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          const Text("Let's fill it with your dream item!",
+              style: TextStyle(fontSize: 20)),
+          const SizedBox(
+            height: 30,
+          ),
+          GestureDetector(
+            onTap: () {
+              bottomnavigasi.perubahanparamsstore(0);
+            },
+            child: Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.only(bottom: 10, top: 10),
+                height: 60,
+                width: 200,
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
+                    borderRadius: BorderRadius.all(Radius.circular(50))),
+                child: const Text(
+                  "Go shopping",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                )),
+          )
+        ],
+      ),
+    )
                       : Column(
                           children: myProvider.getCartList.map((val) {
                             return Dismissible(
@@ -215,50 +252,6 @@ class _StoreCartState extends State<StoreCart> {
     );
   }
 
-  noOrder() {
-    return Container(
-      margin: EdgeInsets.only(top: 100),
-      child: Column(
-        children: [
-          const Icon(
-            Icons.remove_shopping_cart_rounded,
-            size: 150,
-            color: Colors.grey,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Text("Your cart is empty,",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-          const Text("Let's fill it with your dream item!",
-              style: TextStyle(fontSize: 20)),
-          const SizedBox(
-            height: 30,
-          ),
-          GestureDetector(
-            onTap: () {
-              Route route =
-                  MaterialPageRoute(builder: (context) => const StorePage());
-              Navigator.push(context, route);
-            },
-            child: Container(
-                alignment: Alignment.center,
-                margin: const EdgeInsets.only(bottom: 10, top: 10),
-                height: 60,
-                width: 200,
-                decoration: const BoxDecoration(
-                    color: Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
-                    borderRadius: BorderRadius.all(Radius.circular(50))),
-                child: const Text(
-                  "Go shopping",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                )),
-          )
-        ],
-      ),
-    );
-  }
+
+  
 }
