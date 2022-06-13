@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/Store%20pages/DeliveryAddressConfirmation.dart';
 import 'package:provider/provider.dart';
 
 class DeliveryAddress extends StatefulWidget {
@@ -129,8 +130,10 @@ class _DeliveryAddressState extends State<DeliveryAddress> {
                           "nomorhp": nomorHpController.text,
                         };
                         myProvider.setAlamat = data;
-                        print(myProvider.getAlamat);
-                        Navigator.pop(context);
+                        Route route = MaterialPageRoute(
+                            builder: (context) =>
+                                const DeliveryAddressConfirmation());
+                        Navigator.push(context, route);
                       }
                     },
                   ),

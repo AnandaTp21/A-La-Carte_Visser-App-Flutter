@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/Home/Detail/Review.dart';
 
 class sdInfo extends StatelessWidget {
   final String rating;
@@ -23,23 +24,26 @@ class sdInfo extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.star_rate_rounded,
-                      color: Color.fromARGB(0xFF, 0xB1, 0x31, 0x26),
-                    ),
-                    Text(
-                      rating,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                const Text("Ratings")
-              ],
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.star_rate_rounded,
+                        color: Color.fromARGB(0xFF, 0xB1, 0x31, 0x26),
+                      ),
+                      Text(
+                        rating,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                  const Text("Ratings")
+                ],
+              ),
             ),
           ),
           Container(

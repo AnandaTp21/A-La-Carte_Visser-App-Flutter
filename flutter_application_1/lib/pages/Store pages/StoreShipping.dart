@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:flutter_application_1/pages/Store%20pages/DeliveryAddress.dart';
 import 'package:flutter_application_1/pages/Store%20pages/DeliveryAddressConfirmation.dart';
 import 'package:provider/provider.dart';
@@ -84,14 +85,13 @@ class StoreShipping extends StatelessWidget {
                               const DeliveryAddressConfirmation());
                       Navigator.push(context, route);
                     }
+                  } else if (myProv.getShippingRadioGroup == "pickup") {
+                    Route route = MaterialPageRoute(
+                        builder: (context) =>
+                            const PaymentMethod(shipping: "pickup"));
+                    Navigator.push(context, route);
                   } else {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return const Dialog(
-                            child: Text("PickUp"),
-                          );
-                        });
+                    null;
                   }
                 },
                 child: const Text(
