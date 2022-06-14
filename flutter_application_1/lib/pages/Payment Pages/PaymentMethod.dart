@@ -15,14 +15,6 @@ class PaymentMethod extends StatelessWidget {
     var storeProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                
-              },
-              icon: const Icon(
-                Icons.arrow_back_rounded,
-                color: Colors.white,
-              )),
           centerTitle: true,
           title: Image.asset(
             'assets/logowhite.png',
