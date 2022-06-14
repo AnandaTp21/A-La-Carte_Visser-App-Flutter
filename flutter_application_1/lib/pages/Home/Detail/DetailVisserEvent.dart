@@ -13,6 +13,7 @@ class DetailVisserEvent extends StatefulWidget {
   int Harga;
   String Naskah;
   int Recommend;
+  VoidCallback press;
 
   DetailVisserEvent({ Key? key,
   required this.Lokasigambar,
@@ -26,6 +27,7 @@ class DetailVisserEvent extends StatefulWidget {
   required this.Harga,
   required this.Hadiah,
   required this.Naskah,
+  required this.press,
   required this.Recommend,
 
 
@@ -199,8 +201,7 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
       ),
       ) ,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(onPressed: widget.isi == widget.Capacity?null:(){
-      },child:  Text("Shopping Now"),shape: RoundedRectangleBorder(),),
+      floatingActionButton: FloatingActionButton(onPressed: widget.isi == widget.Capacity?null:widget.press,child:  Text("Shopping Now"),shape: RoundedRectangleBorder(),),
     ) ;
   }
 } 
