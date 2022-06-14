@@ -13,6 +13,7 @@ class OrderSuccess extends StatelessWidget {
     var accountProvider = Provider.of<account_Provider>(context);
     return Scaffold(
         appBar: AppBar(
+          leading: Text(""),
           centerTitle: true,
           title: Image.asset(
             'assets/logowhite.png',

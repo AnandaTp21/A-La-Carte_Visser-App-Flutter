@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/login_Provider.dart';
 import 'package:flutter_application_1/pages/utama.dart';
+import 'package:provider/provider.dart';
 
 class Verification extends StatefulWidget {
   String mobile;
-  Verification({ Key? key ,required this.mobile}) : super(key: key);
+  String username;
+  String password;
+  String email;
+  Verification({ Key? key ,
+  required this.mobile,
+  required this.email,
+  required this.password,
+  required this.username,
+  
+  }) : super(key: key);
 
   @override
   State<Verification> createState() => _VerificationState();
@@ -17,6 +28,7 @@ class _VerificationState extends State<Verification> {
   bool errorcode = false;
   @override
   Widget build(BuildContext context) {
+    var account = Provider.of<account_Provider>(context);
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       appBar: AppBar(
@@ -131,6 +143,7 @@ class _VerificationState extends State<Verification> {
                     });
                   }
                   else{
+                    account.useractive(widget.username, widget.password, widget.mobile, widget.email);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> const utama()));
                   }
               

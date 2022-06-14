@@ -5,7 +5,9 @@ import 'package:flutter_application_1/Component/carousel_list.dart';
 import 'package:flutter_application_1/Component/homecomponent/EventPageComponent.dart';
 import 'package:flutter_application_1/Component/homecomponent/judulpage.dart';
 import 'package:flutter_application_1/Provider/Home_Provider.dart';
+import 'package:flutter_application_1/Provider/Order_Provider.dart';
 import 'package:flutter_application_1/pages/Home/Detail/DetailVisserEvent.dart';
+import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:provider/provider.dart';
 
 
@@ -20,6 +22,7 @@ class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     final dataevent = Provider.of<Home_Provider>(context);
+    var orderProvider = Provider.of<Order_Provider>(context);
     return Container(
         child: 
             ListView(
@@ -32,7 +35,14 @@ class _EventPageState extends State<EventPage> {
                 Column(
                   children: dataevent.AmbilDataEvent.map((val){  
                     return EventPageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailVisserEvent(Lokasigambar: val['lokasigambar'], judul: val['judul'], Capacity: val['capacity'], isi: val['isi'], Kalender: val['tanggal'], waktutanggal: val['HariTanggal'], lokasikolam: val['Alamat'], namakolam: val['NamaLokasi'], Harga: val['harga'], Hadiah: val['Hadiah'], Naskah: val['naskah'], Recommend: val['Jumlahrecomend']) ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailVisserEvent(press: (){
+                        orderProvider.setKeterangan = {
+                                  'namaToko': val['NamaLokasi'],
+                                  'alamatToko': val['Alamat'],
+                                  'totalHarga': val['harga'].toString(),
+                                };
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
+                      },Lokasigambar: val['lokasigambar'], judul: val['judul'], Capacity: val['capacity'], isi: val['isi'], Kalender: val['tanggal'], waktutanggal: val['HariTanggal'], lokasikolam: val['Alamat'], namakolam: val['NamaLokasi'], Harga: val['harga'], Hadiah: val['Hadiah'], Naskah: val['naskah'], Recommend: val['Jumlahrecomend']) ));
                     }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
                   }).toList(),
                 )

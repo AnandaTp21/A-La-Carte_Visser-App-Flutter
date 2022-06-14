@@ -49,11 +49,7 @@ class _StoreCartState extends State<StoreCart> {
             children: [
               IconButton(
                   alignment: Alignment.bottomCenter,
-                  onPressed: () {
-                    Route route = MaterialPageRoute(
-                        builder: (context) => const StoreCart());
-                    Navigator.push(context, route);
-                  },
+                  onPressed: () {},
                   icon: const Icon(
                     Icons.shopping_cart_outlined,
                     color: Colors.white,
@@ -93,7 +89,7 @@ class _StoreCartState extends State<StoreCart> {
                 scrollDirection: Axis.vertical,
                 children: [
                   myProvider.getCartList.length == 0
-                      ? noOrder()
+                      ? cart(context)
                       : Column(
                           children: myProvider.getCartList.map((val) {
                             return Dismissible(
@@ -215,8 +211,9 @@ class _StoreCartState extends State<StoreCart> {
     );
   }
 
-  noOrder() {
-    return Container(
+cart(BuildContext konteks){
+  var bottomnavigasi = Provider.of<bottomprovider>(konteks);
+  return Container(
       margin: EdgeInsets.only(top: 100),
       child: Column(
         children: [
@@ -237,9 +234,7 @@ class _StoreCartState extends State<StoreCart> {
           ),
           GestureDetector(
             onTap: () {
-              Route route =
-                  MaterialPageRoute(builder: (context) => const StorePage());
-              Navigator.push(context, route);
+              bottomnavigasi.perubahanparamsstore(0);
             },
             child: Container(
                 alignment: Alignment.center,
@@ -260,5 +255,6 @@ class _StoreCartState extends State<StoreCart> {
         ],
       ),
     );
-  }
+}
+  
 }

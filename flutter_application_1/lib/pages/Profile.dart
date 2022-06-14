@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/Provider/login_Provider.dart';
+import 'package:flutter_application_1/pages/login.dart';
 import 'package:provider/provider.dart';
 class Profile extends StatefulWidget {
   const Profile({ Key? key }) : super(key: key);
@@ -12,6 +14,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     var Account = Provider.of<account_Provider>(context);
+    var bottom = Provider.of<bottomprovider>(context);
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       appBar: AppBar(
@@ -171,7 +174,8 @@ class _ProfileState extends State<Profile> {
               Container(
                 margin: EdgeInsets.symmetric(vertical : 30,horizontal: 120),
                 child: TextButton(child: Text("Log Out",style: TextStyle(fontSize: 25),),onPressed: (){
-                  Navigator.pop(context);
+                  bottom.perubahanbottom(0);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const login()));
                 },style: TextButton.styleFrom(
                   primary: Color.fromRGBO(32, 62, 88, 1)
                 ),),
