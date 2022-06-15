@@ -42,7 +42,7 @@ class _WeightPageState extends State<WeightPage> {
                                 };
                       Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
                       },Rating: val['Rating'],comments: val['Comment'])));
-                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['harga'], Harga: val['hargaawal']);
+                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Hargaawal: val['hargaawal'], Harga: val['harga']);
                   }).toList()
                 )
               ],
