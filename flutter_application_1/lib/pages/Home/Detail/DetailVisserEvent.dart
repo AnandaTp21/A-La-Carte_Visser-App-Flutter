@@ -156,7 +156,15 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
                     child: Text("About event"),
                   ),
                   Text(widget.Naskah),
-
+                  Container(
+                  margin: EdgeInsets.only(top: 49,bottom: 20),
+                child : ElevatedButton(onPressed: widget.isi == widget.Capacity?null:widget.press, child: Text("Shopping Now"),style: ElevatedButton.styleFrom(
+                  primary: Color(0xff203E58),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15)
+                ),)),
                   ],
               ),))))],),
           Container(
@@ -200,8 +208,6 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
         )], 
       ),
       ) ,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(onPressed: widget.isi == widget.Capacity?null:widget.press,child:  Text("Shopping Now"),shape: RoundedRectangleBorder(),),
     ) ;
   }
 } 
