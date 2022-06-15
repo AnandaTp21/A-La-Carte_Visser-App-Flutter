@@ -84,13 +84,13 @@ class _StoreCartState extends State<StoreCart> {
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              ListView(
-                padding: const EdgeInsets.only(bottom: 80),
-                scrollDirection: Axis.vertical,
-                children: [
-                  myProvider.getCartList.length == 0
-                      ? cart(context)
-                      : Column(
+              myProvider.getCartList.length == 0
+                  ? cart(context)
+                  : ListView(
+                      padding: const EdgeInsets.only(bottom: 80),
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        Column(
                           children: myProvider.getCartList.map((val) {
                             return Dismissible(
                                 direction: DismissDirection.endToStart,
@@ -124,50 +124,55 @@ class _StoreCartState extends State<StoreCart> {
                                     hargaProduk: val['hargaProduk']));
                           }).toList(),
                         ),
-                ],
-              ),
-              Container(
-                color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
-                height: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: Container(
-                          padding: const EdgeInsets.only(bottom: 10, top: 10),
-                          margin: const EdgeInsets.only(left: 40),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "Total Price",
-                                style: TextStyle(
-                                    color: Color.fromARGB(115, 0, 0, 0),
-                                    fontSize: 16),
+                      ],
+                    ),
+              Visibility(
+                  visible: myProvider.getCartList.isNotEmpty,
+                  child: Container(
+                    color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
+                    height: 80,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                            flex: 1,
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.only(bottom: 10, top: 10),
+                              margin: const EdgeInsets.only(left: 40),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Total Price",
+                                    style: TextStyle(
+                                        color: Color.fromARGB(115, 0, 0, 0),
+                                        fontSize: 16),
+                                  ),
+                                  Text(
+                                    "Rp" + myProvider.getTotalHarga.toString(),
+                                    style: const TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
                               ),
-                              Text(
-                                "Rp" + myProvider.getTotalHarga.toString(),
-                                style: const TextStyle(
-                                    fontSize: 22, fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                        )),
-                    Expanded(
-                        flex: 1,
-                        child: Visibility(
-                            visible: myProvider.getCartList.isNotEmpty,
+                            )),
+                        Expanded(
+                            flex: 1,
                             child: GestureDetector(
                               onTap: () {
                                 orderProvider.setKeterangan = {
+                                  'orderID' : orderProvider.getOrderList.length+1,
                                   'namaToko': myProvider
                                       .getStoreThumbnailList[0]['namatoko'],
                                   'alamatToko': myProvider
                                       .getStoreThumbnailList[0]['alamattoko'],
                                   'totalHarga':
                                       myProvider.getTotalHarga.toString(),
+                                  'cartList': myProvider.getCartList
                                 };
                                 Route route = MaterialPageRoute(
                                     builder: (context) =>
@@ -202,20 +207,20 @@ class _StoreCartState extends State<StoreCart> {
                                   ],
                                 ),
                               ),
-                            )))
-                  ],
-                ),
-              )
+                            ))
+                      ],
+                    ),
+                  ))
             ],
           )),
     );
   }
 
-cart(BuildContext konteks){
-  var bottomnavigasi = Provider.of<bottomprovider>(konteks);
-  return Container(
-      margin: EdgeInsets.only(top: 100),
+  cart(BuildContext konteks) {
+    var bottomnavigasi = Provider.of<bottomprovider>(konteks);
+    return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(
             Icons.remove_shopping_cart_rounded,
@@ -255,6 +260,5 @@ cart(BuildContext konteks){
         ],
       ),
     );
-}
-  
+  }
 }
