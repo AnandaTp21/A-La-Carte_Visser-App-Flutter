@@ -13,7 +13,6 @@ class OrderSuccess extends StatelessWidget {
     var accountProvider = Provider.of<account_Provider>(context);
     return Scaffold(
         appBar: AppBar(
-          leading: Text(""),
           centerTitle: true,
           title: Image.asset(
             'assets/logowhite.png',
@@ -52,7 +51,7 @@ class OrderSuccess extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    '${accountProvider.active['Username']}, your order has been succesfully placed.',
+                    '${accountProvider.active['Username']}, your order has been successfully placed.',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontSize: 18, color: Color.fromARGB(90, 0, 0, 0)),
@@ -91,7 +90,7 @@ class OrderSuccess extends StatelessWidget {
   text(val) {
     if (val['paymentMethod'] == 'delivery') {
       return const Text(
-        "We'll notify you once your driver is ready!",
+        "We'll notify you when your driver is ready!",
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       );
     } else {

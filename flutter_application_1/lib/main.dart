@@ -8,6 +8,7 @@ import 'package:flutter_application_1/pages/Home/Detail/DetailVisserEvent.dart';
 import 'package:flutter_application_1/pages/Home/Timepage.dart';
 import 'package:flutter_application_1/pages/Home/WeightPage.dart';
 import 'package:flutter_application_1/pages/Home/utamapage.dart';
+import 'package:flutter_application_1/pages/Payment%20Pages/OrderHistory.dart';
 import 'package:flutter_application_1/pages/Payment%20Pages/OrderSuccess.dart';
 import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
