@@ -125,6 +125,7 @@ class PaymentMethod extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.only(top: 10, bottom: 10),
                               child: RadioListTile(
+                                secondary: Image.asset('assets/logoblack.png'),
                                 title: const Text("Online payment",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -178,7 +179,6 @@ class PaymentMethod extends StatelessWidget {
                               if (myProv.getOrderPaymentGroup != 0) {
                                 myProv.setListKeterangan(shipping);
                                 storeProvider.OrderComplete();
-                                
                                 Route route = MaterialPageRoute(
                                     builder: (context) => const OrderSuccess());
                                 Navigator.push(context, route);

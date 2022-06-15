@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Order_Provider extends ChangeNotifier {
-  List<Map<String, dynamic>> _listKeterangan = [];
+  List<Map<String, dynamic>> _orderList = [];
   Map<String, dynamic> _keterangan = {};
 
   int _orderPaymentGroup = 0;
@@ -9,7 +9,7 @@ class Order_Provider extends ChangeNotifier {
   int _orderPaymentRadio2 = 2;
   int _orderPaymentRadio3 = 3;
 
-  List get getListKeterangan => _listKeterangan;
+  List get getOrderList => _orderList;
   Map get getKeterangan => _keterangan;
   int get getOrderPaymentGroup => _orderPaymentGroup;
   int get getOrderPaymentRadio1 => _orderPaymentRadio1;
@@ -21,8 +21,8 @@ class Order_Provider extends ChangeNotifier {
   }
 
   void setListKeterangan(val) {
-    _keterangan['paymentMethod'] = val;
-    _listKeterangan.add(_keterangan);
+    _keterangan['shipping'] = val;
+    _orderList.add(_keterangan);
   }
 
   set setOrderPaymentRadio(val) {
