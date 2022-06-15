@@ -22,7 +22,7 @@ class Order_Provider extends ChangeNotifier {
 
   void setListKeterangan(val) {
     _keterangan['shipping'] = val;
-    _orderList.add(_keterangan);
+    _orderList.insert(0,_keterangan);
   }
 
   set setOrderPaymentRadio(val) {

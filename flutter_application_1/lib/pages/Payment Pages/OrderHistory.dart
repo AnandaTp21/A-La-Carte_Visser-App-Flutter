@@ -12,6 +12,7 @@ class OrderHistory extends StatelessWidget {
     var orderProvider = Provider.of<Order_Provider>(context);
     return Scaffold(
         appBar: AppBar(
+          leading: Text(""),
           centerTitle: true,
           title: Image.asset(
             'assets/logowhite.png',

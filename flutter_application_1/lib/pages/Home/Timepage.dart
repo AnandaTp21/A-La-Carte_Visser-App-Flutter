@@ -40,9 +40,11 @@ class _TimePageState extends State<TimePage> {
                     return TimePageComponent(press: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserTime(Lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){
                       orderProvider.setKeterangan = {
+                                  'orderID' : orderProvider.getOrderList.length +1,
                                   'namaToko': val['NamaLokasi'],
                                   'alamatToko': val['Location'],
                                   'totalHarga': val['harga'].toString(),
+                                  'cartList' : "pesan"
                                 };
                       Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
                       },Rating: val['Rating'],comments: val['Comment'],)));

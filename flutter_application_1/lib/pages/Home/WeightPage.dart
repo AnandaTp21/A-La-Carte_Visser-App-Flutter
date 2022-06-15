@@ -36,9 +36,11 @@ class _WeightPageState extends State<WeightPage> {
                     return WeightPageComponent(press: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailVisserWeight(lokasigambar: val['lokasigambar'],judul: val['NamaLokasi'], recommend: val['Jumlahrecomend'] ,hargaawal: val['hargaawal'], harga: val['harga'],Location: val['Location'],Fasilitas: val['fasilitas'],press: (){
                         orderProvider.setKeterangan = {
+                                  'orderID' : orderProvider.getOrderList.length +1,
                                   'namaToko': val['NamaLokasi'],
                                   'alamatToko': val['Location'],
                                   'totalHarga': val['harga'].toString(),
+                                  'cartList' : "pesan"
                                 };
                       Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
                       },Rating: val['Rating'],comments: val['Comment'])));

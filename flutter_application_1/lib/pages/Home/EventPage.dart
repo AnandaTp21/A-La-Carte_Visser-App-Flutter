@@ -37,9 +37,11 @@ class _EventPageState extends State<EventPage> {
                     return EventPageComponent(press: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailVisserEvent(press: (){
                         orderProvider.setKeterangan = {
+                                  'orderID' : orderProvider.getOrderList.length +1,
                                   'namaToko': val['NamaLokasi'],
                                   'alamatToko': val['Alamat'],
                                   'totalHarga': val['harga'].toString(),
+                                  'cartList' : "pesan"
                                 };
                       Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
                       },Lokasigambar: val['lokasigambar'], judul: val['judul'], Capacity: val['capacity'], isi: val['isi'], Kalender: val['tanggal'], waktutanggal: val['HariTanggal'], lokasikolam: val['Alamat'], namakolam: val['NamaLokasi'], Harga: val['harga'], Hadiah: val['Hadiah'], Naskah: val['naskah'], Recommend: val['Jumlahrecomend']) ));
