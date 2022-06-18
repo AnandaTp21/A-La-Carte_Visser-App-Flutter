@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Component/OrdersWidget.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/scProduct.dart';
 import 'package:flutter_application_1/Provider/Order_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:provider/provider.dart';
 
 class OrderHistory extends StatelessWidget {
@@ -57,7 +58,7 @@ class OrderHistory extends StatelessWidget {
                     )),
                 Expanded(
                     child: TabBarView(children: [
-                  OnGoing(),
+                  OnGoing(context),
                   ListView(
                     children: orderProvider.getOrderList.map((val) {
                       return OrdersWidget(
@@ -77,7 +78,8 @@ class OrderHistory extends StatelessWidget {
     return ListView(children: provider.getOrderList.map);
   }
 
-  OnGoing() {
+  OnGoing(BuildContext context) {
+    var bottomnavigation = Provider.of<bottomprovider>(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +105,10 @@ class OrderHistory extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(50))),
                     primary: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58)),
-                onPressed: () {},
+                onPressed: () {
+                  bottomnavigation.perubahanbottom(1);
+                  bottomnavigation.perubahanparamsstore(0);
+                },
                 child: const Text(
                   "Creat an Order",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
