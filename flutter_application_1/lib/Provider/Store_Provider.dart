@@ -6,14 +6,63 @@ class StoreProvider extends ChangeNotifier {
     'assets/carousel.jpg',
     'assets/carousel.jpg'
   ];
+  List _opendetail = [
+    {
+      "namaToko": "",
+      "lokasiToko": "",
+      "gambarToko": "",
+      "rating": "",
+      "waktuBuka": "",
+      "waktuTutup": "",
+      "coment": []
+    }
+  ];
+  List get opendetail => _opendetail;
+  void opendetailfuns(
+    String namatoko,
+    String lokasitoko,
+    String gambartoko,
+    double rating,
+    String waktubuka,
+    String waktututup,
+    List comment,
+  ) {
+    _opendetail[0] = {
+      "namaToko": namatoko,
+      "lokasiToko": lokasitoko,
+      "gambarToko": gambartoko,
+      "rating": rating,
+      "waktuBuka": waktubuka,
+      "waktuTutup": waktututup,
+      "coment": comment
+    };
+    notifyListeners();
+  }
 
   final List<Map<String, dynamic>> _storeThumbnailList = [
     {
       'idToko': 1,
-      'logotoko': 'assets/logogreen.png',
+      'logotoko': 'assets/logoblack.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
+      'waktuBuka': "10.00",
+      'waktuTutup': "18.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Geiginia Mill",
+          "Nilai": "5,0",
+          "tanggal": "18 Feb 2022",
+          "Isi Commment":
+              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+          "gambar": [
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+          ],
+        }
+      ]
     },
     {
       'idToko': 2,
@@ -21,6 +70,23 @@ class StoreProvider extends ChangeNotifier {
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
+      'waktuBuka': "10.00",
+      'waktuTutup': "18.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Geiginia Mill",
+          "Nilai": "5,0",
+          "tanggal": "18 Feb 2022",
+          "Isi Commment":
+              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+          "gambar": [
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+          ],
+        }
+      ]
     },
     {
       'idToko': 3,
@@ -28,6 +94,23 @@ class StoreProvider extends ChangeNotifier {
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
+      'waktuBuka': "10.00",
+      'waktuTutup': "18.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Geiginia Mill",
+          "Nilai": "5,0",
+          "tanggal": "18 Feb 2022",
+          "Isi Commment":
+              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+          "gambar": [
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+          ],
+        }
+      ]
     },
     {
       'idToko': 4,
@@ -35,6 +118,23 @@ class StoreProvider extends ChangeNotifier {
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,
+      'waktuBuka': "10.00",
+      'waktuTutup': "18.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Geiginia Mill",
+          "Nilai": "5,0",
+          "tanggal": "18 Feb 2022",
+          "Isi Commment":
+              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+          "gambar": [
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+            "assets/carousel.jpg",
+          ],
+        }
+      ]
     },
   ];
 
