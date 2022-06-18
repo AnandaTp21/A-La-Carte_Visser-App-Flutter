@@ -2,28 +2,28 @@ import 'package:flutter/material.dart';
 
 class Home_Provider extends ChangeNotifier {
   final List _CarouselRecommend = [
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
+    "assets/ImageAssets/pemancingan_1.jpg",
+    "assets/ImageAssets/pemancingan_2.jpg",
+    "assets/ImageAssets/pemancingan_3.jpg"
   ];
   final List _CarouselWeight = [
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
+    "assets/ImageAssets/pemancingan_4.jpg",
+    "assets/ImageAssets/pemancingan_5.jpg",
+    "assets/ImageAssets/pemancingan_6.jpg"
   ];
   final List _CarouselTime = [
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
+    "assets/ImageAssets/pemancingan_7.jpg",
+    "assets/ImageAssets/pemancingan_8.jpeg",
+    "assets/ImageAssets/pemancingan_9.jpg"
   ];
   final List _CarouselEvent = [
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
-    "assets/carousel.jpg",
+    "assets/ImageAssets/pemancingan_10.jpg",
+    "assets/ImageAssets/pemancingan_11.jpg",
+    "assets/ImageAssets/pemancingan_12.jpg"
   ];
   final List _DataWeight = [
     {
-      'lokasigambar': 'assets/4005909.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_4.jpg',
       'NamaLokasi': 'Visser Terjun Mount',
       'Jumlahrecomend': 1000,
       'harga': 50000,
@@ -91,7 +91,7 @@ class Home_Provider extends ChangeNotifier {
   ];
   final List _DataTime = [
     {
-      'lokasigambar': 'assets/4005909.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_7.jpg',
       'NamaLokasi': 'Visser Terjun Mounth',
       'Jumlahrecomend': 1000,
       'harga': 50000,
@@ -158,7 +158,7 @@ class Home_Provider extends ChangeNotifier {
   ];
   final List _DataEvent = [
     {
-      'lokasigambar': 'assets/4005909.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_10.jpg',
       'NamaLokasi': 'Visser Damar Raya',
       'Jumlahrecomend': 1000,
       'harga': 50000,
