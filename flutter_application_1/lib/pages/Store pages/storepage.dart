@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/PopupFilterWidget.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreSection.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnail.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
@@ -25,91 +26,99 @@ class _storePageState extends State<StorePage> {
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     return Scaffold(
-        appBar: search?
-       AppBar(
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
-        leading: (
-          IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: (){
-              setState(() {
-                search = false;
-                pencarian = TextEditingController(text: "");
-              });
-            },
-          )
-        ),
-        title : TextField(
-          controller: pencarian,
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Color(0xffffffff).withOpacity(0.6),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(50))
-            ),
-            suffixIcon: IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Search(pencarian : pencarian)));
-            }, icon: Icon(Icons.search_outlined))
-          ),
-        ),
-      ):AppBar(
-        leading: IconButton(
-            onPressed: () {
-              bottomnavigasi.perubahanparamsstore(0);
-            },
-            icon: const Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-            )),
-        centerTitle: true,
-        title: Image.asset(
-          'assets/logowhite.png',
-          width: 51,
-          height: 35,
-        ),
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
-        actions: [
-          Stack(
-            children: [
-              IconButton(
-                  alignment: Alignment.bottomCenter,
+        appBar: search
+            ? AppBar(
+                backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+                leading: (IconButton(
+                  icon: Icon(Icons.arrow_back),
                   onPressed: () {
-                    bottomnavigasi.perubahanpembantuparamssotre(1);
-                    bottomnavigasi.perubahanparamsstore(3);
+                    setState(() {
+                      search = false;
+                      pencarian = TextEditingController(text: "");
+                    });
                   },
-                  icon: const Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Colors.white,
-                  )),
-              Visibility(
-                  visible: myProvider.getCartList.isNotEmpty,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 20,
-                    height: 20,
-                    decoration: const BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    child: Text(
-                      myProvider.getCartList.length.toString(),
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ))
-            ],
-          ),
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  search = true;
-                });
-              },
-              icon: const Icon(
-                Icons.search_outlined,
-                color: Colors.white,
-              )),
-        ],
-      ),
+                )),
+                title: TextField(
+                  controller: pencarian,
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xffffffff).withOpacity(0.6),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Search(pencarian: pencarian)));
+                          },
+                          icon: Icon(Icons.search_outlined))),
+                ),
+              )
+            : AppBar(
+                leading: IconButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              PopupFilterWidget(jenis: "store"));
+                    },
+                    icon: const Icon(
+                      Icons.filter_alt_outlined,
+                      color: Colors.white,
+                    )),
+                centerTitle: true,
+                title: Image.asset(
+                  'assets/logowhite.png',
+                  width: 51,
+                  height: 35,
+                ),
+                backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+                actions: [
+                  Stack(
+                    children: [
+                      IconButton(
+                          alignment: Alignment.bottomCenter,
+                          onPressed: () {
+                            bottomnavigasi.perubahanpembantuparamssotre(1);
+                            bottomnavigasi.perubahanparamsstore(3);
+                          },
+                          icon: const Icon(
+                            Icons.shopping_cart_outlined,
+                            color: Colors.white,
+                          )),
+                      Visibility(
+                          visible: myProvider.getCartList.isNotEmpty,
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 20,
+                            height: 20,
+                            decoration: const BoxDecoration(
+                                color: Colors.red,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8))),
+                            child: Text(
+                              myProvider.getCartList.length.toString(),
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ))
+                    ],
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          search = true;
+                        });
+                      },
+                      icon: const Icon(
+                        Icons.search_outlined,
+                        color: Colors.white,
+                      )),
+                ],
+              ),
         body: Container(
           decoration: const BoxDecoration(
               color: Color.fromARGB(0xFF, 0x50, 0x77, 0x7A)),
