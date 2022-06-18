@@ -31,41 +31,61 @@ class Home_Provider extends ChangeNotifier {
       'Location': "St.Damar Raya",
       'fasilitas': [
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
+          "Icon": Icons.panorama_fisheye,
+          'judulfasilitas': 'Bawal/Kakap',
           'keterangan': 'Type of fish'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.outdoor_grill,
+          'judulfasilitas': 'Grill On Site',
+          'keterangan': 'Facility'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.wifi,
+          'judulfasilitas': 'Free Wifi',
+          'keterangan': 'Facility'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.food_bank_outlined,
+          'judulfasilitas': 'Order Food Easily',
+          'keterangan': 'Facility'
         }
       ],
       "Rating": 4.0,
       "Comment": [
         {
           "nama": "Geiginia Mill",
-          "Nilai": "5,0",
+          "Nilai": "5.0",
           "tanggal": "18 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Worth it untuk datang kembali, sangat nyaman, dan adem",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/pondok_1.png",
+            "assets/ImageAssets/pondok_2.png",
+            "assets/ImageAssets/pondok_3.png"
           ]
         },
-        
+        {
+          "nama": "Rodney Miller",
+          "Nilai": "4.0",
+          "tanggal": "10 Feb 2022",
+          "Isi Commment": "Nyaman, adem, banyak ikannya",
+          "gambar": []
+        },
+        {
+          "nama": "Richard Haill",
+          "Nilai": "5.0",
+          "tanggal": "30 Jan 2022",
+          "Isi Commment": "Sangat suka",
+          "gambar": []
+        },
+        {
+          "nama": "Susie Bridges",
+          "Nilai": "5.0",
+          "tanggal": "30 Jan 2022",
+          "Isi Commment": "Harus banget sih datang kemari",
+          "gambar": ["assets/ImageAssets/pondok_2.png"]
+        }
       ]
     },
   ];
@@ -78,39 +98,60 @@ class Home_Provider extends ChangeNotifier {
       'Location': "St.Damar Raya",
       'fasilitas': [
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
+          "Icon": Icons.panorama_fisheye,
+          'judulfasilitas': 'Bawal/Kakap',
           'keterangan': 'Type of fish'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.outdoor_grill,
+          'judulfasilitas': 'Grill On Site',
+          'keterangan': 'Facility'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.wifi,
+          'judulfasilitas': 'Free Wifi',
+          'keterangan': 'Facility'
         },
         {
-          "Icon": Icons.abc,
-          'judulfasilitas': 'Patin / Lele',
-          'keterangan': 'Type of fish'
+          "Icon": Icons.food_bank_outlined,
+          'judulfasilitas': 'Order Food Easily',
+          'keterangan': 'Facility'
         }
       ],
       "Rating": 4.0,
       "Comment": [
         {
           "nama": "Geiginia Mill",
-          "Nilai": "5,0",
+          "Nilai": "5.0",
           "tanggal": "18 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Worth it untuk datang kembali, sangat nyaman, dan adem",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/pondok_1.png",
+            "assets/ImageAssets/pondok_2.png",
+            "assets/ImageAssets/pondok_3.png"
           ]
+        },
+        {
+          "nama": "Rodney Miller",
+          "Nilai": "4.0",
+          "tanggal": "10 Feb 2022",
+          "Isi Commment": "Nyaman, adem, banyak ikannya",
+          "gambar": []
+        },
+        {
+          "nama": "Richard Haill",
+          "Nilai": "5.0",
+          "tanggal": "30 Jan 2022",
+          "Isi Commment": "Sangat suka",
+          "gambar": []
+        },
+        {
+          "nama": "Susie Bridges",
+          "Nilai": "5.0",
+          "tanggal": "30 Jan 2022",
+          "Isi Commment": "Harus banget sih datang kemari",
+          "gambar": ["assets/ImageAssets/pondok_2.png"]
         }
       ]
     },
@@ -118,17 +159,18 @@ class Home_Provider extends ChangeNotifier {
   final List _DataEvent = [
     {
       'lokasigambar': 'assets/4005909.jpg',
-      'NamaLokasi': 'Visser Terjun Mounth',
+      'NamaLokasi': 'Visser Damar Raya',
       'Jumlahrecomend': 1000,
       'harga': 50000,
-      'tanggal': '15 Maret 2022',
+      'tanggal': '12 Maret 2022',
       "judul": "Galatama Ikan Mas Dan Ikan Patin",
-      "Alamat": "Jl Thamrin no 52",
-      "Hadiah": "1.000.000",
-      "naskah": "b;lsadoiasjdoaisdjaso",
-      "isi": 199,
+      "Alamat": "St. Damar Raya.99, Medan Timur",
+      "Hadiah": "TEN MILLION RUPIAH",
+      "naskah":
+          "Galatama merupakan aktivitas memancing yang dilakukan pada kolam pemancingan dengan sistem lomba untuk mencari pemenang. Untuk itu Visser Damar Raya ingin mengadakan event GALAMATA dalam rangka ulangtahun kedua. Jadi tunggu apalagi? Ayuk buruan klik tombol di bawah ini.",
+      "isi": 169,
       "capacity": 200,
-      "HariTanggal": "Saturday, 23 April 2022"
+      "HariTanggal": "Saturday, 09:00PM - 15:00PM"
     },
   ];
 
