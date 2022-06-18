@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreDetail.dart';
 import 'package:provider/provider.dart';
@@ -8,19 +9,30 @@ class StoreThumbnail extends StatelessWidget {
   final String namatoko;
   final String alamattoko;
   final int jumlahlike;
-  const StoreThumbnail(
-      {Key? key,
-      required this.logotoko,
-      required this.namatoko,
-      required this.alamattoko,
-      required this.jumlahlike})
-      : super(key: key);
+  final double rating;
+  final String waktubuka;
+  final String waktututup;
+  final List comment;
+  const StoreThumbnail({
+    Key? key,
+    required this.logotoko,
+    required this.namatoko,
+    required this.alamattoko,
+    required this.jumlahlike,
+    required this.rating,
+    required this.waktubuka,
+    required this.waktututup,
+    required this.comment,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var bottomnavigasi = Provider.of<bottomprovider>(context);
+    var myprov = Provider.of<StoreProvider>(context);
     return GestureDetector(
       onTap: () {
+        myprov.opendetailfuns(namatoko, alamattoko, logotoko, rating, waktubuka,
+            waktututup, comment);
         bottomnavigasi.perubahanparamsstore(1);
       },
       child: Container(
