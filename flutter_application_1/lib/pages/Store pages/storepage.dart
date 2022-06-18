@@ -134,30 +134,45 @@ class _storePageState extends State<StorePage> {
                   subJudulSection: "Let's find out!",
                   storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
                     return StoreThumbnail(
-                        logotoko: val['logotoko'],
-                        namatoko: val['namatoko'],
-                        alamattoko: val['alamattoko'],
-                        jumlahlike: val['jumlahlike']);
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike'],
+                      rating: val['rating'],
+                      waktubuka: val['waktuBuka'],
+                      waktututup: val['waktuTutup'],
+                      comment: val['comment'],
+                    );
                   }).toList()),
               StoreSection(
                   judulSection: "Order Again",
                   subJudulSection: "You ever order here. Again?",
                   storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
                     return StoreThumbnail(
-                        logotoko: val['logotoko'],
-                        namatoko: val['namatoko'],
-                        alamattoko: val['alamattoko'],
-                        jumlahlike: val['jumlahlike']);
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike'],
+                      rating: val['rating'],
+                      waktubuka: val['waktuBuka'],
+                      waktututup: val['waktuTutup'],
+                      comment: val['comment'],
+                    );
                   }).toList()),
               StoreSection(
                   judulSection: "Recently Viewed",
                   subJudulSection: "Come and see again!",
                   storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
                     return StoreThumbnail(
-                        logotoko: val['logotoko'],
-                        namatoko: val['namatoko'],
-                        alamattoko: val['alamattoko'],
-                        jumlahlike: val['jumlahlike']);
+                      logotoko: val['logotoko'],
+                      namatoko: val['namatoko'],
+                      alamattoko: val['alamattoko'],
+                      jumlahlike: val['jumlahlike'],
+                      rating: val['rating'],
+                      waktubuka: val['waktuBuka'],
+                      waktututup: val['waktuTutup'],
+                      comment: val['comment'],
+                    );
                   }).toList()),
             ],
           ),
