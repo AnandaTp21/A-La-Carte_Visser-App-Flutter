@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
+import 'package:provider/provider.dart';
 
 class sdTitle extends StatelessWidget {
   final String namaToko;
@@ -13,6 +15,7 @@ class sdTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +45,7 @@ class sdTitle extends StatelessWidget {
                     style: TextStyle(color: Colors.black),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    bottomnavigasi.perubahanparamsstore(0);
                   },
                 )
               ],
