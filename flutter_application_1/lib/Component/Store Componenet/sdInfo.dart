@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:flutter_application_1/pages/Home/Detail/Review.dart';
+import 'package:provider/provider.dart';
 
 class sdInfo extends StatelessWidget {
-  final String rating;
+  final double rating;
   final String waktuBuka;
   final String waktuTutup;
+  final String gambar;
+  final List coment;
   const sdInfo(
       {Key? key,
       required this.rating,
       required this.waktuBuka,
+      required this.coment,
+      required this.gambar,
       required this.waktuTutup})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var myProv = Provider.of<StoreProvider>(context);
     return Container(
       margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
       decoration: BoxDecoration(
@@ -25,7 +32,13 @@ class sdInfo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Review(
+                          gambar: gambar, rating: rating, comments: coment)));
+            },
             child: Container(
               child: Column(
                 children: [
@@ -36,7 +49,7 @@ class sdInfo extends StatelessWidget {
                         color: Color.fromARGB(0xFF, 0xB1, 0x31, 0x26),
                       ),
                       Text(
-                        rating,
+                        "${rating}",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )
                     ],
