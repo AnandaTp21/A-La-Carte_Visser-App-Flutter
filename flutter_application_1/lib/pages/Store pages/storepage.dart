@@ -131,7 +131,7 @@ class _storePageState extends State<StorePage> {
               }).toList()),
               StoreSection(
                   judulSection: "Recommended Visser Store",
-                  subJudulSection: "See all offers!",
+                  subJudulSection: "Let's find out!",
                   storeThumbnail: myProvider.getStoreThumbnailList.map((val) {
                     return StoreThumbnail(
                       logotoko: val['logotoko'],
