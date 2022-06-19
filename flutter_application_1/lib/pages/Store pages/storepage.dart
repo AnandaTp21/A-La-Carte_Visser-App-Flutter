@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Component/PopupFilterWidget.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreSection.dart';
 import 'package:flutter_application_1/Component/Store%20Componenet/StoreThumbnail.dart';
 import 'package:flutter_application_1/Component/carousel.dart';
@@ -58,10 +59,13 @@ class _storePageState extends State<StorePage> {
             : AppBar(
                 leading: IconButton(
                     onPressed: () {
-                      bottomnavigasi.perubahanparamsstore(0);
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              PopupFilterWidget(jenis: "store"));
                     },
                     icon: const Icon(
-                      Icons.arrow_back_rounded,
+                      Icons.filter_alt_outlined,
                       color: Colors.white,
                     )),
                 centerTitle: true,
