@@ -105,7 +105,7 @@ class _loginState extends State<login> {
                   ),
                   TextButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPassword()));
-                  }, child: Text("Forgot Password ?",style: GoogleFonts.poppins(color: Color.fromRGBO(80, 119, 122, 1),fontWeight: FontWeight.bold),))
+                  }, child: Text("Forgot Password?",style: GoogleFonts.poppins(color: Color.fromRGBO(80, 119, 122, 1),fontWeight: FontWeight.bold),))
                 ],
               ),
             ),
@@ -145,7 +145,7 @@ class _loginState extends State<login> {
               child : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("Don't have an account yet ?",style: GoogleFonts.poppins(),),
+                Text("Don't have an account yet?",style: GoogleFonts.poppins(),),
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const Register()));
                 }, child:  Text("Register",style: GoogleFonts.poppins(fontWeight: FontWeight.bold),),

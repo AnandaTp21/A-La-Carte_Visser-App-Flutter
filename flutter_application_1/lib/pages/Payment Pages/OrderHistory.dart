@@ -94,7 +94,7 @@ class OrderHistory extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           ),
           const Text(
-            "Hit the blue button down below to Creat an order",
+            "Hit the blue button down below to Create an order",
             style: TextStyle(fontSize: 18),
           ),
           Container(
@@ -110,7 +110,7 @@ class OrderHistory extends StatelessWidget {
                   bottomnavigation.perubahanparamsstore(0);
                 },
                 child: const Text(
-                  "Creat an Order",
+                  "Create an Order",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 )),
           )

@@ -48,14 +48,14 @@ class _VerificationState extends State<Verification> {
             Text("Verification",style: TextStyle(fontSize: 24,color: Color(0xff120D26)),),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10),
-              child: Text("We,ve Send you the verification"),
+              child: Text("We've Send you the verification"),
             ),
-            Text("codee on ${widget.mobile}"),
+            Text("code on ${widget.mobile}"),
             Container(
               margin: EdgeInsets.only(top: 40),
               child: Center(
                 child: errorcode?
-              Text("Perhatikan SMS",style: TextStyle(color :Colors.red,))
+              Text("See Your Phone Messages",style: TextStyle(color :Colors.red,))
               :Container(),
               )
             ),

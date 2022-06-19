@@ -137,7 +137,7 @@ class _RegisterState extends State<Register> {
                       }
                     }
                     if(dapat != -1){
-                        pesan = "Account Sudah Ada Silahkan Login";
+                        pesan = "Account Telah Terdaftar, Silahkan Login";
                         susksesregis = true;
                       }
                     else{
@@ -160,7 +160,7 @@ class _RegisterState extends State<Register> {
               child : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("Already Have an account ?"),
+                Text("Already Have an account?"),
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const login()));
                 }, child: const Text("Login",style: TextStyle(fontWeight: FontWeight.bold),),

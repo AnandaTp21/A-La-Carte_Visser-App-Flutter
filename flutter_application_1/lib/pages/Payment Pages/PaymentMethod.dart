@@ -37,7 +37,7 @@ class PaymentMethod extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "Order payment",
+                          "Order Payment",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 22),
                         ),
@@ -126,7 +126,7 @@ class PaymentMethod extends StatelessWidget {
                               padding: EdgeInsets.only(top: 10, bottom: 10),
                               child: RadioListTile(
                                 secondary: Image.asset('assets/logoblack.png'),
-                                title: const Text("Online payment",
+                                title: const Text("Online Payment",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
                                 subtitle: const Text("Visser Pay"),
