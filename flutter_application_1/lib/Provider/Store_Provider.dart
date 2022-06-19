@@ -42,7 +42,7 @@ class StoreProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> _storeThumbnailList = [
     {
       'idToko': 1,
-      'logotoko': 'assets/logoblack.png',
+      'logotoko': 'assets/logogreen.png',
       'namatoko': 'Visser Store',
       'alamattoko': 'St. Bilal No. 46',
       'jumlahlike': 50,

@@ -17,9 +17,9 @@ class Home_Provider extends ChangeNotifier {
     "assets/ImageAssets/pemancingan_9.jpg"
   ];
   final List _CarouselEvent = [
-    "assets/ImageAssets/pemancingan_10.jpg",
     "assets/ImageAssets/pemancingan_11.jpg",
-    "assets/ImageAssets/pemancingan_12.jpg"
+    "assets/ImageAssets/pemancingan_12.jpg",
+    "assets/ImageAssets/pemancingan_13.jpg"
   ];
   final List _DataWeight = [
     {
@@ -151,6 +151,69 @@ class Home_Provider extends ChangeNotifier {
         }
       ]
     },
+    {
+      'lokasigambar': 'assets/ImageAssets/pemancingan_6.jpg',
+      'NamaLokasi': 'Visser Indiana Water',
+      'Jumlahrecomend': 500,
+      'harga': 40000,
+      'hargaawal': 70000,
+      'Location': "St. Indiana 47",
+      'fasilitas': [
+        {
+          "Icon": Icons.panorama_fisheye,
+          'judulfasilitas': 'Patin/Bawal',
+          'keterangan': 'Type of fish'
+        },
+        {
+          "Icon": Icons.outdoor_grill,
+          'judulfasilitas': 'Grill On Site',
+          'keterangan': 'Facility'
+        },
+        {
+          "Icon": Icons.food_bank_outlined,
+          'judulfasilitas': 'Order Food Easily',
+          'keterangan': 'Facility'
+        }
+      ],
+      "Rating": 4.0,
+      "Comment": [
+        {
+          "nama": "Yuan Ruth",
+          "Nilai": "4.0",
+          "tanggal": "25 Feb 2022",
+          "Isi Commment": "Keren, Adem, Sangat Ramai Jadi Agak Sesak",
+          "gambar": [
+            "assets/ImageAssets/pondok_3.png",
+            "assets/ImageAssets/pondok_1.png",
+            "assets/ImageAssets/pondok_2.png"
+          ]
+        },
+        {
+          "nama": "Effendy Joan",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment": "Ikan Besar",
+          "gambar": []
+        },
+        {
+          "nama": "Rayhan Kay",
+          "Nilai": "4.0",
+          "tanggal": "15 Jan 2022",
+          "Isi Commment": ".........",
+          "gambar": []
+        },
+        {
+          "nama": "Susie Bridges",
+          "Nilai": "5.0",
+          "tanggal": "5 Jan 2022",
+          "Isi Commment": "Sangat Recommend",
+          "gambar": [
+            "assets/ImageAssets/pondok_3.png",
+            "assets/ImageAssets/pondok_1.png"
+          ]
+        }
+      ]
+    },
   ];
   final List _DataTime = [
     {
@@ -237,6 +300,69 @@ class Home_Provider extends ChangeNotifier {
           'keterangan': 'Facility'
         },
         {
+          "Icon": Icons.food_bank_outlined,
+          'judulfasilitas': 'Order Food Easily',
+          'keterangan': 'Facility'
+        }
+      ],
+      "Rating": 4.0,
+      "Comment": [
+        {
+          "nama": "Yuan Ruth",
+          "Nilai": "4.0",
+          "tanggal": "25 Feb 2022",
+          "Isi Commment": "Keren, Adem, Sangat Ramai Jadi Agak Sesak",
+          "gambar": [
+            "assets/ImageAssets/pondok_3.png",
+            "assets/ImageAssets/pondok_1.png",
+            "assets/ImageAssets/pondok_2.png"
+          ]
+        },
+        {
+          "nama": "Effendy Joan",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment": "Ikan Besar",
+          "gambar": []
+        },
+        {
+          "nama": "Rayhan Kay",
+          "Nilai": "4.0",
+          "tanggal": "15 Jan 2022",
+          "Isi Commment": ".........",
+          "gambar": []
+        },
+        {
+          "nama": "Susie Bridges",
+          "Nilai": "5.0",
+          "tanggal": "5 Jan 2022",
+          "Isi Commment": "Sangat Recommend",
+          "gambar": [
+            "assets/ImageAssets/pondok_3.png",
+            "assets/ImageAssets/pondok_1.png"
+          ]
+        }
+      ]
+    },
+    {
+      'lokasigambar': 'assets/ImageAssets/pemancingan_8.jpg',
+      'NamaLokasi': 'Visser Joji Water',
+      'Jumlahrecomend': 100,
+      'harga': 30000,
+      'hargaawal': 40000,
+      'Location': "St. Joji 56",
+      'fasilitas': [
+        {
+          "Icon": Icons.panorama_fisheye,
+          'judulfasilitas': 'Lele/Nila',
+          'keterangan': 'Type of fish'
+        },
+        {
+          "Icon": Icons.outdoor_grill,
+          'judulfasilitas': 'Grill On Site',
+          'keterangan': 'Facility'
+        },
+        {
           "Icon": Icons.wifi,
           'judulfasilitas': 'Free Wifi',
           'keterangan': 'Facility'
@@ -288,7 +414,7 @@ class Home_Provider extends ChangeNotifier {
       'NamaLokasi': 'Visser Damar Raya',
       'Jumlahrecomend': 1000,
       'harga': 50000,
-      'tanggal': '12 Maret 2022',
+      'tanggal': '19 Maret 2022',
       "judul": "Galatama Ikan Mas Dan Ikan Patin",
       "Alamat": "St. Damar Raya.99, Medan Timur",
       "Hadiah": "TEN MILLION RUPIAH",
@@ -303,7 +429,7 @@ class Home_Provider extends ChangeNotifier {
       'NamaLokasi': 'Visser Guardian Angel',
       'Jumlahrecomend': 2000,
       'harga': 85000,
-      'tanggal': '19 Maret 2022',
+      'tanggal': '12 Maret 2022',
       "judul": "Galatama Ikan Bawal dan Ikan Kakap",
       "Alamat": "St. Guardian 75, Medan Selatan",
       "Hadiah": "FIFTEEN MILLION RUPIAH",
@@ -312,6 +438,21 @@ class Home_Provider extends ChangeNotifier {
       "isi": 98,
       "capacity": 100,
       "HariTanggal": "Saturday, 10:00PM - 14:00PM"
+    },
+    {
+      'lokasigambar': 'assets/ImageAssets/pemancingan_13.jpg',
+      'NamaLokasi': 'Visser Tulus Water',
+      'Jumlahrecomend': 1500,
+      'harga': 70000,
+      'tanggal': '05 Maret 2022',
+      "judul": "Galatama Ikan Mas dan Ikan Nila",
+      "Alamat": "St. Tulus 19, Medan Barat",
+      "Hadiah": "ONE MILLION RUPIAH",
+      "naskah":
+          "Galatama sudah hadir kembali. Buruan daftar sebelum kehabisan tiket!",
+      "isi": 45,
+      "capacity": 50,
+      "HariTanggal": "Saturday, 10:00PM - 13:00PM"
     },
   ];
 
