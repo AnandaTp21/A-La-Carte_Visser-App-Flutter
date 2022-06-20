@@ -17,9 +17,9 @@ class Home_Provider extends ChangeNotifier {
     "assets/ImageAssets/pemancingan_9.jpg"
   ];
   final List _CarouselEvent = [
+    "assets/ImageAssets/pemancingan_10.jpg",
     "assets/ImageAssets/pemancingan_11.jpg",
-    "assets/ImageAssets/pemancingan_12.jpg",
-    "assets/ImageAssets/pemancingan_13.jpg"
+    "assets/ImageAssets/pemancingan_12.jpg"
   ];
   final List _DataWeight = [
     {
@@ -345,7 +345,7 @@ class Home_Provider extends ChangeNotifier {
       ]
     },
     {
-      'lokasigambar': 'assets/ImageAssets/pemancingan_8.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_8.jpeg',
       'NamaLokasi': 'Visser Joji Water',
       'Jumlahrecomend': 100,
       'harga': 30000,
@@ -410,7 +410,7 @@ class Home_Provider extends ChangeNotifier {
   ];
   final List _DataEvent = [
     {
-      'lokasigambar': 'assets/ImageAssets/pemancingan_11.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_10.jpg',
       'NamaLokasi': 'Visser Damar Raya',
       'Jumlahrecomend': 1000,
       'harga': 50000,
@@ -425,7 +425,7 @@ class Home_Provider extends ChangeNotifier {
       "HariTanggal": "Saturday, 09:00PM - 15:00PM"
     },
     {
-      'lokasigambar': 'assets/ImageAssets/pemancingan_12.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_11.jpg',
       'NamaLokasi': 'Visser Guardian Angel',
       'Jumlahrecomend': 2000,
       'harga': 85000,
@@ -440,7 +440,7 @@ class Home_Provider extends ChangeNotifier {
       "HariTanggal": "Saturday, 10:00PM - 14:00PM"
     },
     {
-      'lokasigambar': 'assets/ImageAssets/pemancingan_13.jpg',
+      'lokasigambar': 'assets/ImageAssets/pemancingan_12.jpg',
       'NamaLokasi': 'Visser Tulus Water',
       'Jumlahrecomend': 1500,
       'harga': 70000,
