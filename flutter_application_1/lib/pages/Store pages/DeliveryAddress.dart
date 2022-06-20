@@ -67,27 +67,27 @@ class _DeliveryAddressState extends State<DeliveryAddress> {
                   controller: namaController,
                   decoration: InputDecoration(
                       label: const Text("Name"),
-                      errorText: isNamaEmpty == true ? "Input Name!" : null),
+                      errorText: isNamaEmpty == true ? "Input Your Name!" : null),
                 ),
                 TextField(
                   controller: alamatController,
                   decoration: InputDecoration(
                       label: const Text("Address"),
                       errorText:
-                          isAlamatEmpty == true ? "Input Address!" : null),
+                          isAlamatEmpty == true ? "Input Your Address!" : null),
                 ),
                 TextField(
                   controller: provinsiController,
                   decoration: InputDecoration(
                       label: const Text("State/Province"),
                       errorText:
-                          isProvinsiEmpty == true ? "Input Province!" : null),
+                          isProvinsiEmpty == true ? "Input Your Province!" : null),
                 ),
                 TextField(
                   controller: kotaController,
                   decoration: InputDecoration(
                       label: const Text("City/District"),
-                      errorText: isKotaEmpty == true ? "Input City!" : null),
+                      errorText: isKotaEmpty == true ? "Input Your City!" : null),
                 ),
                 TextField(
                   keyboardType: TextInputType.number,
@@ -95,7 +95,7 @@ class _DeliveryAddressState extends State<DeliveryAddress> {
                   decoration: InputDecoration(
                       label: const Text("Postal code"),
                       errorText:
-                          isKodeposEmpty == true ? "Input Postal Code!" : null),
+                          isKodeposEmpty == true ? "Input Your Postal Code!" : null),
                 ),
                 TextField(
                   keyboardType: TextInputType.number,
@@ -103,7 +103,7 @@ class _DeliveryAddressState extends State<DeliveryAddress> {
                   decoration: InputDecoration(
                       label: const Text("Phone Number"),
                       errorText: isNomorHpEmpty == true
-                          ? "Input Phone Number!"
+                          ? "Input Your Phone Number!"
                           : null),
                 ),
                 Container(

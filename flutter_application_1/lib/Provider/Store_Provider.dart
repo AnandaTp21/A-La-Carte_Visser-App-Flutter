@@ -42,97 +42,320 @@ class StoreProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> _storeThumbnailList = [
     {
       'idToko': 1,
-      'logotoko': 'assets/logoblack.png',
-      'namatoko': 'Visser Store',
-      'alamattoko': 'St. Bilal No. 46',
-      'jumlahlike': 50,
-      'waktuBuka': "10.00",
+      'logotoko': 'assets//ImageAssets/toko_1.png',
+      'namatoko': 'Pratama Vis',
+      'alamattoko': 'St. Pratama - 11',
+      'jumlahlike': 99,
+      'waktuBuka': "09.00",
       'waktuTutup': "18.00",
-      'rating': 4.0,
+      'rating': 5.0,
       "comment": [
         {
-          "nama": "Geiginia Mill",
-          "Nilai": "5,0",
-          "tanggal": "18 Feb 2022",
+          "nama": "Ashley Joerch",
+          "Nilai": "5.0",
+          "tanggal": "05 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
           ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "5.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Highly Recommend",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
         }
       ]
     },
     {
       'idToko': 2,
-      'logotoko': 'assets/logogreen.png',
-      'namatoko': 'Visser Store',
-      'alamattoko': 'St. Bilal No. 46',
+      'logotoko': 'assets/ImageAssets/toko_2.png',
+      'namatoko': 'Nyageg Store',
+      'alamattoko': 'St. Nyageg - 26',
       'jumlahlike': 50,
       'waktuBuka': "10.00",
-      'waktuTutup': "18.00",
+      'waktuTutup': "17.00",
       'rating': 4.0,
       "comment": [
         {
-          "nama": "Geiginia Mill",
-          "Nilai": "5,0",
-          "tanggal": "18 Feb 2022",
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
           ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
         }
       ]
     },
     {
       'idToko': 3,
-      'logotoko': 'assets/logogreen.png',
-      'namatoko': 'Visser Store',
-      'alamattoko': 'St. Bilal No. 46',
-      'jumlahlike': 50,
-      'waktuBuka': "10.00",
-      'waktuTutup': "18.00",
+      'logotoko': 'assets/ImageAssets/toko_3.png',
+      'namatoko': 'Lubuog Mani',
+      'alamattoko': 'St. Lubuog - 33',
+      'jumlahlike': 35,
+      'waktuBuka': "08.00",
+      'waktuTutup': "14.00",
       'rating': 4.0,
       "comment": [
         {
-          "nama": "Geiginia Mill",
-          "Nilai": "5,0",
-          "tanggal": "18 Feb 2022",
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
           ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
         }
       ]
     },
     {
       'idToko': 4,
-      'logotoko': 'assets/logogreen.png',
-      'namatoko': 'Visser Store',
-      'alamattoko': 'St. Bilal No. 46',
-      'jumlahlike': 50,
-      'waktuBuka': "10.00",
-      'waktuTutup': "18.00",
+      'logotoko': 'assets/ImageAssets/toko_4.png',
+      'namatoko': 'Mancing Vis',
+      'alamattoko': 'St. Mancing - 46',
+      'jumlahlike': 70,
+      'waktuBuka': "09.00",
+      'waktuTutup': "17.30",
       'rating': 4.0,
       "comment": [
         {
-          "nama": "Geiginia Mill",
-          "Nilai": "5,0",
-          "tanggal": "18 Feb 2022",
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
           "Isi Commment":
-              "Tempat yang sangat bagus,nyaman dan sangat bagus sekali untuk di kunjungi di kemudian hari",
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
           "gambar": [
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
-            "assets/carousel.jpg",
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
           ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
+        }
+      ]
+    },
+    {
+      'idToko': 5,
+      'logotoko': 'assets/ImageAssets/toko_5.png',
+      'namatoko': 'Irexz Store',
+      'alamattoko': 'St. Irray - 04',
+      'jumlahlike': 30,
+      'waktuBuka': "09.00",
+      'waktuTutup': "15.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment":
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
+          "gambar": [
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
+          ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "5.0",
+          "tanggal": "02 Jan 2022",
+          "Isi Commment": "Tidak menyesal membeli barang dari toko ini",
+          "gambar": [],
+        }
+      ]
+    },
+    {
+      'idToko': 6,
+      'logotoko': 'assets/ImageAssets/toko_6.png',
+      'namatoko': 'Untung Store',
+      'alamattoko': 'St. Untung - 10',
+      'jumlahlike': 45,
+      'waktuBuka': "10.00",
+      'waktuTutup': "16.30",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment":
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
+          "gambar": [
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
+          ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
+        }
+      ]
+    },
+    {
+      'idToko': 7,
+      'logotoko': 'assets/ImageAssets/toko_7.png',
+      'namatoko': 'Warung Store',
+      'alamattoko': 'St. Pancing - 70',
+      'jumlahlike': 60,
+      'waktuBuka': "09.00",
+      'waktuTutup': "17.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment":
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
+          "gambar": [
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
+          ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
+        }
+      ]
+    },
+    {
+      'idToko': 8,
+      'logotoko': 'assets/ImageAssets/toko_8.png',
+      'namatoko': 'Ghavin Store',
+      'alamattoko': 'St. Ghavin - 88',
+      'jumlahlike': 80,
+      'waktuBuka': "08.00",
+      'waktuTutup': "16.00",
+      'rating': 4.0,
+      "comment": [
+        {
+          "nama": "Ashley Joerch",
+          "Nilai": "4.0",
+          "tanggal": "05 Feb 2022",
+          "Isi Commment":
+              "Alat pancing sangat kokoh, penjual sangat ramah, recommend",
+          "gambar": [
+            "assets/ImageAssets/joran-1.png",
+            "assets/ImageAssets/joran 2.png",
+            "assets/ImageAssets/joran 3.webp",
+            "assets/ImageAssets/joran 2.png"
+          ],
+        },
+        {
+          "nama": "Josh Raymond",
+          "Nilai": "4.0",
+          "tanggal": "27 Jan 2022",
+          "Isi Commment": "Saya suka",
+          "gambar": [],
+        },
+        {
+          "nama": "Tyas Mutia",
+          "Nilai": "4.0",
+          "tanggal": "05 Jan 2022",
+          "Isi Commment": "Sangat bagus barangnya",
+          "gambar": [],
         }
       ]
     },

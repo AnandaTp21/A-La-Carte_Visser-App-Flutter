@@ -250,7 +250,7 @@ class _StoreCartState extends State<StoreCart> {
                     color: Color.fromARGB(0xFF, 0x20, 0x3E, 0x58),
                     borderRadius: BorderRadius.all(Radius.circular(50))),
                 child: const Text(
-                  "Go shopping",
+                  "Go Shopping",
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
