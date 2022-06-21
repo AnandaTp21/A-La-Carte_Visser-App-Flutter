@@ -22,7 +22,7 @@ class _ReviewState extends State<Review> {
     return Scaffold(
       backgroundColor: Color(0xffE7DFD4),
       appBar: AppBar(
-        backgroundColor: Colors.transparent ,
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
       ),
       body: Column(
         children: [

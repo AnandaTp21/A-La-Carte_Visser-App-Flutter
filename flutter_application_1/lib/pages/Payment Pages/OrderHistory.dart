@@ -86,7 +86,7 @@ class OrderHistory extends StatelessWidget {
         children: [
           const Icon(
             Icons.shopping_cart_outlined,
-            size: 200,
+            size: 150,
             color: Colors.grey,
           ),
           const Text(
@@ -96,12 +96,13 @@ class OrderHistory extends StatelessWidget {
           const Text(
             "Hit the blue button down below to Create an order",
             style: TextStyle(fontSize: 18),
+            textAlign: TextAlign.center,
           ),
           Container(
             margin: EdgeInsets.only(top: 30),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(50))),
                     primary: const Color.fromARGB(0xFF, 0x20, 0x3E, 0x58)),

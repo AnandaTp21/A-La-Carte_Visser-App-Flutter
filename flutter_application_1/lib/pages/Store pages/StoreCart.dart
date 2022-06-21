@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Provider/Store_Provider.dart';
 import 'package:flutter_application_1/Provider/bottomprovider.dart';
 import 'package:flutter_application_1/pages/Store%20pages/StoreShipping.dart';
 import 'package:flutter_application_1/pages/Store%20pages/storepage.dart';
+import 'package:flutter_application_1/pages/search.dart';
 import 'package:provider/provider.dart';
 
 class StoreCart extends StatefulWidget {
@@ -17,68 +18,106 @@ class StoreCart extends StatefulWidget {
 
 class _StoreCartState extends State<StoreCart> {
   @override
+  bool search = false;
+  TextEditingController pencarian = TextEditingController();
   Widget build(BuildContext context) {
     var bottomnavigasi = Provider.of<bottomprovider>(context);
     var myProvider = Provider.of<StoreProvider>(context);
     var orderProvider = Provider.of<Order_Provider>(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              if (bottomnavigasi.helpparams == 1) {
-                bottomnavigasi.perubahanparamsstore(0);
-              } else if (bottomnavigasi.helpparams == 2) {
-                bottomnavigasi.perubahanparamsstore(1);
-              } else if (bottomnavigasi.helpparams == 3) {
-                bottomnavigasi.perubahanparamsstore(2);
-              }
-            },
-            icon: const Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-            )),
-        centerTitle: true,
-        title: Image.asset(
-          'assets/logowhite.png',
-          width: 51,
-          height: 35,
-        ),
-        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
-        actions: [
-          Stack(
-            children: [
-              IconButton(
-                  alignment: Alignment.bottomCenter,
-                  onPressed: () {},
+      appBar: search
+          ? AppBar(
+              backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+              leading: (IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  setState(() {
+                    search = false;
+                    pencarian = TextEditingController(text: "");
+                  });
+                },
+              )),
+              title: TextField(
+                controller: pencarian,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Color(0xffffffff).withOpacity(0.6),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) =>
+                                      Search(pencarian: pencarian))));
+                        },
+                        icon: Icon(Icons.search_outlined))),
+              ),
+            )
+          : AppBar(
+              leading: IconButton(
+                  onPressed: () {
+                    if (bottomnavigasi.helpparams == 1) {
+                      bottomnavigasi.perubahanparamsstore(0);
+                    } else if (bottomnavigasi.helpparams == 2) {
+                      bottomnavigasi.perubahanparamsstore(1);
+                    } else if (bottomnavigasi.helpparams == 3) {
+                      bottomnavigasi.perubahanparamsstore(2);
+                    }
+                  },
                   icon: const Icon(
-                    Icons.shopping_cart_outlined,
+                    Icons.arrow_back_rounded,
                     color: Colors.white,
                   )),
-              Visibility(
-                  visible: myProvider.getCartList.isNotEmpty,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 20,
-                    height: 20,
-                    decoration: const BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    child: Text(
-                      myProvider.getCartList.length.toString(),
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ))
-            ],
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search_outlined,
-                color: Colors.white,
-              )),
-        ],
-      ),
+              centerTitle: true,
+              title: Image.asset(
+                'assets/logowhite.png',
+                width: 51,
+                height: 35,
+              ),
+              backgroundColor: Color.fromRGBO(80, 119, 122, 1),
+              actions: [
+                Stack(
+                  children: [
+                    IconButton(
+                        alignment: Alignment.bottomCenter,
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.shopping_cart_outlined,
+                          color: Colors.white,
+                        )),
+                    Visibility(
+                        visible: myProvider.getCartList.isNotEmpty,
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 20,
+                          height: 20,
+                          decoration: const BoxDecoration(
+                              color: Colors.red,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Text(
+                            myProvider.getCartList.length.toString(),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ))
+                  ],
+                ),
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        search = true;
+                      });
+                    },
+                    icon: const Icon(
+                      Icons.search_outlined,
+                      color: Colors.white,
+                    )),
+              ],
+            ),
       body: Container(
           color: const Color.fromARGB(0xFF, 0xE7, 0xDF, 0xD4),
           child: Stack(
@@ -165,7 +204,8 @@ class _StoreCartState extends State<StoreCart> {
                             child: GestureDetector(
                               onTap: () {
                                 orderProvider.setKeterangan = {
-                                  'orderID' : orderProvider.getOrderList.length+1,
+                                  'orderID':
+                                      orderProvider.getOrderList.length + 1,
                                   'namaToko': myProvider
                                       .getStoreThumbnailList[0]['namatoko'],
                                   'alamatToko': myProvider
