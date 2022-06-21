@@ -88,7 +88,7 @@ class OrderSuccess extends StatelessWidget {
   }
 
   text(val) {
-    if (val['paymentMethod'] == 'delivery') {
+    if (val['shipping'] == 'delivery') {
       return const Text(
         "We'll notify you when your driver is ready!",
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
