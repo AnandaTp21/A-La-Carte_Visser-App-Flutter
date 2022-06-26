@@ -8,6 +8,8 @@ class StoreProvider extends ChangeNotifier {
   ];
   List _opendetail = [
     {
+      
+      "idToko": "",
       "namaToko": "",
       "lokasiToko": "",
       "gambarToko": "",
@@ -25,9 +27,11 @@ class StoreProvider extends ChangeNotifier {
     double rating,
     String waktubuka,
     String waktututup,
+    int idToko,
     List comment,
   ) {
     _opendetail[0] = {
+      "idToko": idToko,
       "namaToko": namatoko,
       "lokasiToko": lokasitoko,
       "gambarToko": gambartoko,
@@ -42,7 +46,7 @@ class StoreProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> _storeThumbnailList = [
     {
       'idToko': 1,
-      'logotoko': 'assets//ImageAssets/toko_1.png',
+      'logotoko': 'assets/ImageAssets/toko_1.png',
       'namatoko': 'Pratama Vis',
       'alamattoko': 'St. Pratama - 11',
       'jumlahlike': 99,
@@ -440,6 +444,7 @@ class StoreProvider extends ChangeNotifier {
     }
     if (x < 0) {
       _cartList.add({
+        'idToko': list['idToko'],
         'idProduk': list['idProduk'],
         'gambarProduk': list['gambarProduk'],
         'namaProduk': list['namaProduk'],
