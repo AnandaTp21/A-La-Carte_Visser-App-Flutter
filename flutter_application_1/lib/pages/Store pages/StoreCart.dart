@@ -206,10 +206,16 @@ class _StoreCartState extends State<StoreCart> {
                                 orderProvider.setKeterangan = {
                                   'orderID':
                                       orderProvider.getOrderList.length + 1,
-                                  'namaToko': myProvider
-                                      .getStoreThumbnailList[0]['namatoko'],
-                                  'alamatToko': myProvider
-                                      .getStoreThumbnailList[0]['alamattoko'],
+                                  'namaToko': myProvider.getStoreThumbnailList[
+                                      myProvider.getCartList[0]['idToko'] -
+                                          1]['namatoko'],
+                                  'idToko': myProvider.getStoreThumbnailList[
+                                      myProvider.getCartList[0]['idToko'] -
+                                          1]['idToko'],
+                                  'alamatToko':
+                                      myProvider.getStoreThumbnailList[
+                                          myProvider.getCartList[0]['idToko'] -
+                                              1]['alamattoko'],
                                   'totalHarga':
                                       myProvider.getTotalHarga.toString(),
                                   'cartList': myProvider.getCartList

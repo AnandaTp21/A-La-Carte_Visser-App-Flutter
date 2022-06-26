@@ -62,11 +62,13 @@ class OrderHistory extends StatelessWidget {
                   ListView(
                     children: orderProvider.getOrderList.map((val) {
                       return OrdersWidget(
-                          shipping: val['shipping'],
-                          namaToko: val['namaToko'],
-                          alamatToko: val['alamatToko'],
-                          totalHarga: val['totalHarga'],
-                          orderID: val['orderID']);
+                        shipping: val['shipping'],
+                        namaToko: val['namaToko'],
+                        alamatToko: val['alamatToko'],
+                        totalHarga: val['totalHarga'],
+                        orderID: val['orderID'],
+                        idToko: val['idToko'],
+                      );
                     }).toList(),
                   )
                 ]))

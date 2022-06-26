@@ -13,6 +13,7 @@ class StoreThumbnail extends StatelessWidget {
   final String waktubuka;
   final String waktututup;
   final List comment;
+  final int idToko;
   const StoreThumbnail({
     Key? key,
     required this.logotoko,
@@ -22,7 +23,7 @@ class StoreThumbnail extends StatelessWidget {
     required this.rating,
     required this.waktubuka,
     required this.waktututup,
-    required this.comment,
+    required this.comment, required this.idToko,
   }) : super(key: key);
 
   @override
@@ -31,8 +32,7 @@ class StoreThumbnail extends StatelessWidget {
     var myprov = Provider.of<StoreProvider>(context);
     return GestureDetector(
       onTap: () {
-        myprov.opendetailfuns(namatoko, alamattoko, logotoko, rating, waktubuka,
-            waktututup, comment);
+        myprov.opendetailfuns(namatoko, alamattoko, logotoko, rating, waktubuka, waktututup, idToko, comment);
         bottomnavigasi.perubahanparamsstore(1);
       },
       child: Container(

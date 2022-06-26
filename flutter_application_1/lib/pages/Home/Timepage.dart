@@ -53,6 +53,7 @@ class _TimePageState extends State<TimePage> {
                                         orderProvider.getOrderList.length + 1,
                                     'namaToko': val['NamaLokasi'],
                                     'alamatToko': val['Location'],
+                                    'idToko': 1,
                                     'totalHarga': val['harga'].toString(),
                                     'cartList': "pesan"
                                   };
@@ -60,7 +61,7 @@ class _TimePageState extends State<TimePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: ((context) => PaymentMethod(
-                                              shipping: "Ticket"))));
+                                              shipping: "tiket"))));
                                 },
                                 Rating: val['Rating'],
                                 comments: val['Comment'],
