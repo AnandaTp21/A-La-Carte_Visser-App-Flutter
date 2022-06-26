@@ -187,6 +187,7 @@ class _StoreDetailState extends State<StoreDetail> {
                               crossAxisCount: 2,
                               children: myProvider.getProductList.map((val) {
                                 return sdProduct(
+                                  idToko: getdata['idToko'],
                                   idProduk: val['idProduk'],
                                   gambarProduk: val['gambarProduk'],
                                   namaProduk: val['namaProduk'],
