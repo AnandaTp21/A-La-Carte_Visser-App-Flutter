@@ -42,7 +42,7 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromRGBO(80, 119, 122, 1),
         title: Text("Event Details"),
       ),
       body: Container(

@@ -416,7 +416,7 @@ class Home_Provider extends ChangeNotifier {
       'harga': 50000,
       'tanggal': '19 Maret 2022',
       "judul": "Galatama Ikan Mas Dan Ikan Patin",
-      "Alamat": "St. Damar Raya.99, Medan Timur",
+      "Alamat": "St. Damar Raya.99",
       "Hadiah": "TEN MILLION RUPIAH",
       "naskah":
           "Galatama merupakan aktivitas memancing yang dilakukan pada kolam pemancingan dengan sistem lomba untuk mencari pemenang. Untuk itu Visser Damar Raya ingin mengadakan event GALAMATA dalam rangka ulangtahun kedua. Jadi tunggu apalagi? Ayuk buruan klik tombol di bawah ini.",

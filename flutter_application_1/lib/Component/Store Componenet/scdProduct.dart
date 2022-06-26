@@ -8,9 +8,11 @@ class sdcProduct extends StatelessWidget {
   final String namaProduk;
   final Color containerColor;
   final int idProduk;
+  final int idToko;
 
   const sdcProduct({
     Key? key,
+    required this.idToko,
     required this.gambarProduk,
     required this.hargaProduk,
     required this.namaProduk,
@@ -21,6 +23,7 @@ class sdcProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, dynamic> keteranganProduk = {
+      'idToko': idToko,
       'idProduk': idProduk,
       'gambarProduk': gambarProduk,
       'namaProduk': namaProduk,

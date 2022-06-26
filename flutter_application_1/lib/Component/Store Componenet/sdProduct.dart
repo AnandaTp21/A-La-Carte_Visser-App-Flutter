@@ -7,19 +7,22 @@ class sdProduct extends StatelessWidget {
   final String namaProduk;
   final int hargaProduk;
   final int idProduk;
+  final int idToko;
 
   const sdProduct(
       {Key? key,
       required this.gambarProduk,
       required this.namaProduk,
       required this.hargaProduk,
-      required this.idProduk})
+      required this.idProduk,
+      required this.idToko})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var myProvider = Provider.of<StoreProvider>(context);
     Map<String, dynamic> keteranganProduk = {
+      'idToko': idToko,
       'idProduk': idProduk,
       'gambarProduk': gambarProduk,
       'namaProduk': namaProduk,

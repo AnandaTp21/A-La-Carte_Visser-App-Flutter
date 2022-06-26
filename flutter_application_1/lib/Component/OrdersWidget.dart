@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Provider/Store_Provider.dart';
+import 'package:flutter_application_1/Provider/bottomprovider.dart';
+import 'package:provider/provider.dart';
 
 class OrdersWidget extends StatelessWidget {
   final String shipping;
@@ -8,17 +11,23 @@ class OrdersWidget extends StatelessWidget {
   final String totalHarga;
   final int orderID;
 
+  final int idToko;
+
   const OrdersWidget(
       {Key? key,
       required this.shipping,
       required this.namaToko,
       required this.alamatToko,
       required this.totalHarga,
-      required this.orderID})
+      required this.orderID,
+      required this.idToko})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var bottomnavigasi = Provider.of<bottomprovider>(context);
+    var myprov = Provider.of<StoreProvider>(context);
+    var toko = myprov.getStoreThumbnailList[idToko - 1];
     return Container(
         padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Column(
@@ -34,7 +43,7 @@ class OrdersWidget extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "Order ID : ${orderID}",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                                 color: Color.fromARGB(150, 0, 0, 0)),
@@ -64,7 +73,23 @@ class OrdersWidget extends StatelessWidget {
                                 shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(50)))),
-                            onPressed: () {},
+                            onPressed: () {
+                              if (shipping == 'tiket') {
+                                bottomnavigasi.perubahanbottom(0);
+                              } else {
+                                myprov.opendetailfuns(
+                                    toko['namatoko'],
+                                    toko['alamattoko'],
+                                    toko['logotoko'],
+                                    toko['rating'],
+                                    toko['waktuBuka'],
+                                    toko['waktuTutup'],
+                                    toko['idToko'],
+                                    toko['comment']);
+                                bottomnavigasi.perubahanbottom(1);
+                                bottomnavigasi.perubahanparamsstore(1);
+                              }
+                            },
                             child: const Text("Reorder",
                                 style: const TextStyle(fontSize: 20)))
                       ],
