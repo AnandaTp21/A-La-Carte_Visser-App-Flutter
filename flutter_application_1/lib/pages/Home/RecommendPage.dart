@@ -82,6 +82,7 @@ class _RecommendPageState extends State<RecommendPage> {
                                       'namaToko': 'Visser Good People',
                                       'alamatToko': 'St. Good 75',
                                       'totalHarga': hargaTime,
+                                      'idToko': 1,
                                       'cartList': "pesan"
                                     };
                                     Navigator.push(
@@ -179,7 +180,8 @@ class _RecommendPageState extends State<RecommendPage> {
                                     'namaToko': 'Visser Terjun Mount',
                                     'alamatToko': "St. Terjun 40",
                                     'totalHarga': hargaWeight,
-                                    'cartList': "pesan"
+                                    'cartList': "pesan",
+                                    'idToko': 1,
                                   };
                                   Navigator.push(
                                       context,
@@ -247,7 +249,8 @@ class _RecommendPageState extends State<RecommendPage> {
                                     'alamatToko':
                                         "St. Damar Raya.99, Medan Timur",
                                     'totalHarga': hargaEvent,
-                                    'cartList': "pesan"
+                                    'cartList': "pesan",
+                                    'idToko': 1,
                                   };
                                   Navigator.push(
                                       context,
