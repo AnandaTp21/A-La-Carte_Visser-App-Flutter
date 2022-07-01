@@ -248,7 +248,7 @@ class _DetailVisserEventState extends State<DetailVisserEvent> {
             ),
             Container(
                 height: 60,
-                margin: EdgeInsets.only(top: 240, left: 40, right: 40),
+                margin: EdgeInsets.only(top: 200, left: 40, right: 40),
                 child: Container(
                   child: Row(
                     children: [
