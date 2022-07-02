@@ -8,7 +8,6 @@ class StoreProvider extends ChangeNotifier {
   ];
   List _opendetail = [
     {
-      
       "idToko": "",
       "namaToko": "",
       "lokasiToko": "",
@@ -64,7 +63,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -103,7 +101,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -142,7 +139,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -181,7 +177,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -220,7 +215,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -266,7 +260,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -305,7 +298,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -344,7 +336,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
