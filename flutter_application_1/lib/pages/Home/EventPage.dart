@@ -10,9 +10,8 @@ import 'package:flutter_application_1/pages/Home/Detail/DetailVisserEvent.dart';
 import 'package:flutter_application_1/pages/Payment%20Pages/PaymentMethod.dart';
 import 'package:provider/provider.dart';
 
-
 class EventPage extends StatefulWidget {
-  const EventPage({ Key? key }) : super(key: key);
+  const EventPage({Key? key}) : super(key: key);
 
   @override
   State<EventPage> createState() => _EventPageState();
@@ -24,34 +23,60 @@ class _EventPageState extends State<EventPage> {
     final dataevent = Provider.of<Home_Provider>(context);
     var orderProvider = Provider.of<Order_Provider>(context);
     return Container(
-        child: 
-            ListView(
-                padding: EdgeInsets.only(top: 0),
-              children: [
-                carousel(items: dataevent.AmbilCarouselEvent.map((e){
-                  return CarouselList(lokasiGambar: e);
-                }).toList()),
-                judulpage(judul: "Event Visser"),
-                Column(
-                  children: dataevent.AmbilDataEvent.map((val){  
-                    return EventPageComponent(press: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailVisserEvent(press: (){
-                        orderProvider.setKeterangan = {
-                                  'orderID' : orderProvider.getOrderList.length +1,
-                                  'namaToko': val['NamaLokasi'],
-                                  'alamatToko': val['Alamat'],
-                                  'totalHarga': val['harga'].toString(),
-                                  'cartList' : "pesan"
-                                };
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => PaymentMethod(shipping: "Ticket"))));
-                      },Lokasigambar: val['lokasigambar'], judul: val['judul'], Capacity: val['capacity'], isi: val['isi'], Kalender: val['tanggal'], waktutanggal: val['HariTanggal'], lokasikolam: val['Alamat'], namakolam: val['NamaLokasi'], Harga: val['harga'], Hadiah: val['Hadiah'], Naskah: val['naskah'], Recommend: val['Jumlahrecomend']) ));
-                    }, LokasiGambar: val['lokasigambar'], NamaLokasi: val['NamaLokasi'], JumlahRecomend: val['Jumlahrecomend'], Tanggal: val['tanggal'], Harga: val['harga']);
-                  }).toList(),
-                )
-              ],
-            ),
-          );
-        
-
+      child: ListView(
+        padding: EdgeInsets.only(top: 0),
+        children: [
+          carousel(
+              items: dataevent.AmbilCarouselEvent.map((e) {
+            return CarouselList(lokasiGambar: e);
+          }).toList()),
+          judulpage(judul: "Event Visser"),
+          Column(
+            children: dataevent.AmbilDataEvent.map((val) {
+              return EventPageComponent(
+                  press: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailVisserEvent(
+                                press: () {
+                                  orderProvider.setKeterangan = {
+                                    'orderID':
+                                        orderProvider.getOrderList.length + 1,
+                                    'namaToko': val['NamaLokasi'],
+                                    'alamatToko': val['Alamat'],
+                                    'totalHarga': val['harga'].toString(),
+                                    'idToko': 1,
+                                    'cartList': "pesan"
+                                  };
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: ((context) => PaymentMethod(
+                                              shipping: "tiket"))));
+                                },
+                                Lokasigambar: val['lokasigambar'],
+                                judul: val['judul'],
+                                Capacity: val['capacity'],
+                                isi: val['isi'],
+                                Kalender: val['tanggal'],
+                                waktutanggal: val['HariTanggal'],
+                                lokasikolam: val['Alamat'],
+                                namakolam: val['NamaLokasi'],
+                                Harga: val['harga'],
+                                Hadiah: val['Hadiah'],
+                                Naskah: val['naskah'],
+                                Recommend: val['Jumlahrecomend'])));
+                  },
+                  LokasiGambar: val['lokasigambar'],
+                  NamaLokasi: val['NamaLokasi'],
+                  JumlahRecomend: val['Jumlahrecomend'],
+                  Tanggal: val['tanggal'],
+                  Harga: val['harga']);
+            }).toList(),
+          )
+        ],
+      ),
+    );
   }
 }

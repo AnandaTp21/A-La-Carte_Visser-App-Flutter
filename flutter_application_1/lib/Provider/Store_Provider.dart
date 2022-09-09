@@ -8,6 +8,7 @@ class StoreProvider extends ChangeNotifier {
   ];
   List _opendetail = [
     {
+      "idToko": "",
       "namaToko": "",
       "lokasiToko": "",
       "gambarToko": "",
@@ -25,9 +26,11 @@ class StoreProvider extends ChangeNotifier {
     double rating,
     String waktubuka,
     String waktututup,
+    int idToko,
     List comment,
   ) {
     _opendetail[0] = {
+      "idToko": idToko,
       "namaToko": namatoko,
       "lokasiToko": lokasitoko,
       "gambarToko": gambartoko,
@@ -60,7 +63,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -99,7 +101,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -138,7 +139,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -157,7 +157,6 @@ class StoreProvider extends ChangeNotifier {
         }
       ]
     },
-    
     {
       'idToko': 4,
       'logotoko': 'assets/ImageAssets/toko_4.png',
@@ -178,7 +177,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -217,7 +215,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -263,7 +260,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -302,7 +298,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -341,7 +336,6 @@ class StoreProvider extends ChangeNotifier {
             "assets/ImageAssets/joran-1.png",
             "assets/ImageAssets/joran 2.png",
             "assets/ImageAssets/joran 3.webp",
-            "assets/ImageAssets/joran 2.png"
           ],
         },
         {
@@ -441,6 +435,7 @@ class StoreProvider extends ChangeNotifier {
     }
     if (x < 0) {
       _cartList.add({
+        'idToko': list['idToko'],
         'idProduk': list['idProduk'],
         'gambarProduk': list['gambarProduk'],
         'namaProduk': list['namaProduk'],

@@ -26,10 +26,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             Container(
               margin: EdgeInsets.only(top: 50),
               width: 320,
-              decoration: BoxDecoration(color : Color.fromARGB(40, 32, 62, 88),borderRadius: BorderRadius.all(Radius.circular(100)),),
               child :TextFormField(
                 style: TextStyle(fontSize: 15,color:Color.fromRGBO(255, 255, 255, 60,) ),
             decoration: InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(40, 32, 62, 88),
               hintText: 'Enter Your email address',
               hintStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 60,)),
               prefixIcon: Icon(Icons.email_outlined,color: Color.fromRGBO(255, 255, 255, 60,),),

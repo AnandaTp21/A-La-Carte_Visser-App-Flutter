@@ -120,7 +120,7 @@ class _ProfileState extends State<Profile> {
                         ),
                       )
                       ),
-                      Divider(
+                      const Divider(
                         color: Color.fromARGB(102, 158, 158, 158),
                         endIndent: 17,
                         indent: 17,

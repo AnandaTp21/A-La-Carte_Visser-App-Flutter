@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/NearYou.dart';
 
 class PopupFilterWidget extends StatefulWidget {
   final String jenis;
@@ -65,18 +66,24 @@ class _PopupFilterWidgetState extends State<PopupFilterWidget> {
             "Location",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-          Container(
-            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              color: Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.location_on_outlined),
-                Text("Enter a new address")
-              ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => NearYou())));
+            },
+            child: Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              margin: EdgeInsets.only(top: 10, bottom: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.location_on_outlined),
+                  Text("Enter a new address")
+                ],
+              ),
             ),
           ),
           ElevatedButton(
@@ -158,22 +165,24 @@ class _PopupFilterWidgetState extends State<PopupFilterWidget> {
           const SizedBox(
             height: 10,
           ),
-          const Text(
-            "Location",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              color: Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.location_on_outlined),
-                Text("Enter a new address")
-              ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => NearYou())));
+            },
+            child: Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              margin: EdgeInsets.only(top: 10, bottom: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Color.fromARGB(0xFF, 0xF0, 0xEB, 0xE5),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.location_on_outlined),
+                  Text("Enter a new address")
+                ],
+              ),
             ),
           ),
           ElevatedButton(
